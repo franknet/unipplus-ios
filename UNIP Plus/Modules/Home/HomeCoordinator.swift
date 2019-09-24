@@ -11,8 +11,10 @@ import UIKit
 class HomeCoordinator: BaseCoordinator {
     
     var navigation: UINavigationController
+    private var homeVC: HomeViewController
     
     init(navigationController: UINavigationController) {
+        self.homeVC = HomeViewController()
         self.navigation = navigationController
     }
     
@@ -24,7 +26,6 @@ class HomeCoordinator: BaseCoordinator {
         pagerCoordinator.homeCoordinator = self
         pagerCoordinator.start()
         
-        let homeVC = HomeViewController()
         homeVC.coordinator = self
         homeVC.viewModel = HomeViewModel()
         homeVC.pager = pageNavigation
@@ -34,5 +35,16 @@ class HomeCoordinator: BaseCoordinator {
     
     func logout() {
         navigation.popToRootViewController(animated: true)
+    }
+    
+    func showMenu() {
+        let menuVC = MenuViewController()
+        menuVC.modalPresentationStyle = .overCurrentContext
+        menuVC.modalTransitionStyle = .crossDissolve
+        menuVC.coordinator = self
+        
+        self.homeVC.present(menuVC, animated: true) {
+            
+        }
     }
 }

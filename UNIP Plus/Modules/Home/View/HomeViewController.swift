@@ -10,6 +10,7 @@ import UIKit
 
 class HomeViewController: BaseViewController<HomeCoordinator, HomeViewModel> {
     var pager: UINavigationController?
+    var menu: MenuViewController?
     
     override func viewDidLoad() {
         setup()
@@ -23,11 +24,8 @@ class HomeViewController: BaseViewController<HomeCoordinator, HomeViewModel> {
         addViewController(pager!, toView: self.view)
     }
     
-    func addRightMenuButton() {
+    private func setMenuViewController() {
         
-    }
-    
-    @objc private func menuAction() {
         
     }
     

@@ -37,6 +37,9 @@
 		A61635AF23354DB300177DFD /* PaymentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61635AE23354DB300177DFD /* PaymentsViewModel.swift */; };
 		A61635B123354DDB00177DFD /* AcademicRecordsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61635B023354DDB00177DFD /* AcademicRecordsViewModel.swift */; };
 		A61635B42335661700177DFD /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61635B32335661700177DFD /* UIViewControllerExtension.swift */; };
+		A65D72C6233AB78500C72007 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65D72C4233AB78500C72007 /* MenuViewController.swift */; };
+		A65D72C7233AB78500C72007 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A65D72C5233AB78500C72007 /* MenuViewController.xib */; };
+		A65D72CD233ABCFC00C72007 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65D72CC233ABCFC00C72007 /* MenuViewModel.swift */; };
 		A67008252332DE25000C632C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67008242332DE25000C632C /* AppDelegate.swift */; };
 		A670082C2332DE25000C632C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A670082B2332DE25000C632C /* Assets.xcassets */; };
 		A670083A2332DE25000C632C /* UNIP_PlusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67008392332DE25000C632C /* UNIP_PlusTests.swift */; };
@@ -95,6 +98,9 @@
 		A61635AE23354DB300177DFD /* PaymentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsViewModel.swift; sourceTree = "<group>"; };
 		A61635B023354DDB00177DFD /* AcademicRecordsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademicRecordsViewModel.swift; sourceTree = "<group>"; };
 		A61635B32335661700177DFD /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		A65D72C4233AB78500C72007 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		A65D72C5233AB78500C72007 /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		A65D72CC233ABCFC00C72007 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		A67008212332DE25000C632C /* UNIP Plus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UNIP Plus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A67008242332DE25000C632C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A670082B2332DE25000C632C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -367,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				A6BD96B8233A90590046E7C5 /* View */,
+				A65D72CC233ABCFC00C72007 /* MenuViewModel.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -374,6 +381,8 @@
 		A6BD96B8233A90590046E7C5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A65D72C4233AB78500C72007 /* MenuViewController.swift */,
+				A65D72C5233AB78500C72007 /* MenuViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -381,8 +390,8 @@
 		A6BD96BB233A917D0046E7C5 /* Pager */ = {
 			isa = PBXGroup;
 			children = (
-				A6BD96BD233A91A50046E7C5 /* PagerCoordinator.swift */,
 				A6BD96BC233A91940046E7C5 /* View */,
+				A6BD96BD233A91A50046E7C5 /* PagerCoordinator.swift */,
 				A6BD96BF233A921C0046E7C5 /* PagerViewModel.swift */,
 			);
 			path = Pager;
@@ -508,6 +517,7 @@
 				A670082C2332DE25000C632C /* Assets.xcassets in Resources */,
 				A6BD96B2233947800046E7C5 /* GradesSectionView.xib in Resources */,
 				A616359D2335038A00177DFD /* GradesViewController.xib in Resources */,
+				A65D72C7233AB78500C72007 /* MenuViewController.xib in Resources */,
 				A616357A2333D4AF00177DFD /* LoginViewController.xib in Resources */,
 				A61635A12335049C00177DFD /* AcademicRecordsViewController.xib in Resources */,
 				A61635A72335401A00177DFD /* HomeViewController.xib in Resources */,
@@ -612,12 +622,14 @@
 				A61635782333D4AF00177DFD /* LoginViewController.swift in Sources */,
 				A616358A2334295500177DFD /* BaseCoordinator.swift in Sources */,
 				A61635AD23354D8300177DFD /* GradesViewModel.swift in Sources */,
+				A65D72CD233ABCFC00C72007 /* MenuViewModel.swift in Sources */,
 				A6BD96A523393B840046E7C5 /* DefaultTheme.swift in Sources */,
 				A61635A42335051500177DFD /* PaymentsViewController.swift in Sources */,
 				A6BD96B4233949A20046E7C5 /* UITableViewExtension.swift in Sources */,
 				A61635B123354DDB00177DFD /* AcademicRecordsViewModel.swift in Sources */,
 				A61635A92335407400177DFD /* BaseViewModel.swift in Sources */,
 				A61635A02335049C00177DFD /* AcademicRecordsViewController.swift in Sources */,
+				A65D72C6233AB78500C72007 /* MenuViewController.swift in Sources */,
 				A6BD96B0233947700046E7C5 /* GradesSectionView.swift in Sources */,
 				A616358C233429C000177DFD /* LoginCoordinator.swift in Sources */,
 				A616356B2332E01F00177DFD /* Encryptor.swift in Sources */,

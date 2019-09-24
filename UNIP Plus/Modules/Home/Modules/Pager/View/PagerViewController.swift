@@ -50,7 +50,7 @@ class PagerViewController: BaseViewController<PagerCoordinator, PagerViewModel> 
     
     // MARK: Actions
     @objc private func menuAction() {
-        coordinator!.homeCoordinator?.logout()
+        coordinator!.homeCoordinator?.showMenu()
     }
 
 }

@@ -1,0 +1,40 @@
+//
+//  LoginViewController.swift
+//  UNIP Plus
+//
+//  Created by Jose Franklin da Silva Alves on 19/09/19.
+//  Copyright © 2019 Mobile Class. All rights reserved.
+//
+
+import UIKit
+import SwiftyJSON
+
+class LoginViewController: BaseViewController<LoginCoordinator, LoginViewModel> {
+    @IBOutlet private weak var raTF: UITextField?
+    @IBOutlet private weak var passwordTF: UITextField?
+    
+//  let credentials = ["ra": "c85ebc8", "password": "2710"];
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewModel?.delegate = self
+    }
+    
+    @IBAction func enterAction(_ sender: Any) {
+//        viewModel?.performLoginWithCredentials(["ra": self.raTF?.text ?? "", "password": self.passwordTF?.text ?? ""])
+        coordinator?.pushHome()
+    }
+    
+}
+
+extension LoginViewController: LoginViewModelDelegate {
+    
+    func showAlert(message: String) {
+        coordinator?.showAlertWithMessage(message)
+    }
+    
+    func userLogged(_ userInfo: JSON) {
+        coordinator?.pushHome()
+    }
+    
+}

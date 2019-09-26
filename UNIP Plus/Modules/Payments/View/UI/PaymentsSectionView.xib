@@ -10,12 +10,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="GradesSectionView" customModule="UNIP_Plus" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PaymentsSectionView" customModule="UNIP_Plus" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="119"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUW-Ni-xqT">
-                    <rect key="frame" x="16" y="37" width="42" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hi-ql-jzf">
+                    <rect key="frame" x="16" y="49" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -23,15 +23,15 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="SUW-Ni-xqT" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="KBs-Ld-8Lm"/>
-                <constraint firstItem="SUW-Ni-xqT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="SPq-Vr-iMc"/>
+                <constraint firstItem="0hi-ql-jzf" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="JZm-nv-od3"/>
+                <constraint firstItem="0hi-ql-jzf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="qtv-LV-fxe"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="title" destination="SUW-Ni-xqT" id="dE3-WR-xWM"/>
+                <outlet property="title" destination="0hi-ql-jzf" id="YJQ-Kr-I11"/>
             </connections>
-            <point key="canvasLocation" x="129" y="175"/>
+            <point key="canvasLocation" x="137.68115942028987" y="-108.81696428571428"/>
         </view>
     </objects>
 </document>

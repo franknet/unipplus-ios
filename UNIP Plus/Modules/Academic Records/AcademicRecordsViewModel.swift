@@ -8,19 +8,25 @@
 
 import UIKit
 
+protocol AcademicRecordsViewModelDelegate {
+    func error(message: String)
+    func fetchAcademicRecordsFinished()
+}
+
 class AcademicRecordsViewModel: BaseViewModel {
+    var delegate: AcademicRecordsViewModelDelegate?
     
     func viewDidLoad() {
-        
+        fetchAcademicRecords()
     }
     
-    func viewWillAppear() {
-        
+    func fetchAcademicRecords() {
+        APIService().requestModule(.AcademicRecords).get()
+        .execute(onSuccess: { (data) in
+                
+        }) { (error) in
+            self.delegate?.error(message: error)
+        }
     }
-    
-    func viewWillDisappear() {
-        
-    }
-    
     
 }

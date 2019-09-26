@@ -6,7 +6,6 @@ target 'UNIP Plus' do
   use_frameworks!
   pod 'CryptoSwift'
   pod 'Alamofire'
-  pod 'SwiftyJSON'
   pod 'FirebaseCore'
   pod 'Firebase/Analytics'
   pod 'Firebase/AdMob'

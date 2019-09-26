@@ -8,11 +8,10 @@
 
 import UIKit
 import FirebaseRemoteConfig
-import SwiftyJSON
 
 protocol LoginViewModelDelegate {
     func showAlert(message: String)
-    func userLogged(_ userInfo: JSON)
+    func userLogged(_ userInfo: UserInfo?)
 }
 
 class LoginViewModel: BaseViewModel {
@@ -52,7 +51,8 @@ class LoginViewModel: BaseViewModel {
         APIService()
         .requestModule(.Login).post(params: ["authentication": encrypted!])
         .execute(onSuccess: { (data) in
-            self.delegate?.userLogged(JSON(parseJSON: data))
+            let userInfo = JSONHelper.Deserialize(type: UserInfo.self, jsonData: data)
+            self.delegate?.userLogged(userInfo)
         }) { (error) in
             self.delegate?.showAlert(message: error)
         }

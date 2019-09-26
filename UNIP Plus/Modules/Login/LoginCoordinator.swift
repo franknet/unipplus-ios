@@ -26,8 +26,9 @@ class LoginCoordinator: BaseCoordinator {
         navigation.pushViewController(loginVC, animated: false)
     }
     
-    func pushHome() {
-        let homeVC = HomeCoordinator(navigationController: navigation)
-        homeVC.start()
+    func showHome() {
+        let coordinator = HomeCoordinator(navigationController: UINavigationController())
+        coordinator.start()
+        navigation.show(coordinator.navigation, sender: nil)
     }
 }

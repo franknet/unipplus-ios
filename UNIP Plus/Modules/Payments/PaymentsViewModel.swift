@@ -8,18 +8,27 @@
 
 import UIKit
 
+protocol PaymentsViewModelDelegate {
+    func error(message: String)
+    func fetchPaymentsFinished()
+}
+
 class PaymentsViewModel: BaseViewModel {
+    var delegate: PaymentsViewModelDelegate?
+    var paymentsInfo: PaymentsInfo?
     
     func viewDidLoad() {
-        
+        fetchPaymentss()
     }
     
-    func viewWillAppear() {
-        
-    }
-    
-    func viewWillDisappear() {
-        
+    private func fetchPaymentss() {
+        APIService().requestModule(.Payments).get()
+        .execute(onSuccess: { (data) in
+            self.paymentsInfo = JSONHelper.Deserialize(type: PaymentsInfo.self, jsonData: data)
+            self.delegate?.fetchPaymentsFinished()
+        }) { (error) in
+            self.delegate?.error(message: error)
+        }
     }
     
 }

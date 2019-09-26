@@ -39,10 +39,20 @@
 		A61635B42335661700177DFD /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61635B32335661700177DFD /* UIViewControllerExtension.swift */; };
 		A65D72C6233AB78500C72007 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65D72C4233AB78500C72007 /* MenuViewController.swift */; };
 		A65D72C7233AB78500C72007 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A65D72C5233AB78500C72007 /* MenuViewController.xib */; };
-		A65D72CD233ABCFC00C72007 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65D72CC233ABCFC00C72007 /* MenuViewModel.swift */; };
+		A65D72D1233C0A5500C72007 /* PaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65D72CF233C0A5500C72007 /* PaymentCell.swift */; };
+		A65D72D2233C0A5500C72007 /* PaymentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A65D72D0233C0A5500C72007 /* PaymentCell.xib */; };
+		A65D72D4233C0A8000C72007 /* PaymentsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65D72D3233C0A8000C72007 /* PaymentsSectionView.swift */; };
+		A65D72D6233C0A9800C72007 /* PaymentsSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A65D72D5233C0A9800C72007 /* PaymentsSectionView.xib */; };
 		A67008252332DE25000C632C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67008242332DE25000C632C /* AppDelegate.swift */; };
 		A670082C2332DE25000C632C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A670082B2332DE25000C632C /* Assets.xcassets */; };
 		A670083A2332DE25000C632C /* UNIP_PlusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67008392332DE25000C632C /* UNIP_PlusTests.swift */; };
+		A6B187C6233D063A00233F4C /* BaseUIPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B187C5233D063A00233F4C /* BaseUIPageView.swift */; };
+		A6B187C9233D341200233F4C /* BaseUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B187C8233D341200233F4C /* BaseUITableView.swift */; };
+		A6B187CB233D437700233F4C /* GradesInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B187CA233D437700233F4C /* GradesInfo.swift */; };
+		A6B187CE233D43B900233F4C /* GradesGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B187CD233D43B900233F4C /* GradesGroup.swift */; };
+		A6B187D0233D43D800233F4C /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B187CF233D43D800233F4C /* Grade.swift */; };
+		A6B187D3233D446100233F4C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B187D2233D446100233F4C /* Message.swift */; };
+		A6B187D5233D465D00233F4C /* GradeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B187D4233D465D00233F4C /* GradeStatus.swift */; };
 		A6BD96A02339116D0046E7C5 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BD969F2339116D0046E7C5 /* Theme.swift */; };
 		A6BD96A523393B840046E7C5 /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BD96A423393B840046E7C5 /* DefaultTheme.swift */; };
 		A6BD96AD233947410046E7C5 /* GradeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BD96AB233947410046E7C5 /* GradeCell.swift */; };
@@ -51,10 +61,11 @@
 		A6BD96B2233947800046E7C5 /* GradesSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6BD96B1233947800046E7C5 /* GradesSectionView.xib */; };
 		A6BD96B4233949A20046E7C5 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BD96B3233949A20046E7C5 /* UITableViewExtension.swift */; };
 		A6BD96B623394F3B0046E7C5 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BD96B523394F3B0046E7C5 /* DictionaryExtension.swift */; };
-		A6BD96BE233A91A50046E7C5 /* PagerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BD96BD233A91A50046E7C5 /* PagerCoordinator.swift */; };
-		A6BD96C0233A921C0046E7C5 /* PagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BD96BF233A921C0046E7C5 /* PagerViewModel.swift */; };
-		A6BD96C3233A92520046E7C5 /* PagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BD96C1233A92520046E7C5 /* PagerViewController.swift */; };
-		A6BD96C4233A92520046E7C5 /* PagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6BD96C2233A92520046E7C5 /* PagerViewController.xib */; };
+		A6E313E2233D4F2400841A01 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E313E1233D4F2400841A01 /* UserInfo.swift */; };
+		A6E313E5233D575B00841A01 /* PaymentsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E313E4233D575B00841A01 /* PaymentsInfo.swift */; };
+		A6E313E7233D577E00841A01 /* PaymentsGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E313E6233D577E00841A01 /* PaymentsGroup.swift */; };
+		A6E313E9233D57A000841A01 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E313E8233D57A000841A01 /* Payment.swift */; };
+		A6F34851233D626F0088C15A /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F34850233D626F0088C15A /* JSONHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,7 +111,10 @@
 		A61635B32335661700177DFD /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		A65D72C4233AB78500C72007 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		A65D72C5233AB78500C72007 /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
-		A65D72CC233ABCFC00C72007 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		A65D72CF233C0A5500C72007 /* PaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCell.swift; sourceTree = "<group>"; };
+		A65D72D0233C0A5500C72007 /* PaymentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentCell.xib; sourceTree = "<group>"; };
+		A65D72D3233C0A8000C72007 /* PaymentsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsSectionView.swift; sourceTree = "<group>"; };
+		A65D72D5233C0A9800C72007 /* PaymentsSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentsSectionView.xib; sourceTree = "<group>"; };
 		A67008212332DE25000C632C /* UNIP Plus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UNIP Plus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A67008242332DE25000C632C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A670082B2332DE25000C632C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,6 +122,13 @@
 		A67008352332DE25000C632C /* UNIP PlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UNIP PlusTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A67008392332DE25000C632C /* UNIP_PlusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNIP_PlusTests.swift; sourceTree = "<group>"; };
 		A670083B2332DE25000C632C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6B187C5233D063A00233F4C /* BaseUIPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIPageView.swift; sourceTree = "<group>"; };
+		A6B187C8233D341200233F4C /* BaseUITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUITableView.swift; sourceTree = "<group>"; };
+		A6B187CA233D437700233F4C /* GradesInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesInfo.swift; sourceTree = "<group>"; };
+		A6B187CD233D43B900233F4C /* GradesGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesGroup.swift; sourceTree = "<group>"; };
+		A6B187CF233D43D800233F4C /* Grade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grade.swift; sourceTree = "<group>"; };
+		A6B187D2233D446100233F4C /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		A6B187D4233D465D00233F4C /* GradeStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeStatus.swift; sourceTree = "<group>"; };
 		A6BD969F2339116D0046E7C5 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		A6BD96A423393B840046E7C5 /* DefaultTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
 		A6BD96AB233947410046E7C5 /* GradeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeCell.swift; sourceTree = "<group>"; };
@@ -116,10 +137,11 @@
 		A6BD96B1233947800046E7C5 /* GradesSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GradesSectionView.xib; sourceTree = "<group>"; };
 		A6BD96B3233949A20046E7C5 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		A6BD96B523394F3B0046E7C5 /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
-		A6BD96BD233A91A50046E7C5 /* PagerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerCoordinator.swift; sourceTree = "<group>"; };
-		A6BD96BF233A921C0046E7C5 /* PagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerViewModel.swift; sourceTree = "<group>"; };
-		A6BD96C1233A92520046E7C5 /* PagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerViewController.swift; sourceTree = "<group>"; };
-		A6BD96C2233A92520046E7C5 /* PagerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PagerViewController.xib; sourceTree = "<group>"; };
+		A6E313E1233D4F2400841A01 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		A6E313E4233D575B00841A01 /* PaymentsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsInfo.swift; sourceTree = "<group>"; };
+		A6E313E6233D577E00841A01 /* PaymentsGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsGroup.swift; sourceTree = "<group>"; };
+		A6E313E8233D57A000841A01 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
+		A6F34850233D626F0088C15A /* JSONHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
 		AF28D265D2EEE085B25F3E57 /* Pods-UNIP PlusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIP PlusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UNIP PlusTests/Pods-UNIP PlusTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,6 +208,7 @@
 				A61635752333D47500177DFD /* View */,
 				A616358B233429C000177DFD /* LoginCoordinator.swift */,
 				A616357E2333D6BC00177DFD /* LoginViewModel.swift */,
+				A6E313E1233D4F2400841A01 /* UserInfo.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -213,6 +236,7 @@
 		A61635822333E9ED00177DFD /* Grades */ = {
 			isa = PBXGroup;
 			children = (
+				A6B187CC233D439C00233F4C /* Models */,
 				A61635982335033000177DFD /* View */,
 				A61635AC23354D8300177DFD /* GradesViewModel.swift */,
 			);
@@ -231,6 +255,7 @@
 		A61635842333EA0000177DFD /* Payments */ = {
 			isa = PBXGroup;
 			children = (
+				A6E313E3233D574300841A01 /* Models */,
 				A61635992335033500177DFD /* View */,
 				A61635AE23354DB300177DFD /* PaymentsViewModel.swift */,
 			);
@@ -240,9 +265,11 @@
 		A61635882334293100177DFD /* Bases */ = {
 			isa = PBXGroup;
 			children = (
+				A6B187C8233D341200233F4C /* BaseUITableView.swift */,
 				A61635892334295500177DFD /* BaseCoordinator.swift */,
 				A616358D23342C2600177DFD /* BaseViewController.swift */,
 				A61635A82335407400177DFD /* BaseViewModel.swift */,
+				A6B187C5233D063A00233F4C /* BaseUIPageView.swift */,
 			);
 			path = Bases;
 			sourceTree = "<group>";
@@ -250,6 +277,7 @@
 		A61635962335031E00177DFD /* Academic Records */ = {
 			isa = PBXGroup;
 			children = (
+				A6F3484E233D611D0088C15A /* Models */,
 				A61635972335032700177DFD /* View */,
 				A61635B023354DDB00177DFD /* AcademicRecordsViewModel.swift */,
 			);
@@ -278,6 +306,7 @@
 		A61635992335033500177DFD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A65D72CE233C0A3600C72007 /* UI */,
 				A61635A22335051500177DFD /* PaymentsViewController.swift */,
 				A61635A32335051500177DFD /* PaymentsViewController.xib */,
 			);
@@ -292,6 +321,17 @@
 				A6BD96B523394F3B0046E7C5 /* DictionaryExtension.swift */,
 			);
 			path = Extentions;
+			sourceTree = "<group>";
+		};
+		A65D72CE233C0A3600C72007 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A65D72CF233C0A5500C72007 /* PaymentCell.swift */,
+				A65D72D0233C0A5500C72007 /* PaymentCell.xib */,
+				A65D72D3233C0A8000C72007 /* PaymentsSectionView.swift */,
+				A65D72D5233C0A9800C72007 /* PaymentsSectionView.xib */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		A67008182332DE25000C632C = {
@@ -317,6 +357,7 @@
 		A67008232332DE25000C632C /* UNIP Plus */ = {
 			isa = PBXGroup;
 			children = (
+				A6F3484F233D62470088C15A /* Utils */,
 				A6BD96A1233914CF0046E7C5 /* Common */,
 				A6BD969E2339115E0046E7C5 /* Resources */,
 				A61635B2233565FF00177DFD /* Extentions */,
@@ -342,6 +383,25 @@
 			path = "UNIP PlusTests";
 			sourceTree = "<group>";
 		};
+		A6B187CC233D439C00233F4C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A6B187CA233D437700233F4C /* GradesInfo.swift */,
+				A6B187CD233D43B900233F4C /* GradesGroup.swift */,
+				A6B187CF233D43D800233F4C /* Grade.swift */,
+				A6B187D4233D465D00233F4C /* GradeStatus.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A6B187D1233D445000233F4C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A6B187D2233D446100233F4C /* Message.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A6BD969E2339115E0046E7C5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,6 +414,7 @@
 		A6BD96A1233914CF0046E7C5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A6B187D1233D445000233F4C /* Model */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -373,7 +434,6 @@
 			isa = PBXGroup;
 			children = (
 				A6BD96B8233A90590046E7C5 /* View */,
-				A65D72CC233ABCFC00C72007 /* MenuViewModel.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -387,32 +447,37 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		A6BD96BB233A917D0046E7C5 /* Pager */ = {
-			isa = PBXGroup;
-			children = (
-				A6BD96BC233A91940046E7C5 /* View */,
-				A6BD96BD233A91A50046E7C5 /* PagerCoordinator.swift */,
-				A6BD96BF233A921C0046E7C5 /* PagerViewModel.swift */,
-			);
-			path = Pager;
-			sourceTree = "<group>";
-		};
-		A6BD96BC233A91940046E7C5 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A6BD96C1233A92520046E7C5 /* PagerViewController.swift */,
-				A6BD96C2233A92520046E7C5 /* PagerViewController.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		A6BD96C5233A9AFF0046E7C5 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				A6BD96BB233A917D0046E7C5 /* Pager */,
 				A6BD96B7233A90510046E7C5 /* Menu */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		A6E313E3233D574300841A01 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A6E313E4233D575B00841A01 /* PaymentsInfo.swift */,
+				A6E313E6233D577E00841A01 /* PaymentsGroup.swift */,
+				A6E313E8233D57A000841A01 /* Payment.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A6F3484E233D611D0088C15A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A6F3484F233D62470088C15A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A6F34850233D626F0088C15A /* JSONHelper.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		A7716ECFA1B2564F8C2648A0 /* Pods */ = {
@@ -510,8 +575,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A65D72D2233C0A5500C72007 /* PaymentCell.xib in Resources */,
 				A616357D2333D56F00177DFD /* SplashScreen.xib in Resources */,
-				A6BD96C4233A92520046E7C5 /* PagerViewController.xib in Resources */,
 				A61635862333EAE700177DFD /* GoogleService-Info.plist in Resources */,
 				A61635A52335051500177DFD /* PaymentsViewController.xib in Resources */,
 				A670082C2332DE25000C632C /* Assets.xcassets in Resources */,
@@ -520,6 +585,7 @@
 				A65D72C7233AB78500C72007 /* MenuViewController.xib in Resources */,
 				A616357A2333D4AF00177DFD /* LoginViewController.xib in Resources */,
 				A61635A12335049C00177DFD /* AcademicRecordsViewController.xib in Resources */,
+				A65D72D6233C0A9800C72007 /* PaymentsSectionView.xib in Resources */,
 				A61635A72335401A00177DFD /* HomeViewController.xib in Resources */,
 				A6BD96AE233947410046E7C5 /* GradeCell.xib in Resources */,
 			);
@@ -549,7 +615,6 @@
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -560,7 +625,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -619,36 +683,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6B187C6233D063A00233F4C /* BaseUIPageView.swift in Sources */,
 				A61635782333D4AF00177DFD /* LoginViewController.swift in Sources */,
+				A65D72D4233C0A8000C72007 /* PaymentsSectionView.swift in Sources */,
+				A6B187D3233D446100233F4C /* Message.swift in Sources */,
 				A616358A2334295500177DFD /* BaseCoordinator.swift in Sources */,
 				A61635AD23354D8300177DFD /* GradesViewModel.swift in Sources */,
-				A65D72CD233ABCFC00C72007 /* MenuViewModel.swift in Sources */,
 				A6BD96A523393B840046E7C5 /* DefaultTheme.swift in Sources */,
 				A61635A42335051500177DFD /* PaymentsViewController.swift in Sources */,
 				A6BD96B4233949A20046E7C5 /* UITableViewExtension.swift in Sources */,
+				A6B187D0233D43D800233F4C /* Grade.swift in Sources */,
 				A61635B123354DDB00177DFD /* AcademicRecordsViewModel.swift in Sources */,
 				A61635A92335407400177DFD /* BaseViewModel.swift in Sources */,
 				A61635A02335049C00177DFD /* AcademicRecordsViewController.swift in Sources */,
+				A6E313E7233D577E00841A01 /* PaymentsGroup.swift in Sources */,
+				A6E313E9233D57A000841A01 /* Payment.swift in Sources */,
+				A6B187CB233D437700233F4C /* GradesInfo.swift in Sources */,
 				A65D72C6233AB78500C72007 /* MenuViewController.swift in Sources */,
 				A6BD96B0233947700046E7C5 /* GradesSectionView.swift in Sources */,
 				A616358C233429C000177DFD /* LoginCoordinator.swift in Sources */,
+				A6B187D5233D465D00233F4C /* GradeStatus.swift in Sources */,
+				A6B187CE233D43B900233F4C /* GradesGroup.swift in Sources */,
 				A616356B2332E01F00177DFD /* Encryptor.swift in Sources */,
 				A61635702333D3FB00177DFD /* APIService.swift in Sources */,
 				A61635922334313F00177DFD /* HomeViewController.swift in Sources */,
 				A616358E23342C2600177DFD /* BaseViewController.swift in Sources */,
 				A61635952334315500177DFD /* HomeCoordinator.swift in Sources */,
 				A616357F2333D6BC00177DFD /* LoginViewModel.swift in Sources */,
+				A6E313E5233D575B00841A01 /* PaymentsInfo.swift in Sources */,
+				A6F34851233D626F0088C15A /* JSONHelper.swift in Sources */,
 				A6BD96B623394F3B0046E7C5 /* DictionaryExtension.swift in Sources */,
 				A67008252332DE25000C632C /* AppDelegate.swift in Sources */,
-				A6BD96C3233A92520046E7C5 /* PagerViewController.swift in Sources */,
+				A65D72D1233C0A5500C72007 /* PaymentCell.swift in Sources */,
 				A6BD96AD233947410046E7C5 /* GradeCell.swift in Sources */,
+				A6B187C9233D341200233F4C /* BaseUITableView.swift in Sources */,
+				A6E313E2233D4F2400841A01 /* UserInfo.swift in Sources */,
 				A61635B42335661700177DFD /* UIViewControllerExtension.swift in Sources */,
-				A6BD96C0233A921C0046E7C5 /* PagerViewModel.swift in Sources */,
 				A61635AF23354DB300177DFD /* PaymentsViewModel.swift in Sources */,
 				A6BD96A02339116D0046E7C5 /* Theme.swift in Sources */,
 				A61635AB23354D5A00177DFD /* HomeViewModel.swift in Sources */,
 				A616359C2335038A00177DFD /* GradesViewController.swift in Sources */,
-				A6BD96BE233A91A50046E7C5 /* PagerCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

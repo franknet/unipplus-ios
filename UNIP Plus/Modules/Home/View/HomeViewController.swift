@@ -9,8 +9,6 @@
 import UIKit
 
 class HomeViewController: BaseViewController<HomeCoordinator, HomeViewModel> {
-    var pager: UINavigationController?
-    var menu: MenuViewController?
     
     override func viewDidLoad() {
         setup()
@@ -18,15 +16,51 @@ class HomeViewController: BaseViewController<HomeCoordinator, HomeViewModel> {
     
     private func setup() {
         addContentsPager()
+        setMenuButton()
     }
     
     private func addContentsPager() {
-        addViewController(pager!, toView: self.view)
+        let gradesVC = GradesViewController()
+        gradesVC.coordinator = self.coordinator
+        gradesVC.viewModel = GradesViewModel()
+        
+        let paymentsVC = PaymentsViewController()
+        paymentsVC.coordinator = self.coordinator
+        paymentsVC.viewModel = PaymentsViewModel()
+        
+        let academicRecordsVC = AcademicRecordsViewController()
+        academicRecordsVC.coordinator = self.coordinator
+        academicRecordsVC.viewModel = AcademicRecordsViewModel()
+        
+        let pagerView = BaseUIPageView()
+        pagerView.pageDelegate = self
+        pagerView.setViews([gradesVC, paymentsVC, academicRecordsVC])
+        
+        addViewController(pagerView, toView: self.view)
     }
     
-    private func setMenuViewController() {
-        
-        
+    func setMenuButton() {
+        let menuBtn = UIBarButtonItem(barButtonSystemItem: .action, target: coordinator, action: #selector(coordinator?.showMenu))
+        navigationItem.rightBarButtonItem = menuBtn
+    }
+    
+}
+
+extension HomeViewController: BaseUIPageViewDelegate {
+    // MARK: BaseUIPageViewDelegate
+    func didFinishTransitionTo(viewController: UIViewController) {
+        title = viewController.title
+    }
+    
+}
+
+extension HomeViewController: MenuViewControllerDelegate {
+    func logout() {
+        coordinator?.logout()
+    }
+    
+    func share() {
+        coordinator?.share()
     }
     
 }

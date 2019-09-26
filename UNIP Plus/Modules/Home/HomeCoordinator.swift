@@ -9,8 +9,8 @@
 import UIKit
 
 class HomeCoordinator: BaseCoordinator {
-    
     var navigation: UINavigationController
+    
     private var homeVC: HomeViewController
     
     init(navigationController: UINavigationController) {
@@ -19,32 +19,28 @@ class HomeCoordinator: BaseCoordinator {
     }
     
     func start() {
-        let pageNavigation = UINavigationController()
-        pageNavigation.interactivePopGestureRecognizer?.isEnabled = false
-        
-        let pagerCoordinator = PagerCoordinator(navigation: pageNavigation)
-        pagerCoordinator.homeCoordinator = self
-        pagerCoordinator.start()
-        
         homeVC.coordinator = self
         homeVC.viewModel = HomeViewModel()
-        homeVC.pager = pageNavigation
         
-        navigation.pushViewController(homeVC, animated: true)
+        navigation.interactivePopGestureRecognizer?.isEnabled = false
+        navigation.modalPresentationStyle = .overFullScreen
+        navigation.pushViewController(homeVC, animated: false)
     }
     
     func logout() {
-        navigation.popToRootViewController(animated: true)
+        navigation.dismiss(animated: true, completion: nil)
     }
     
-    func showMenu() {
+    func share() {
+        
+    }
+    
+    @objc func showMenu() {
         let menuVC = MenuViewController()
         menuVC.modalPresentationStyle = .overCurrentContext
         menuVC.modalTransitionStyle = .crossDissolve
-        menuVC.coordinator = self
+        menuVC.delegate = homeVC
         
-        self.homeVC.present(menuVC, animated: true) {
-            
-        }
+        self.homeVC.present(menuVC, animated: true, completion: nil)
     }
 }

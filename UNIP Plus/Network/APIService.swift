@@ -8,9 +8,12 @@
 
 import Foundation
 import Alamofire
-import SwiftyJSON
 
 class APIService {
+    
+    private struct APIError: Codable {
+        var message: String = ""
+    }
     
     enum Modules: String {
         case Login = "http://localhost:3000/api/v1/authentication"
@@ -37,7 +40,7 @@ class APIService {
         return self
     }
     
-    public func execute(onSuccess: @escaping (_ content: String) -> Void, onFailure: @escaping (_ error: String) -> Void) {
+    public func execute(onSuccess: @escaping (_ data: Data) -> Void, onFailure: @escaping (_ error: String) -> Void) {
         if !NetworkReachabilityManager()!.isReachable {
             onFailure("Sem conexão com a internet")
         }
@@ -45,26 +48,22 @@ class APIService {
         let session = Alamofire.SessionManager.default
         session.request(_request!)
         .validate(statusCode: [200, 400])
-        .responseString { (response) in
+        .responseData { (response) in
             switch response.result {
             case .success:
                 guard let http_res = response.response else {
                     onFailure("Sem dados de resposta!")
                     return
                 }
+                guard let data = response.result.value else {
+                    onFailure("O serviçp não retornou nenhuma informação")
+                    return
+                }
                 if http_res.statusCode == 200 {
-                    guard let body = response.result.value else {
-                        onFailure("O serviçp não retornou nenhuma informação")
-                        return
-                    }
-                    onSuccess(body)
+                    onSuccess(data)
                 } else {
-                    guard let body = response.result.value else {
-                        onFailure("O serviçp não retornou nenhuma informação")
-                        return
-                    }
-                    let json = JSON(parseJSON: body)
-                    onFailure(json["message"].stringValue)
+                    let result = JSONHelper.Deserialize(type: APIError.self, jsonData: data)
+                    onFailure(result!.message)
                 }
             case .failure:
                 onFailure("Os serviços do aplicativo encontra-se fora do ar.")

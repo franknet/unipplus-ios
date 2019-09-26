@@ -21,16 +21,30 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BLW-5t-rZo">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="166"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="226"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="i40-0Q-2XC">
-                            <rect key="frame" x="0.0" y="120" width="414" height="30"/>
+                            <rect key="frame" x="0.0" y="120" width="414" height="90"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Io-Dh-LNh">
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXb-PA-3r0">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
+                                    <state key="normal" title="Compartilhar"/>
+                                    <connections>
+                                        <action selector="menuAction:" destination="-1" eventType="touchUpInside" id="uq8-Rx-B1I"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRI-qH-4BU">
+                                    <rect key="frame" x="0.0" y="30" width="414" height="30"/>
+                                    <state key="normal" title="Logout"/>
+                                    <connections>
+                                        <action selector="menuAction:" destination="-1" eventType="touchUpInside" id="IS1-Pf-pMk"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Io-Dh-LNh">
+                                    <rect key="frame" x="0.0" y="60" width="414" height="30"/>
                                     <state key="normal" title="Fechar"/>
                                     <connections>
-                                        <action selector="closeAction" destination="-1" eventType="touchUpInside" id="Fok-0u-GYp"/>
+                                        <action selector="menuAction:" destination="-1" eventType="touchUpInside" id="LYa-7T-SDQ"/>
                                     </connections>
                                 </button>
                             </subviews>

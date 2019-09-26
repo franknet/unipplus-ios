@@ -7,13 +7,12 @@
 //
 
 import UIKit
-import SwiftyJSON
 
 class LoginViewController: BaseViewController<LoginCoordinator, LoginViewModel> {
     @IBOutlet private weak var raTF: UITextField?
     @IBOutlet private weak var passwordTF: UITextField?
     
-//  let credentials = ["ra": "c85ebc8", "password": "2710"];
+  let credentials = ["ra": "c85ebc8", "password": "2710"];
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +20,8 @@ class LoginViewController: BaseViewController<LoginCoordinator, LoginViewModel> 
     }
     
     @IBAction func enterAction(_ sender: Any) {
-//        viewModel?.performLoginWithCredentials(["ra": self.raTF?.text ?? "", "password": self.passwordTF?.text ?? ""])
-        coordinator?.pushHome()
+        viewModel?.performLoginWithCredentials(credentials)
+//        coordinator?.showHome()
     }
     
 }
@@ -33,8 +32,8 @@ extension LoginViewController: LoginViewModelDelegate {
         coordinator?.showAlertWithMessage(message)
     }
     
-    func userLogged(_ userInfo: JSON) {
-        coordinator?.pushHome()
+    func userLogged(_ userInfo: UserInfo?) {
+        coordinator?.showHome()
     }
     
 }

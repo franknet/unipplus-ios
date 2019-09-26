@@ -87,7 +87,6 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - Protobuf (3.9.0)
-  - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -96,7 +95,6 @@ DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/RemoteConfig
   - FirebaseCore
-  - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -118,7 +116,6 @@ SPEC REPOS:
     - GoogleUtilities
     - nanopb
     - Protobuf
-    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
@@ -139,8 +136,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: 9c2c544202301110b29f7974a82e77fdcf12bf51
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 1097ca58584c8d9be81bfbf2c5ff5975648dd87a
-  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 7b36f2a01934f49c9f842c39c670a76e34e0459a
+PODFILE CHECKSUM: fd569ebcf94769c5555b506db07e2bf8bbf49499
 
 COCOAPODS: 1.5.3

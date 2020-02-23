@@ -31,6 +31,8 @@ class MenuViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    
     func setup() {
         setInitalPosition()
         setShowMenuAction()
@@ -46,6 +48,11 @@ class MenuViewController: UIViewController {
         perform(#selector(showMenu), with: nil, afterDelay: 0.2)
     }
     
+    private func setOutSideTouchAction() {
+        
+    }
+    
+    // MARK: Actions
     @objc func showMenu() {
         topConstraint?.constant = 0
         UIView.animate(withDuration: 0.2) {
@@ -53,7 +60,10 @@ class MenuViewController: UIViewController {
         }
     }
     
-    // MARK: Actions
+    @objc func touchOutSide() {
+        
+    }
+    
     @IBAction func menuAction(_ sender: UIButton) {
         guard let size = container?.frame.size else { return }
         topConstraint?.constant = size.height * -1

@@ -20,9 +20,9 @@ class HomeViewController: BaseViewController<HomeCoordinator, HomeViewModel> {
     }
     
     private func addContentsPager() {
-        let gradesVC = GradesViewController()
+        let gradesVC = DisciplinesViewController()
         gradesVC.coordinator = self.coordinator
-        gradesVC.viewModel = GradesViewModel()
+        gradesVC.viewModel = DisciplinesViewModel()
         
         let paymentsVC = PaymentsViewController()
         paymentsVC.coordinator = self.coordinator

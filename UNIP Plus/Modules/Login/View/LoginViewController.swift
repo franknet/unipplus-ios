@@ -12,16 +12,28 @@ class LoginViewController: BaseViewController<LoginCoordinator, LoginViewModel> 
     @IBOutlet private weak var raTF: UITextField?
     @IBOutlet private weak var passwordTF: UITextField?
     
-  let credentials = ["ra": "c85ebc8", "password": "2710"];
+    let credentials = ["ra": "c85ebc8", "password": "2710"];
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel?.delegate = self
+        coordinator?.showHome()
     }
     
     @IBAction func enterAction(_ sender: Any) {
-        viewModel?.performLoginWithCredentials(credentials)
-//        coordinator?.showHome()
+//        viewModel?.performLoginWithCredentials(credentials)
+        
+    }
+    
+    @IBAction func switchTheme(_ sender: UISwitch) {
+//        let theme = BackgroudView.appearance
+        
+        if sender.isOn {
+        } else {
+            
+        }
+        
+        self.loadView()
     }
     
 }

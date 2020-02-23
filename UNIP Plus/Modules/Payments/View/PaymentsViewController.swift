@@ -9,7 +9,7 @@
 import UIKit
 
 class PaymentsViewController: BaseViewController<HomeCoordinator, PaymentsViewModel> {
-    @IBOutlet weak var table: BaseUITableView?
+    @IBOutlet weak var table: BaseUITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +18,6 @@ class PaymentsViewController: BaseViewController<HomeCoordinator, PaymentsViewMo
     
     private func setup() {
         title = "Pagamentos"
-        table?.tableDelegate = self
         viewModel?.delegate = self
         registerCells()
     }
@@ -30,41 +29,28 @@ class PaymentsViewController: BaseViewController<HomeCoordinator, PaymentsViewMo
 
 }
 
-extension PaymentsViewController: BaseUITableViewDelegate {
-    
-    func numberOfSections() -> Int {
-        guard let info = viewModel?.paymentsInfo, let paymentsGroup = info.payments else { return 0 }
-        return paymentsGroup.count
+extension PaymentsViewController {
+    func tableCalls() {
+        table.numberOfSections {
+            return 1
+        }
+        table.numberOfRowsInSection { section in
+            return 8
+        }
+        table.viewForHeaderInSection { tableView, section in
+            return tableView.dequeueReusableHeaderFooterView(PaymentsSectionView.self) { view in
+                
+            }
+        }
+        table.cellForRowAt { tableView, indexPath in
+            return tableView.dequeueReusableCell(PaymentCell.self) { cell in
+                
+            }
+        }
+        table.didSelectCellAt { indexPath in
+            
+        }
     }
-    
-    func viewForHeaderInSection(_ section: Int) -> UIView? {
-        let paymentsGroup = viewModel?.paymentsInfo!.payments![section]
-        let view = table?.dequeueHeaderFooterView(PaymentsSectionView.self)
-        view?.title?.text = paymentsGroup?.name
-        return view
-    }
-    
-    func numberOfRowsInSection(_ section: Int) -> Int {
-        guard
-            let info = viewModel?.paymentsInfo,
-            let paymentsGroup = info.payments,
-            let payments = paymentsGroup[section].payments
-        else { return 0 }
-        return payments.count
-    }
-    
-    func cellForRowAt(_ indexPath: IndexPath) -> UITableViewCell {
-        let payment = viewModel?.paymentsInfo!.payments![indexPath.section].payments![indexPath.row]
-        let cell = table?.dequeueCell(PaymentCell.self)
-        cell?.textLabel?.text = payment?.maturity_dt
-        return cell!
-    }
-    
-    func didSelectCellAt(_ indexPath: IndexPath) {
-        
-    }
-    
-    
 }
 
 extension PaymentsViewController: PaymentsViewModelDelegate {

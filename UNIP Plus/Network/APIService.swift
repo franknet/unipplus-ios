@@ -12,12 +12,12 @@ import Alamofire
 class APIService {
     
     private struct APIError: Codable {
-        var message: String = ""
+        var message: String!
     }
     
     enum Modules: String {
         case Login = "http://localhost:3000/api/v1/authentication"
-        case Grades = "http://localhost:3000/api/v1/grades"
+        case Disciplines = "http://localhost:3000/api/v1/disciplines"
         case Payments = "http://localhost:3000/api/v1/payments"
         case AcademicRecords = "http://localhost:3000/api/v1/academic-records"
     }
@@ -30,24 +30,24 @@ class APIService {
         return self
     }
     
-    func get() -> APIService {
-        self._request =  Alamofire.request(self._module!.rawValue, method: .get, parameters: nil, encoding: URLEncoding.default, headers:nil).request
+    func get(headers: HTTPHeaders? = nil) -> APIService {
+        
+        self._request =  AF.request(self._module!.rawValue, method: .get, parameters: nil, encoding: URLEncoding.default, headers:headers).request
         return self
     }
     
-    func post(params: [String:String]) -> APIService {
-        self._request =  Alamofire.request(_module!.rawValue, method: .post, parameters: params, encoding: JSONEncoding.default, headers:["Content-Type": "application/json"]).request
+    func post(params: [String:String], headers: HTTPHeaders? = nil) -> APIService {
+        self._request =  AF.request(_module!.rawValue, method: .post, parameters: params, encoding: JSONEncoding.default, headers:headers).request
         return self
     }
     
-    public func execute(onSuccess: @escaping (_ data: Data) -> Void, onFailure: @escaping (_ error: String) -> Void) {
+    public func execute(onSuccess: @escaping (_ data: Data?) -> Void, onFailure: @escaping (_ error: String) -> Void) {
         if !NetworkReachabilityManager()!.isReachable {
             onFailure("Sem conexão com a internet")
         }
-        
-        let session = Alamofire.SessionManager.default
+        let session = Session.default
         session.request(_request!)
-        .validate(statusCode: [200, 400])
+        .validate(statusCode: [200, 302, 400])
         .responseData { (response) in
             switch response.result {
             case .success:
@@ -55,7 +55,7 @@ class APIService {
                     onFailure("Sem dados de resposta!")
                     return
                 }
-                guard let data = response.result.value else {
+                guard let data = response.data else {
                     onFailure("O serviçp não retornou nenhuma informação")
                     return
                 }

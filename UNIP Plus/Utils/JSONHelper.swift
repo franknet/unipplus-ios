@@ -9,13 +9,13 @@
 import Foundation
 
 class JSONHelper {
-    static func Serialize<T: Codable>(obj: T) -> Data? {
+    static func SerializeToData<T: Codable>(obj: T) -> Data? {
         do {
             return try JSONEncoder().encode(obj)
         } catch { return nil }
     }
     
-    static func Serialize<T: Codable>(obj: T) -> String? {
+    static func SerializeToString<T: Codable>(obj: T) -> String? {
         do {
             let data = try JSONEncoder().encode(obj)
             return String(data: data, encoding: .utf8)

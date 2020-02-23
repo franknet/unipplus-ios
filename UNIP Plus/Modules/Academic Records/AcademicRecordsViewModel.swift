@@ -17,7 +17,7 @@ class AcademicRecordsViewModel: BaseViewModel {
     var delegate: AcademicRecordsViewModelDelegate?
     
     func viewDidLoad() {
-        fetchAcademicRecords()
+//        fetchAcademicRecords()
     }
     
     func fetchAcademicRecords() {

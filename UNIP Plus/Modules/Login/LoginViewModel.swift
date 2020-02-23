@@ -45,17 +45,7 @@ class LoginViewModel: BaseViewModel {
     }
     
     func performLoginWithCredentials(_ credentials: [String:String]) {
-        let json = credentials.toJSON()
-        let encrypted = Encryptor.encrypt(text: json!, key: "3s6v9y4B1E3H8McQ")
         
-        APIService()
-        .requestModule(.Login).post(params: ["authentication": encrypted!])
-        .execute(onSuccess: { (data) in
-            let userInfo = JSONHelper.Deserialize(type: UserInfo.self, jsonData: data)
-            self.delegate?.userLogged(userInfo)
-        }) { (error) in
-            self.delegate?.showAlert(message: error)
-        }
         
     }
 }

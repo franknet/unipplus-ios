@@ -18,13 +18,13 @@ class PaymentsViewModel: BaseViewModel {
     var paymentsInfo: PaymentsInfo?
     
     func viewDidLoad() {
-        fetchPaymentss()
+//        fetchPaymentss()
     }
     
     private func fetchPaymentss() {
         APIService().requestModule(.Payments).get()
         .execute(onSuccess: { (data) in
-            self.paymentsInfo = JSONHelper.Deserialize(type: PaymentsInfo.self, jsonData: data)
+            self.paymentsInfo = JSONHelper.Deserialize(type: PaymentsInfo.self, jsonData: data!)
             self.delegate?.fetchPaymentsFinished()
         }) { (error) in
             self.delegate?.error(message: error)

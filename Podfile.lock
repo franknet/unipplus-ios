@@ -1,5 +1,7 @@
 PODS:
-  - Alamofire (5.0.1)
+  - AWSAPIGateway (2.13.0):
+    - AWSCore (= 2.13.0)
+  - AWSCore (2.13.0)
   - Firebase/AdMob (6.17.0):
     - Firebase/CoreOnly
     - Google-Mobile-Ads-SDK (~> 7.50)
@@ -95,7 +97,8 @@ PODS:
   - Protobuf (3.11.4)
 
 DEPENDENCIES:
-  - Alamofire
+  - AWSAPIGateway
+  - AWSCore
   - Firebase/AdMob
   - Firebase/Analytics
   - Firebase/RemoteConfig
@@ -103,7 +106,8 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - Alamofire
+    - AWSAPIGateway
+    - AWSCore
     - Firebase
     - FirebaseABTesting
     - FirebaseAnalytics
@@ -124,7 +128,8 @@ SPEC REPOS:
     - Protobuf
 
 SPEC CHECKSUMS:
-  Alamofire: 41c162d645ba6a78e7fd030fcdaf6aa394ca39a0
+  AWSAPIGateway: d4da3bcfbf106ef96519a993659a540d3db3e149
+  AWSCore: 167aba8cdaff6873193a66f062f41749c6c6a3d3
   Firebase: 2672e5636b42f977177716317e68346ae5e9de25
   FirebaseABTesting: 0d10f3cdc3fa00f3f175b5b56c1003c8e888299f
   FirebaseAnalytics: cf95d3aab897612783020fbd98401d5366f135ee
@@ -144,6 +149,6 @@ SPEC CHECKSUMS:
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
 
-PODFILE CHECKSUM: fe18f7d5a7704f0855e1314bbd845603beb68dee
+PODFILE CHECKSUM: f7c713789b96d052f93d046f03cfe674a5459182
 
 COCOAPODS: 1.8.4

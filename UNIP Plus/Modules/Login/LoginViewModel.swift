@@ -9,43 +9,51 @@
 import UIKit
 import FirebaseRemoteConfig
 
-protocol LoginViewModelDelegate {
-    func showAlert(message: String)
-    func userLogged(_ userInfo: UserInfo?)
+protocol LoginViewModelCoordinatorDelegate: AnyObject {
+    func login(_ viewModel: LoginViewModel, didFinishWithError error: String)
+    func login(_ viewModel: LoginViewModel, didFinishWithResult result: LoginResponse)
+}
+
+protocol LoginViewModelDelegate: AnyObject {
+    
 }
 
 class LoginViewModel: BaseViewModel {
-    var delegate: LoginViewModelDelegate?
+    weak var delegate: LoginViewModelDelegate!
+    fileprivate var coordinator: LoginViewModelCoordinatorDelegate
+    
+    init(coordinator: LoginViewModelCoordinatorDelegate) {
+        self.coordinator = coordinator
+    }
     
     func viewDidLoad() {
-        loadRemoteConfig()
+        
     }
     
-    func loadRemoteConfig() {
-        let settings = RemoteConfigSettings()
-        settings.minimumFetchInterval = 0
+    func performLogin(ra: String?, password: String?) {
+        let credentials = Credentials()
+        credentials!.ra = ra
+        credentials!.password = password
         
-        let remote = RemoteConfig.remoteConfig()
-        remote.configSettings = settings
-        
-        remote.fetch { (status, error) in
-            switch status {
-            case .success:
-                remote.activate { (error) in
-                    guard error != nil else { return }
-                    print(status)
+        let client = UnipPlusApiClient.default()
+        client.apiV1AuthenticationPost(payload: credentials!).continueWith { [weak self] task in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                guard let result = task.result else { return }
+                print(result)
+                if task.error != nil {
+                    self.coordinator.login(self, didFinishWithError: result.message!)
+                } else {
+                    self.coordinator.login(self, didFinishWithResult: result)
                 }
-            case .failure:
-                break
-            default:
-                break
             }
+            return nil
         }
-        
     }
-    
-    func performLoginWithCredentials(_ credentials: [String:String]) {
-        
+}
+
+fileprivate extension LoginViewModel {
+    func fetchRemoteConfig() {
         
     }
 }

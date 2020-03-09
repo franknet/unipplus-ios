@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PaymentsViewController: BaseViewController<HomeCoordinator, PaymentsViewModel> {
+class PaymentsViewController: BaseViewController<PaymentsViewModel> {
     @IBOutlet weak var table: BaseUITableView!
 
     override func viewDidLoad() {
@@ -18,7 +18,7 @@ class PaymentsViewController: BaseViewController<HomeCoordinator, PaymentsViewMo
     
     private func setup() {
         title = "Pagamentos"
-        viewModel?.delegate = self
+        viewModel.delegate = self
         registerCells()
     }
     
@@ -55,7 +55,7 @@ extension PaymentsViewController {
 
 extension PaymentsViewController: PaymentsViewModelDelegate {
     func error(message: String) {
-        coordinator?.showAlertWithMessage(message)
+        
     }
     
     func fetchPaymentsFinished() {

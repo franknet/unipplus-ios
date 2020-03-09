@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import UNIP_Plus
 
 class UNIP_PlusTests: XCTestCase {
 
@@ -29,11 +28,5 @@ class UNIP_PlusTests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
-    }
-    
-    func testEncryption() {
-        let encrypted = Encryptor.encrypt(text: "teste", key: "1234567890123456")
-        print(encrypted!)
-        assert(encrypted == "G3Or1dQBz3mn567vhv2eoQ==")
     }
 }

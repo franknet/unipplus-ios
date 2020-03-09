@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DisciplinesViewController: BaseViewController<HomeCoordinator, DisciplinesViewModel> {
+class DisciplinesViewController: BaseViewController<DisciplinesViewModel> {
     @IBOutlet weak var table: BaseUITableView!
     
     override func viewDidLoad() {
@@ -18,7 +18,7 @@ class DisciplinesViewController: BaseViewController<HomeCoordinator, Disciplines
     
     private func setup() {
         title = "Notas e Faltas"
-        viewModel?.delegate = self
+        viewModel.delegate = self
         setTableView()
     }
     
@@ -59,7 +59,7 @@ extension DisciplinesViewController: DisciplinesViewModelDelegate {
     // MARK: GradesViewModelDelegate
     
     func error(message: String) {
-        coordinator?.showAlertWithMessage(message)
+        
     }
     
     func fetchGradesFinished() {

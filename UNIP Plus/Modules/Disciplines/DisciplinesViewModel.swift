@@ -22,13 +22,7 @@ class DisciplinesViewModel: BaseViewModel {
     }
     
     private func fetchGrades() {
-        APIService().requestModule(.Disciplines).get()
-        .execute(onSuccess: { (data) in
-            self.gradesInfo = JSONHelper.Deserialize(type: Disciplines.self, jsonData: data!)
-            self.delegate?.fetchGradesFinished()
-        }) { (error) in
-            self.delegate?.error(message: error)
-        }
+        
     }
     
 }

@@ -6,9 +6,9 @@
 //  Copyright © 2019 Mobile Class. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-@objc protocol BaseViewModel {
+@objc protocol BaseViewModel: AnyObject {
     @objc optional func viewDidLoad()
     @objc optional func viewWillAppear()
     @objc optional func viewWillDisappear()

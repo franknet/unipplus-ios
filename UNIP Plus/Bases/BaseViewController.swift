@@ -8,26 +8,34 @@
 
 import UIKit
 
-class BaseViewController<T: BaseCoordinator, VM: BaseViewModel>: UIViewController {
-    var coordinator: T?
-    var viewModel: VM?
+class BaseViewController<T: BaseViewModel>: UIViewController {
+    var viewModel: T
+    
+    init(viewModel: T) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard viewModel?.viewDidLoad != nil else { return }
-        viewModel?.viewDidLoad!()
+        guard viewModel.viewDidLoad != nil else { return }
+        viewModel.viewDidLoad?()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard viewModel?.viewWillAppear != nil else { return }
-        viewModel?.viewWillAppear!()
+        guard viewModel.viewWillAppear != nil else { return }
+        viewModel.viewWillAppear?()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        guard viewModel?.viewWillDisappear != nil else { return }
-        viewModel?.viewWillDisappear!()
+        guard viewModel.viewWillDisappear != nil else { return }
+        viewModel.viewWillDisappear?()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

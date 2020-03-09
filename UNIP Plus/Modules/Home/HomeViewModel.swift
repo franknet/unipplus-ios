@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol HomeViewModelCoordinatorDelegate {
+    func home(_ viewModel: HomeViewModel, openMenuWithCompletion completion: (() -> Void)?)
+}
+
 class HomeViewModel: BaseViewModel {
+    var coordinator: HomeViewModelCoordinatorDelegate
     
-    
+    init(coordinator: HomeViewModelCoordinatorDelegate) {
+        self.coordinator = coordinator
+    }
 }

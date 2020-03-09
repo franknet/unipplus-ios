@@ -30,9 +30,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         addRootView()
         
-//        GADMobileAds.sharedInstance().start(completionHandler: nil)
-//        FirebaseApp.configure()
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        FirebaseApp.configure()
         
+        let provider = AWSAnonymousCredentialsProvider()
+        let awsConfig = AWSServiceConfiguration(region: .SAEast1, credentialsProvider: provider)
+        AWSServiceManager.default()?.defaultServiceConfiguration = awsConfig
         
         return true
     }

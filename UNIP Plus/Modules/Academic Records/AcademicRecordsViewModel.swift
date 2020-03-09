@@ -17,16 +17,11 @@ class AcademicRecordsViewModel: BaseViewModel {
     var delegate: AcademicRecordsViewModelDelegate?
     
     func viewDidLoad() {
-//        fetchAcademicRecords()
+        
     }
     
     func fetchAcademicRecords() {
-        APIService().requestModule(.AcademicRecords).get()
-        .execute(onSuccess: { (data) in
-                
-        }) { (error) in
-            self.delegate?.error(message: error)
-        }
+        
     }
     
 }

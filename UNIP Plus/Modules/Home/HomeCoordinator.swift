@@ -11,36 +11,25 @@ import UIKit
 class HomeCoordinator: BaseCoordinator {
     var navigation: UINavigationController
     
-    private var homeVC: HomeViewController
-    
     init(navigationController: UINavigationController) {
-        self.homeVC = HomeViewController()
-        self.navigation = navigationController
+        navigation = navigationController
     }
     
     func start() {
-        homeVC.coordinator = self
-        homeVC.viewModel = HomeViewModel()
-        
+        let homeVC = HomeViewController(viewModel: HomeViewModel(coordinator: self))
         navigation.interactivePopGestureRecognizer?.isEnabled = false
         navigation.modalPresentationStyle = .overFullScreen
+        navigation.modalTransitionStyle = .coverVertical
         navigation.pushViewController(homeVC, animated: false)
     }
-    
-    func logout() {
-        navigation.dismiss(animated: true, completion: nil)
-    }
-    
-    func share() {
-        
-    }
-    
-    @objc func showMenu() {
+}
+
+extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
+    func home(_ viewModel: HomeViewModel, openMenuWithCompletion completion: (() -> Void)?) {
         let menuVC = MenuViewController()
         menuVC.modalPresentationStyle = .overCurrentContext
         menuVC.modalTransitionStyle = .crossDissolve
-        menuVC.delegate = homeVC
-        
-        self.homeVC.present(menuVC, animated: true, completion: nil)
+        navigation.present(menuVC, animated: true, completion: completion)
     }
+    
 }

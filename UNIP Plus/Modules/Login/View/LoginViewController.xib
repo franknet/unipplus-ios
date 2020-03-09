@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -59,7 +59,7 @@
                             </constraints>
                             <state key="normal" title="ENTRAR"/>
                             <connections>
-                                <action selector="enterAction:" destination="-1" eventType="touchUpInside" id="EDQ-7n-V4u"/>
+                                <action selector="enterAction" destination="-1" eventType="touchUpInside" id="pHB-gY-tMs"/>
                             </connections>
                         </button>
                     </subviews>
@@ -74,19 +74,11 @@
                         <constraint firstAttribute="trailing" secondItem="jWg-td-1mp" secondAttribute="trailing" id="nPq-HM-8Qt"/>
                     </constraints>
                 </view>
-                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="y5O-hR-VqX">
-                    <rect key="frame" x="182.5" y="432.5" width="51" height="31"/>
-                    <connections>
-                        <action selector="switchTheme:" destination="-1" eventType="valueChanged" id="PsS-dC-paN"/>
-                    </connections>
-                </switch>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="y5O-hR-VqX" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="1TF-oY-SuY"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="HYy-Qj-M80" secondAttribute="bottom" constant="32" id="6ME-b9-uuR"/>
                 <constraint firstItem="HYy-Qj-M80" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="AKa-Ly-rt7"/>
-                <constraint firstItem="y5O-hR-VqX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RHn-Me-dsv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HYy-Qj-M80" secondAttribute="trailing" constant="32" id="xhw-Go-vTA"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

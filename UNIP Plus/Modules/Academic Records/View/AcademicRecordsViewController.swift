@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AcademicRecordsViewController: BaseViewController<HomeCoordinator, AcademicRecordsViewModel> {
+class AcademicRecordsViewController: BaseViewController<AcademicRecordsViewModel> {
     @IBOutlet weak var table: BaseUITableView?
 
     override func viewDidLoad() {
@@ -19,7 +19,7 @@ class AcademicRecordsViewController: BaseViewController<HomeCoordinator, Academi
     
     func setUp() {
         title = "Histórico"
-        viewModel?.delegate = self
+        viewModel.delegate = self
         
     }
 
@@ -28,7 +28,7 @@ class AcademicRecordsViewController: BaseViewController<HomeCoordinator, Academi
 
 extension AcademicRecordsViewController: AcademicRecordsViewModelDelegate {
     func error(message: String) {
-        coordinator?.showAlertWithMessage(message)
+        
     }
     
     func fetchAcademicRecordsFinished() {

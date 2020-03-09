@@ -9,7 +9,7 @@
 import UIKit
 
 class LoginCoordinator: BaseCoordinator {
-    
+
     var navigation: UINavigationController
 
     init(navigationController: UINavigationController) {
@@ -17,16 +17,18 @@ class LoginCoordinator: BaseCoordinator {
     }
     
     func start() {
-        let loginVC = LoginViewController()
-        loginVC.coordinator = self
-        loginVC.viewModel = LoginViewModel()
-        
+        let loginVC = LoginViewController(viewModel: LoginViewModel(coordinator: self))
         navigation.interactivePopGestureRecognizer?.isEnabled = false
         navigation.navigationBar.isHidden = true
         navigation.pushViewController(loginVC, animated: false)
     }
-    
-    func showHome() {
+}
+
+extension LoginCoordinator: LoginViewModelCoordinatorDelegate {
+    func login(_ viewModel: LoginViewModel, didFinishWithError error: String) {
+        showAlertWithMessage(error)
+    }
+    func login(_ viewModel: LoginViewModel, didFinishWithResult result: LoginResponse) {
         let coordinator = HomeCoordinator(navigationController: UINavigationController())
         coordinator.start()
         navigation.show(coordinator.navigation, sender: nil)

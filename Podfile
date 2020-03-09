@@ -6,7 +6,8 @@ target 'UNIP Plus' do
   use_frameworks!
   
   # networking
-  pod 'Alamofire'
+  pod 'AWSCore'
+  pod 'AWSAPIGateway'
   
   # Google Firebase
   pod 'FirebaseCore'

@@ -41,14 +41,14 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>GADApplicationIdentifier</key>
-    <string>ca-app-pub-5422259815391452~6254429127</string>
-    <key>GADIsAdManagerApp</key>
-    <true/>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoads</key>
-            <true/>
-    </dict>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-5422259815391452~6254429127</string>
+	<key>GADIsAdManagerApp</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

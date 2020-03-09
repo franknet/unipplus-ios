@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		8B042BD99317D0FA0DA38194 /* Pods_UNIP_Plus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 338E027C2D4D750196B2E673 /* Pods_UNIP_Plus.framework */; };
 		A289EAF519BEB974ACAD8F6D /* Pods_UNIP_PlusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3A8B7C07F25630E5BBC420 /* Pods_UNIP_PlusTests.framework */; };
-		A61635702333D3FB00177DFD /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A616356F2333D3FB00177DFD /* APIService.swift */; };
-		A61635712333D3FB00177DFD /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A616356F2333D3FB00177DFD /* APIService.swift */; };
 		A61635782333D4AF00177DFD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61635762333D4AF00177DFD /* LoginViewController.swift */; };
 		A616357A2333D4AF00177DFD /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A61635772333D4AF00177DFD /* LoginViewController.xib */; };
 		A616357D2333D56F00177DFD /* SplashScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A616357C2333D56F00177DFD /* SplashScreen.xib */; };
@@ -77,10 +75,18 @@
 		A6DF589B234C0FCE00055003 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6DF589A234C0FCE00055003 /* Colors.xcassets */; };
 		A6DF58A0234C112F00055003 /* UserConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF589F234C112F00055003 /* UserConfiguration.swift */; };
 		A6DF58A2234C11B900055003 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF58A1234C11B900055003 /* UserRepository.swift */; };
-		A6E313E2233D4F2400841A01 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E313E1233D4F2400841A01 /* UserInfo.swift */; };
+		A6E313E2233D4F2400841A01 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E313E1233D4F2400841A01 /* LoginResponse.swift */; };
 		A6E313E5233D575B00841A01 /* PaymentsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E313E4233D575B00841A01 /* PaymentsInfo.swift */; };
 		A6E313E7233D577E00841A01 /* PaymentsGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E313E6233D577E00841A01 /* PaymentsGroup.swift */; };
 		A6E313E9233D57A000841A01 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E313E8233D57A000841A01 /* Payment.swift */; };
+		A6F2117C241342F800CA2C84 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F2117B241342F800CA2C84 /* BaseModel.swift */; };
+		A6F2117D241342F800CA2C84 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F2117B241342F800CA2C84 /* BaseModel.swift */; };
+		A6F2117F24146FB300CA2C84 /* BaseAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F2117E24146FB300CA2C84 /* BaseAdapter.swift */; };
+		A6F211972416C3B000CA2C84 /* UnipPlusApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F211962416C3B000CA2C84 /* UnipPlusApiClient.swift */; };
+		A6F211A42416CC8400CA2C84 /* UnipPlusApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F211A32416CC8400CA2C84 /* UnipPlusApiClientTests.swift */; };
+		A6F211A72416E2C500CA2C84 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F211A62416E2C500CA2C84 /* Credentials.swift */; };
+		A6F211A82416E2C500CA2C84 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F211A62416E2C500CA2C84 /* Credentials.swift */; };
+		A6F211A92416E34A00CA2C84 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E313E1233D4F2400841A01 /* LoginResponse.swift */; };
 		A6F34851233D626F0088C15A /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F34850233D626F0088C15A /* JSONHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -100,7 +106,6 @@
 		39C8CD721DF6224787DB5AF2 /* Pods-UNIP Plus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIP Plus.release.xcconfig"; path = "Pods/Target Support Files/Pods-UNIP Plus/Pods-UNIP Plus.release.xcconfig"; sourceTree = "<group>"; };
 		4C809124FC9ABEC9A3D4A6BA /* Pods-UNIP PlusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIP PlusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UNIP PlusTests/Pods-UNIP PlusTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5B3A8B7C07F25630E5BBC420 /* Pods_UNIP_PlusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UNIP_PlusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A616356F2333D3FB00177DFD /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		A61635762333D4AF00177DFD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A61635772333D4AF00177DFD /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		A616357C2333D56F00177DFD /* SplashScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashScreen.xib; sourceTree = "<group>"; };
@@ -166,10 +171,18 @@
 		A6DF589A234C0FCE00055003 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		A6DF589F234C112F00055003 /* UserConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfiguration.swift; sourceTree = "<group>"; };
 		A6DF58A1234C11B900055003 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
-		A6E313E1233D4F2400841A01 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		A6E313E1233D4F2400841A01 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		A6E313E4233D575B00841A01 /* PaymentsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsInfo.swift; sourceTree = "<group>"; };
 		A6E313E6233D577E00841A01 /* PaymentsGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsGroup.swift; sourceTree = "<group>"; };
 		A6E313E8233D57A000841A01 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
+		A6F2117B241342F800CA2C84 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		A6F2117E24146FB300CA2C84 /* BaseAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAdapter.swift; sourceTree = "<group>"; };
+		A6F211962416C3B000CA2C84 /* UnipPlusApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnipPlusApiClient.swift; sourceTree = "<group>"; };
+		A6F211992416C40600CA2C84 /* UNIP Plus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UNIP Plus-Bridging-Header.h"; sourceTree = "<group>"; };
+		A6F2119A2416C40600CA2C84 /* UNIP PlusTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UNIP PlusTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		A6F2119F2416C44100CA2C84 /* AWSApiGatewayBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWSApiGatewayBridge.h; sourceTree = "<group>"; };
+		A6F211A32416CC8400CA2C84 /* UnipPlusApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnipPlusApiClientTests.swift; sourceTree = "<group>"; };
+		A6F211A62416E2C500CA2C84 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		A6F34850233D626F0088C15A /* JSONHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
 		AF28D265D2EEE085B25F3E57 /* Pods-UNIP PlusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIP PlusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UNIP PlusTests/Pods-UNIP PlusTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -218,7 +231,7 @@
 		A616356E2333D3CB00177DFD /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				A616356F2333D3FB00177DFD /* APIService.swift */,
+				A6F211962416C3B000CA2C84 /* UnipPlusApiClient.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -226,10 +239,10 @@
 		A61635722333D41C00177DFD /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				A6F211A52416E2B000CA2C84 /* Models */,
 				A61635752333D47500177DFD /* View */,
 				A616358B233429C000177DFD /* LoginCoordinator.swift */,
 				A616357E2333D6BC00177DFD /* LoginViewModel.swift */,
-				A6E313E1233D4F2400841A01 /* UserInfo.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -291,6 +304,8 @@
 				A616358D23342C2600177DFD /* BaseViewController.swift */,
 				A61635A82335407400177DFD /* BaseViewModel.swift */,
 				A6B187C5233D063A00233F4C /* BaseUIPageView.swift */,
+				A6F2117B241342F800CA2C84 /* BaseModel.swift */,
+				A6F2117E24146FB300CA2C84 /* BaseAdapter.swift */,
 			);
 			path = Bases;
 			sourceTree = "<group>";
@@ -387,6 +402,7 @@
 		A67008232332DE25000C632C /* UNIP Plus */ = {
 			isa = PBXGroup;
 			children = (
+				A6F211952416C39400CA2C84 /* Aws */,
 				A698D2AF239865B000E2A120 /* Google */,
 				A6ADD831237C4B3E001DD764 /* Mocks */,
 				A6DF589E234C110400055003 /* Repository */,
@@ -401,6 +417,8 @@
 				A67008242332DE25000C632C /* AppDelegate.swift */,
 				A616356E2333D3CB00177DFD /* Network */,
 				A616356D2333D3C000177DFD /* Modules */,
+				A6F211992416C40600CA2C84 /* UNIP Plus-Bridging-Header.h */,
+				A6F2119A2416C40600CA2C84 /* UNIP PlusTests-Bridging-Header.h */,
 			);
 			path = "UNIP Plus";
 			sourceTree = "<group>";
@@ -410,6 +428,7 @@
 			children = (
 				A67008392332DE25000C632C /* UNIP_PlusTests.swift */,
 				A670083B2332DE25000C632C /* Info.plist */,
+				A6F211A32416CC8400CA2C84 /* UnipPlusApiClientTests.swift */,
 			);
 			path = "UNIP PlusTests";
 			sourceTree = "<group>";
@@ -539,6 +558,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		A6F211952416C39400CA2C84 /* Aws */ = {
+			isa = PBXGroup;
+			children = (
+				A6F2119F2416C44100CA2C84 /* AWSApiGatewayBridge.h */,
+			);
+			path = Aws;
+			sourceTree = "<group>";
+		};
+		A6F211A52416E2B000CA2C84 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A6E313E1233D4F2400841A01 /* LoginResponse.swift */,
+				A6F211A62416E2C500CA2C84 /* Credentials.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		A6F3484E233D611D0088C15A /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -618,9 +654,11 @@
 				TargetAttributes = {
 					A67008202332DE25000C632C = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1130;
 					};
 					A67008342332DE25000C632C = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1130;
 						TestTargetID = A67008202332DE25000C632C;
 					};
 				};
@@ -772,6 +810,7 @@
 				A633DE94237CB17C00629D64 /* SemesterStatusView.swift in Sources */,
 				A6B187CB233D437700233F4C /* Disciplines.swift in Sources */,
 				A65D72C6233AB78500C72007 /* MenuViewController.swift in Sources */,
+				A6F2117C241342F800CA2C84 /* BaseModel.swift in Sources */,
 				A6DF58A0234C112F00055003 /* UserConfiguration.swift in Sources */,
 				A6BD96B0233947700046E7C5 /* DisciplinesSectionView.swift in Sources */,
 				A616358C233429C000177DFD /* LoginCoordinator.swift in Sources */,
@@ -779,9 +818,9 @@
 				A6B187CE233D43B900233F4C /* GradesGroup.swift in Sources */,
 				A698D2B3239865E100E2A120 /* GoogleAnalyticsManager.swift in Sources */,
 				A6468FC5234CBE2E00B867AA /* BackgroudView.swift in Sources */,
-				A61635702333D3FB00177DFD /* APIService.swift in Sources */,
 				A61635922334313F00177DFD /* HomeViewController.swift in Sources */,
 				A616358E23342C2600177DFD /* BaseViewController.swift in Sources */,
+				A6F211972416C3B000CA2C84 /* UnipPlusApiClient.swift in Sources */,
 				A61635952334315500177DFD /* HomeCoordinator.swift in Sources */,
 				A698D2B52398662800E2A120 /* GoogleRemoteManager.swift in Sources */,
 				A69CD123235783E300A6039C /* Theme.swift in Sources */,
@@ -792,10 +831,12 @@
 				A698D2B1239865CD00E2A120 /* GoogleAdsManager.swift in Sources */,
 				A6BD96B623394F3B0046E7C5 /* DictionaryExtension.swift in Sources */,
 				A67008252332DE25000C632C /* AppDelegate.swift in Sources */,
+				A6F211A72416E2C500CA2C84 /* Credentials.swift in Sources */,
 				A65D72D1233C0A5500C72007 /* PaymentCell.swift in Sources */,
 				A6BD96AD233947410046E7C5 /* DisciplineCell.swift in Sources */,
+				A6F2117F24146FB300CA2C84 /* BaseAdapter.swift in Sources */,
 				A6B187C9233D341200233F4C /* BaseUITableView.swift in Sources */,
-				A6E313E2233D4F2400841A01 /* UserInfo.swift in Sources */,
+				A6E313E2233D4F2400841A01 /* LoginResponse.swift in Sources */,
 				A66B06D624031A6B00FA47E0 /* GoogleAdTableViewCell.swift in Sources */,
 				A61635B42335661700177DFD /* UIViewControllerExtension.swift in Sources */,
 				A61635AF23354DB300177DFD /* PaymentsViewModel.swift in Sources */,
@@ -808,7 +849,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A61635712333D3FB00177DFD /* APIService.swift in Sources */,
+				A6F211A42416CC8400CA2C84 /* UnipPlusApiClientTests.swift in Sources */,
+				A6F2117D241342F800CA2C84 /* BaseModel.swift in Sources */,
+				A6F211A82416E2C500CA2C84 /* Credentials.swift in Sources */,
+				A6F211A92416E34A00CA2C84 /* LoginResponse.swift in Sources */,
 				A670083A2332DE25000C632C /* UNIP_PlusTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -948,6 +992,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "UNIP Plus/Info.plist";
@@ -958,6 +1003,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "mobileclass.UNIP-Plus";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "UNIP Plus/UNIP Plus-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = (
@@ -974,6 +1021,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "UNIP Plus/Info.plist";
@@ -984,6 +1032,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "mobileclass.UNIP-Plus";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "UNIP Plus/UNIP Plus-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = (
@@ -1000,6 +1049,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "UNIP PlusTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1009,6 +1059,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mobileclass.UNIP-PlusTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UNIP Plus/UNIP PlusTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UNIP Plus.app/UNIP Plus";
@@ -1021,6 +1073,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "UNIP PlusTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1030,6 +1083,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mobileclass.UNIP-PlusTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UNIP Plus/UNIP PlusTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UNIP Plus.app/UNIP Plus";

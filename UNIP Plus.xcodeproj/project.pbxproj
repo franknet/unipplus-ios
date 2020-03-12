@@ -51,6 +51,14 @@
 		A698D2B3239865E100E2A120 /* GoogleAnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A698D2B2239865E100E2A120 /* GoogleAnalyticsManager.swift */; };
 		A698D2B52398662800E2A120 /* GoogleRemoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A698D2B42398662800E2A120 /* GoogleRemoteManager.swift */; };
 		A69CD123235783E300A6039C /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69CD122235783E300A6039C /* Theme.swift */; };
+		A69E08FB24185F92000BBF8F /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69E08FA24185F92000BBF8F /* BaseModel.swift */; };
+		A69E08FD241864D8000BBF8F /* UnipPlusApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69E08FC241864D8000BBF8F /* UnipPlusApiClient.swift */; };
+		A69E08FE241864D8000BBF8F /* UnipPlusApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69E08FC241864D8000BBF8F /* UnipPlusApiClient.swift */; };
+		A69E0900241873E0000BBF8F /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69E08FF241873E0000BBF8F /* ApiError.swift */; };
+		A69E0901241873E0000BBF8F /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69E08FF241873E0000BBF8F /* ApiError.swift */; };
+		A69E09052418797E000BBF8F /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69E09042418797E000BBF8F /* Library.swift */; };
+		A69E09062418797E000BBF8F /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69E09042418797E000BBF8F /* Library.swift */; };
+		A69E090824194985000BBF8F /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69E090724194985000BBF8F /* UIImageViewExtension.swift */; };
 		A6ADD833237C4B66001DD764 /* UserInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = A6ADD832237C4B66001DD764 /* UserInfo.json */; };
 		A6ADD834237C4B66001DD764 /* UserInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = A6ADD832237C4B66001DD764 /* UserInfo.json */; };
 		A6ADD836237C4B92001DD764 /* Grades.json in Resources */ = {isa = PBXBuildFile; fileRef = A6ADD835237C4B92001DD764 /* Grades.json */; };
@@ -61,11 +69,7 @@
 		A6ADD83D237C4BE9001DD764 /* AcademicRecords.json in Resources */ = {isa = PBXBuildFile; fileRef = A6ADD83B237C4BE9001DD764 /* AcademicRecords.json */; };
 		A6B187C6233D063A00233F4C /* BaseUIPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B187C5233D063A00233F4C /* BaseUIPageView.swift */; };
 		A6B187C9233D341200233F4C /* BaseUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B187C8233D341200233F4C /* BaseUITableView.swift */; };
-		A6B187CB233D437700233F4C /* Disciplines.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B187CA233D437700233F4C /* Disciplines.swift */; };
-		A6B187CE233D43B900233F4C /* GradesGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B187CD233D43B900233F4C /* GradesGroup.swift */; };
-		A6B187D0233D43D800233F4C /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B187CF233D43D800233F4C /* Grade.swift */; };
 		A6B187D3233D446100233F4C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B187D2233D446100233F4C /* Message.swift */; };
-		A6B187D5233D465D00233F4C /* GradeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B187D4233D465D00233F4C /* GradeStatus.swift */; };
 		A6BD96AD233947410046E7C5 /* DisciplineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BD96AB233947410046E7C5 /* DisciplineCell.swift */; };
 		A6BD96AE233947410046E7C5 /* DisciplineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6BD96AC233947410046E7C5 /* DisciplineCell.xib */; };
 		A6BD96B0233947700046E7C5 /* DisciplinesSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BD96AF233947700046E7C5 /* DisciplinesSectionView.swift */; };
@@ -79,14 +83,12 @@
 		A6E313E5233D575B00841A01 /* PaymentsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E313E4233D575B00841A01 /* PaymentsInfo.swift */; };
 		A6E313E7233D577E00841A01 /* PaymentsGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E313E6233D577E00841A01 /* PaymentsGroup.swift */; };
 		A6E313E9233D57A000841A01 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E313E8233D57A000841A01 /* Payment.swift */; };
-		A6F2117C241342F800CA2C84 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F2117B241342F800CA2C84 /* BaseModel.swift */; };
-		A6F2117D241342F800CA2C84 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F2117B241342F800CA2C84 /* BaseModel.swift */; };
 		A6F2117F24146FB300CA2C84 /* BaseAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F2117E24146FB300CA2C84 /* BaseAdapter.swift */; };
-		A6F211972416C3B000CA2C84 /* UnipPlusApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F211962416C3B000CA2C84 /* UnipPlusApiClient.swift */; };
 		A6F211A42416CC8400CA2C84 /* UnipPlusApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F211A32416CC8400CA2C84 /* UnipPlusApiClientTests.swift */; };
 		A6F211A72416E2C500CA2C84 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F211A62416E2C500CA2C84 /* Credentials.swift */; };
 		A6F211A82416E2C500CA2C84 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F211A62416E2C500CA2C84 /* Credentials.swift */; };
 		A6F211A92416E34A00CA2C84 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E313E1233D4F2400841A01 /* LoginResponse.swift */; };
+		A6F211AB24170B5700CA2C84 /* DisciplinesModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F211AA24170B5700CA2C84 /* DisciplinesModels.swift */; };
 		A6F34851233D626F0088C15A /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F34850233D626F0088C15A /* JSONHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -151,17 +153,18 @@
 		A698D2B2239865E100E2A120 /* GoogleAnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAnalyticsManager.swift; sourceTree = "<group>"; };
 		A698D2B42398662800E2A120 /* GoogleRemoteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleRemoteManager.swift; sourceTree = "<group>"; };
 		A69CD122235783E300A6039C /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		A69E08FA24185F92000BBF8F /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		A69E08FC241864D8000BBF8F /* UnipPlusApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnipPlusApiClient.swift; sourceTree = "<group>"; };
+		A69E08FF241873E0000BBF8F /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		A69E09042418797E000BBF8F /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
+		A69E090724194985000BBF8F /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		A6ADD832237C4B66001DD764 /* UserInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserInfo.json; sourceTree = "<group>"; };
 		A6ADD835237C4B92001DD764 /* Grades.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Grades.json; sourceTree = "<group>"; };
 		A6ADD838237C4BB6001DD764 /* Payments.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Payments.json; sourceTree = "<group>"; };
 		A6ADD83B237C4BE9001DD764 /* AcademicRecords.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AcademicRecords.json; sourceTree = "<group>"; };
 		A6B187C5233D063A00233F4C /* BaseUIPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIPageView.swift; sourceTree = "<group>"; };
 		A6B187C8233D341200233F4C /* BaseUITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUITableView.swift; sourceTree = "<group>"; };
-		A6B187CA233D437700233F4C /* Disciplines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disciplines.swift; sourceTree = "<group>"; };
-		A6B187CD233D43B900233F4C /* GradesGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesGroup.swift; sourceTree = "<group>"; };
-		A6B187CF233D43D800233F4C /* Grade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grade.swift; sourceTree = "<group>"; };
 		A6B187D2233D446100233F4C /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		A6B187D4233D465D00233F4C /* GradeStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeStatus.swift; sourceTree = "<group>"; };
 		A6BD96AB233947410046E7C5 /* DisciplineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisciplineCell.swift; sourceTree = "<group>"; };
 		A6BD96AC233947410046E7C5 /* DisciplineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisciplineCell.xib; sourceTree = "<group>"; };
 		A6BD96AF233947700046E7C5 /* DisciplinesSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisciplinesSectionView.swift; sourceTree = "<group>"; };
@@ -175,14 +178,12 @@
 		A6E313E4233D575B00841A01 /* PaymentsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsInfo.swift; sourceTree = "<group>"; };
 		A6E313E6233D577E00841A01 /* PaymentsGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsGroup.swift; sourceTree = "<group>"; };
 		A6E313E8233D57A000841A01 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
-		A6F2117B241342F800CA2C84 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		A6F2117E24146FB300CA2C84 /* BaseAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAdapter.swift; sourceTree = "<group>"; };
-		A6F211962416C3B000CA2C84 /* UnipPlusApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnipPlusApiClient.swift; sourceTree = "<group>"; };
 		A6F211992416C40600CA2C84 /* UNIP Plus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UNIP Plus-Bridging-Header.h"; sourceTree = "<group>"; };
 		A6F2119A2416C40600CA2C84 /* UNIP PlusTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UNIP PlusTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		A6F2119F2416C44100CA2C84 /* AWSApiGatewayBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWSApiGatewayBridge.h; sourceTree = "<group>"; };
 		A6F211A32416CC8400CA2C84 /* UnipPlusApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnipPlusApiClientTests.swift; sourceTree = "<group>"; };
 		A6F211A62416E2C500CA2C84 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		A6F211AA24170B5700CA2C84 /* DisciplinesModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisciplinesModels.swift; sourceTree = "<group>"; };
 		A6F34850233D626F0088C15A /* JSONHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
 		AF28D265D2EEE085B25F3E57 /* Pods-UNIP PlusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIP PlusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UNIP PlusTests/Pods-UNIP PlusTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -219,6 +220,7 @@
 		A616356D2333D3C000177DFD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A69E090224187958000BBF8F /* Library */,
 				A61635962335031E00177DFD /* Academic Records */,
 				A61635842333EA0000177DFD /* Payments */,
 				A61635822333E9ED00177DFD /* Disciplines */,
@@ -231,7 +233,8 @@
 		A616356E2333D3CB00177DFD /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				A6F211962416C3B000CA2C84 /* UnipPlusApiClient.swift */,
+				A69E08FC241864D8000BBF8F /* UnipPlusApiClient.swift */,
+				A69E08FF241873E0000BBF8F /* ApiError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -270,8 +273,8 @@
 		A61635822333E9ED00177DFD /* Disciplines */ = {
 			isa = PBXGroup;
 			children = (
-				A6B187CC233D439C00233F4C /* Models */,
 				A61635982335033000177DFD /* View */,
+				A6F211AA24170B5700CA2C84 /* DisciplinesModels.swift */,
 				A61635AC23354D8300177DFD /* DisciplinesViewModel.swift */,
 			);
 			path = Disciplines;
@@ -304,8 +307,8 @@
 				A616358D23342C2600177DFD /* BaseViewController.swift */,
 				A61635A82335407400177DFD /* BaseViewModel.swift */,
 				A6B187C5233D063A00233F4C /* BaseUIPageView.swift */,
-				A6F2117B241342F800CA2C84 /* BaseModel.swift */,
 				A6F2117E24146FB300CA2C84 /* BaseAdapter.swift */,
+				A69E08FA24185F92000BBF8F /* BaseModel.swift */,
 			);
 			path = Bases;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				A61635B32335661700177DFD /* UIViewControllerExtension.swift */,
 				A6BD96B3233949A20046E7C5 /* UITableViewExtension.swift */,
 				A6BD96B523394F3B0046E7C5 /* DictionaryExtension.swift */,
+				A69E090724194985000BBF8F /* UIImageViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -402,7 +406,6 @@
 		A67008232332DE25000C632C /* UNIP Plus */ = {
 			isa = PBXGroup;
 			children = (
-				A6F211952416C39400CA2C84 /* Aws */,
 				A698D2AF239865B000E2A120 /* Google */,
 				A6ADD831237C4B3E001DD764 /* Mocks */,
 				A6DF589E234C110400055003 /* Repository */,
@@ -444,6 +447,14 @@
 			path = Google;
 			sourceTree = "<group>";
 		};
+		A69E090224187958000BBF8F /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				A69E09042418797E000BBF8F /* Library.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
 		A6ADD831237C4B3E001DD764 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -453,17 +464,6 @@
 				A6ADD83B237C4BE9001DD764 /* AcademicRecords.json */,
 			);
 			path = Mocks;
-			sourceTree = "<group>";
-		};
-		A6B187CC233D439C00233F4C /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				A6B187CA233D437700233F4C /* Disciplines.swift */,
-				A6B187CD233D43B900233F4C /* GradesGroup.swift */,
-				A6B187CF233D43D800233F4C /* Grade.swift */,
-				A6B187D4233D465D00233F4C /* GradeStatus.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		A6B187D1233D445000233F4C /* Model */ = {
@@ -556,14 +556,6 @@
 				A6E313E8233D57A000841A01 /* Payment.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		A6F211952416C39400CA2C84 /* Aws */ = {
-			isa = PBXGroup;
-			children = (
-				A6F2119F2416C44100CA2C84 /* AWSApiGatewayBridge.h */,
-			);
-			path = Aws;
 			sourceTree = "<group>";
 		};
 		A6F211A52416E2B000CA2C84 /* Models */ = {
@@ -801,32 +793,29 @@
 				A61635AD23354D8300177DFD /* DisciplinesViewModel.swift in Sources */,
 				A61635A42335051500177DFD /* PaymentsViewController.swift in Sources */,
 				A6BD96B4233949A20046E7C5 /* UITableViewExtension.swift in Sources */,
-				A6B187D0233D43D800233F4C /* Grade.swift in Sources */,
 				A61635B123354DDB00177DFD /* AcademicRecordsViewModel.swift in Sources */,
 				A61635A92335407400177DFD /* BaseViewModel.swift in Sources */,
 				A61635A02335049C00177DFD /* AcademicRecordsViewController.swift in Sources */,
 				A6E313E7233D577E00841A01 /* PaymentsGroup.swift in Sources */,
 				A6E313E9233D57A000841A01 /* Payment.swift in Sources */,
 				A633DE94237CB17C00629D64 /* SemesterStatusView.swift in Sources */,
-				A6B187CB233D437700233F4C /* Disciplines.swift in Sources */,
 				A65D72C6233AB78500C72007 /* MenuViewController.swift in Sources */,
-				A6F2117C241342F800CA2C84 /* BaseModel.swift in Sources */,
 				A6DF58A0234C112F00055003 /* UserConfiguration.swift in Sources */,
+				A69E08FB24185F92000BBF8F /* BaseModel.swift in Sources */,
 				A6BD96B0233947700046E7C5 /* DisciplinesSectionView.swift in Sources */,
 				A616358C233429C000177DFD /* LoginCoordinator.swift in Sources */,
-				A6B187D5233D465D00233F4C /* GradeStatus.swift in Sources */,
-				A6B187CE233D43B900233F4C /* GradesGroup.swift in Sources */,
 				A698D2B3239865E100E2A120 /* GoogleAnalyticsManager.swift in Sources */,
 				A6468FC5234CBE2E00B867AA /* BackgroudView.swift in Sources */,
 				A61635922334313F00177DFD /* HomeViewController.swift in Sources */,
+				A69E090824194985000BBF8F /* UIImageViewExtension.swift in Sources */,
 				A616358E23342C2600177DFD /* BaseViewController.swift in Sources */,
-				A6F211972416C3B000CA2C84 /* UnipPlusApiClient.swift in Sources */,
 				A61635952334315500177DFD /* HomeCoordinator.swift in Sources */,
 				A698D2B52398662800E2A120 /* GoogleRemoteManager.swift in Sources */,
 				A69CD123235783E300A6039C /* Theme.swift in Sources */,
 				A616357F2333D6BC00177DFD /* LoginViewModel.swift in Sources */,
 				A6E313E5233D575B00841A01 /* PaymentsInfo.swift in Sources */,
 				A6F34851233D626F0088C15A /* JSONHelper.swift in Sources */,
+				A69E09052418797E000BBF8F /* Library.swift in Sources */,
 				A6DF58A2234C11B900055003 /* UserRepository.swift in Sources */,
 				A698D2B1239865CD00E2A120 /* GoogleAdsManager.swift in Sources */,
 				A6BD96B623394F3B0046E7C5 /* DictionaryExtension.swift in Sources */,
@@ -835,6 +824,8 @@
 				A65D72D1233C0A5500C72007 /* PaymentCell.swift in Sources */,
 				A6BD96AD233947410046E7C5 /* DisciplineCell.swift in Sources */,
 				A6F2117F24146FB300CA2C84 /* BaseAdapter.swift in Sources */,
+				A69E0900241873E0000BBF8F /* ApiError.swift in Sources */,
+				A69E08FD241864D8000BBF8F /* UnipPlusApiClient.swift in Sources */,
 				A6B187C9233D341200233F4C /* BaseUITableView.swift in Sources */,
 				A6E313E2233D4F2400841A01 /* LoginResponse.swift in Sources */,
 				A66B06D624031A6B00FA47E0 /* GoogleAdTableViewCell.swift in Sources */,
@@ -842,6 +833,7 @@
 				A61635AF23354DB300177DFD /* PaymentsViewModel.swift in Sources */,
 				A61635AB23354D5A00177DFD /* HomeViewModel.swift in Sources */,
 				A616359C2335038A00177DFD /* DisciplinesViewController.swift in Sources */,
+				A6F211AB24170B5700CA2C84 /* DisciplinesModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -850,10 +842,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6F211A42416CC8400CA2C84 /* UnipPlusApiClientTests.swift in Sources */,
-				A6F2117D241342F800CA2C84 /* BaseModel.swift in Sources */,
+				A69E09062418797E000BBF8F /* Library.swift in Sources */,
 				A6F211A82416E2C500CA2C84 /* Credentials.swift in Sources */,
 				A6F211A92416E34A00CA2C84 /* LoginResponse.swift in Sources */,
 				A670083A2332DE25000C632C /* UNIP_PlusTests.swift in Sources */,
+				A69E08FE241864D8000BBF8F /* UnipPlusApiClient.swift in Sources */,
+				A69E0901241873E0000BBF8F /* ApiError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

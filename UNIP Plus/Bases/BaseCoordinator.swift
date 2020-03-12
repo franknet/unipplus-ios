@@ -17,6 +17,6 @@ extension BaseCoordinator {
     func showAlertWithMessage(_ message: String?) {
         let alert = UIAlertController(title: "Atenção", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        navigation.visibleViewController?.present(alert, animated: true, completion: nil)
+        navigation.present(alert, animated: true, completion: nil)
     }
 }

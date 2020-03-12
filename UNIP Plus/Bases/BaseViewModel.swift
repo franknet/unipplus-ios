@@ -8,8 +8,6 @@
 
 import Foundation
 
-@objc protocol BaseViewModel: AnyObject {
-    @objc optional func viewDidLoad()
-    @objc optional func viewWillAppear()
-    @objc optional func viewWillDisappear()
+protocol BaseViewModel: AnyObject {
+    
 }

@@ -7,10 +7,13 @@
 //
 
 import Foundation
-import AWSCore
 
-@objcMembers
-public class Credentials: AWSModel {
-    var ra: String?
-    var password: String?
+class Credentials: BaseModel {
+    let ra: String
+    let password: String
+    
+    required init(withRa: String, andPassword: String) {
+        self.ra = withRa
+        self.password = andPassword
+    }
 }

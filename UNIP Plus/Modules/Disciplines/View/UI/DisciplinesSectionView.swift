@@ -9,5 +9,10 @@
 import UIKit
 
 class DisciplinesSectionView: UITableViewHeaderFooterView {
-    @IBOutlet weak var title: UILabel?
+    @IBOutlet weak var title: UILabel!
+    
+    func setDisciplinesGroup(_ group: DisciplinesGroup?) {
+        guard let group = group else { return }
+        title.text = group.type
+    }
 }

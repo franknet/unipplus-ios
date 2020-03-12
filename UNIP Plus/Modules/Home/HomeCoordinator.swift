@@ -11,12 +11,36 @@ import UIKit
 class HomeCoordinator: BaseCoordinator {
     var navigation: UINavigationController
     
+    var homeVM: HomeViewModel!
+    var homeVC: HomeViewController!
+    
+    var disciplinesVM: DisciplinesViewModel!
+    var disciplinesVC: DisciplinesViewController!
+    
+    var paymentsVM: PaymentsViewModel!
+    var paymentsVC: PaymentsViewController!
+    
+    var academicRecordsVM: AcademicRecordsViewModel!
+    var academicRecordsVC: AcademicRecordsViewController!
+    
     init(navigationController: UINavigationController) {
         navigation = navigationController
     }
     
     func start() {
-        let homeVC = HomeViewController(viewModel: HomeViewModel(coordinator: self))
+        disciplinesVM = DisciplinesViewModel()
+        disciplinesVC = DisciplinesViewController(viewModel: disciplinesVM)
+        
+        paymentsVM = PaymentsViewModel()
+        paymentsVC = PaymentsViewController(viewModel: paymentsVM)
+        
+        academicRecordsVM = AcademicRecordsViewModel()
+        academicRecordsVC = AcademicRecordsViewController(viewModel: academicRecordsVM)
+        
+        homeVM = HomeViewModel(coordinator: self)
+        homeVC = HomeViewController(viewModel: homeVM)
+        homeVC.pageViews = [disciplinesVC, paymentsVC, academicRecordsVC]
+        
         navigation.interactivePopGestureRecognizer?.isEnabled = false
         navigation.modalPresentationStyle = .overFullScreen
         navigation.modalTransitionStyle = .coverVertical

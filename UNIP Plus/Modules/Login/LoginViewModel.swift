@@ -26,34 +26,16 @@ class LoginViewModel: BaseViewModel {
         self.coordinator = coordinator
     }
     
-    func viewDidLoad() {
-        
-    }
-    
     func performLogin(ra: String?, password: String?) {
-        let credentials = Credentials()
-        credentials!.ra = ra
-        credentials!.password = password
-        
-        let client = UnipPlusApiClient.default()
-        client.apiV1AuthenticationPost(payload: credentials!).continueWith { [weak self] task in
-            DispatchQueue.main.async {
-                guard let self = self else { return }
-                guard let result = task.result else { return }
-                print(result)
-                if task.error != nil {
-                    self.coordinator.login(self, didFinishWithError: result.message!)
-                } else {
-                    self.coordinator.login(self, didFinishWithResult: result)
-                }
+        let credentials = Credentials(withRa: ra!, andPassword: password!)
+        UnipPlusApiClient().fetchResource(.authentication(credentials))
+        .execute(for: LoginResponse.self) { [weak self] (result, error) in
+            guard let self = self else { return }
+            if let error = error {
+                self.coordinator.login(self, didFinishWithError: error)
+            } else {
+                self.coordinator.login(self, didFinishWithResult: result!)
             }
-            return nil
         }
-    }
-}
-
-fileprivate extension LoginViewModel {
-    func fetchRemoteConfig() {
-        
     }
 }

@@ -22,20 +22,14 @@ class BaseViewController<T: BaseViewModel>: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard viewModel.viewDidLoad != nil else { return }
-        viewModel.viewDidLoad?()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard viewModel.viewWillAppear != nil else { return }
-        viewModel.viewWillAppear?()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        guard viewModel.viewWillDisappear != nil else { return }
-        viewModel.viewWillDisappear?()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

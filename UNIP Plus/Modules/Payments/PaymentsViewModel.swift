@@ -18,10 +18,14 @@ class PaymentsViewModel: BaseViewModel {
     var paymentsInfo: PaymentsInfo?
     
     func viewDidLoad() {
+        fetchPayments()
+    }
+    
+    func fetchPayments() {
         
     }
     
-    private func fetchPaymentss() {
+    func fetchDownloadPaymentDoc() {
         
     }
     

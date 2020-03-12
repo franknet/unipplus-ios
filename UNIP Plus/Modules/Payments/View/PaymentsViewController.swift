@@ -9,7 +9,7 @@
 import UIKit
 
 class PaymentsViewController: BaseViewController<PaymentsViewModel> {
-    @IBOutlet weak var table: BaseUITableView!
+    @IBOutlet weak var table: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,27 +30,7 @@ class PaymentsViewController: BaseViewController<PaymentsViewModel> {
 }
 
 extension PaymentsViewController {
-    func tableCalls() {
-        table.numberOfSections {
-            return 1
-        }
-        table.numberOfRowsInSection { section in
-            return 8
-        }
-        table.viewForHeaderInSection { tableView, section in
-            return tableView.dequeueReusableHeaderFooterView(PaymentsSectionView.self) { view in
-                
-            }
-        }
-        table.cellForRowAt { tableView, indexPath in
-            return tableView.dequeueReusableCell(PaymentCell.self) { cell in
-                
-            }
-        }
-        table.didSelectCellAt { indexPath in
-            
-        }
-    }
+    
 }
 
 extension PaymentsViewController: PaymentsViewModelDelegate {

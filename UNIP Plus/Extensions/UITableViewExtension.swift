@@ -19,11 +19,23 @@ extension UITableView {
         register(nib, forHeaderFooterViewReuseIdentifier: String(describing: headerFooter))
     }
     
-    func dequeueCell<T: UITableViewCell>(_ cell: T.Type) -> T? {
-        return dequeueReusableCell(withIdentifier: String(describing: cell)) as? T
+    func showScrollIndicatiors(_ show: Bool) {
+        self.showsVerticalScrollIndicator = show
+        self.showsHorizontalScrollIndicator = show
     }
     
-    func dequeueHeaderFooterView<T: UITableViewHeaderFooterView>(_ headerFooter: T.Type) -> T? {
-        return dequeueReusableHeaderFooterView(withIdentifier: String(describing: headerFooter)) as? T
+    func dequeueReusableCell<T: UITableViewCell>(_ type: T.Type, completion: @escaping (_ cell: T) -> Void) -> UITableViewCell {
+        let identifier = String(describing: type)
+        guard let cell = dequeueReusableCell(withIdentifier: identifier) as? T else { return UITableViewCell() }
+        completion(cell)
+        return cell
     }
+    
+    func dequeueReusableHeaderFooterView<T>(_ type: T.Type, completion: @escaping (_ view: T) -> Void) -> T? {
+        let identifier = String(describing: type)
+        guard let view = dequeueReusableHeaderFooterView(withIdentifier: identifier) as? T else { return nil }
+        completion(view)
+        return view
+    }
+    
 }

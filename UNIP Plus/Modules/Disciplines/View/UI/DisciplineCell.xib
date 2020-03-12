@@ -150,11 +150,14 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="exValue" destination="OfC-ho-zq4" id="yNV-Ot-xOK"/>
-                <outlet property="mfValue" destination="cfL-Yk-br8" id="3ac-gv-K4Q"/>
-                <outlet property="msValue" destination="wHm-1l-Nwz" id="L6F-ry-YFX"/>
-                <outlet property="np1Value" destination="Xjy-az-SXB" id="B1F-QV-jNE"/>
-                <outlet property="np2Value" destination="nXv-GR-M5H" id="nmj-q7-Q9Q"/>
+                <outlet property="absenseLabel" destination="Yl4-0K-fJS" id="wSI-q9-NL9"/>
+                <outlet property="exLabel" destination="OfC-ho-zq4" id="Sk9-bV-s94"/>
+                <outlet property="mfLabel" destination="cfL-Yk-br8" id="nnj-x7-2q0"/>
+                <outlet property="msLabel" destination="wHm-1l-Nwz" id="1Pq-1U-gBz"/>
+                <outlet property="nameLabel" destination="YpI-fM-qWV" id="GNn-OC-8xu"/>
+                <outlet property="np1Label" destination="Xjy-az-SXB" id="SKQ-Go-Cqo"/>
+                <outlet property="np2Label" destination="nXv-GR-M5H" id="htF-2b-F97"/>
+                <outlet property="statusLabel" destination="mSa-Er-cTS" id="3Ez-bT-DKZ"/>
             </connections>
             <point key="canvasLocation" x="-100.00000000000001" y="38.839285714285715"/>
         </tableViewCell>

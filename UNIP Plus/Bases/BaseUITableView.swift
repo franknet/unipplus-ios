@@ -8,12 +8,18 @@
 
 import UIKit
 
+protocol BaseUITableViewAdapeter {
+    
+}
+
 class BaseUITableView: UITableView {
     fileprivate var numberOfSectionsCall: (() -> Int)?
-    fileprivate var viewForHeaderInSectionCall: ((_ table: BaseUITableView, _ section: Int) -> UIView?)?
+    fileprivate var viewForHeaderInSectionCall: ((_ section: Int) -> UIView?)?
     fileprivate var numberOfRowsInSectionCall: ((_ section: Int) -> Int)?
-    fileprivate var cellForRowAtCall: ((_ table: BaseUITableView, _ indexPath: IndexPath) -> UITableViewCell)?
+    fileprivate var cellForRowAtCall: ((_ indexPath: IndexPath) -> UITableViewCell)?
     fileprivate var didSelectCellAtCall: ((_ indexPath: IndexPath) -> Void)?
+    
+    var adapter: BaseUITableViewAdapeter?
 
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
@@ -28,27 +34,27 @@ class BaseUITableView: UITableView {
     private func commonInit() {
         self.delegate = self
         self.dataSource = self
-        showScrollIndicatiors(false)
+//        showScrollIndicatiors(false)
     }
     
-    func showScrollIndicatiors(_ show: Bool) {
-        self.showsVerticalScrollIndicator = show
-        self.showsHorizontalScrollIndicator = show
-    }
-    
-    func dequeueReusableCell<T: UITableViewCell>(_ type: T.Type, completion: @escaping (_ cell: T) -> Void) -> UITableViewCell {
-        let identifier = String(describing: type)
-        guard let cell = dequeueReusableCell(withIdentifier: identifier) as? T else { return UITableViewCell() }
-        completion(cell)
-        return cell
-    }
-    
-    func dequeueReusableHeaderFooterView<T>(_ type: T.Type, completion: @escaping (_ view: T) -> Void) -> T? {
-        let identifier = String(describing: type)
-        guard let view = dequeueReusableHeaderFooterView(withIdentifier: identifier) as? T else { return nil }
-        completion(view)
-        return view
-    }
+//    func showScrollIndicatiors(_ show: Bool) {
+//        self.showsVerticalScrollIndicator = show
+//        self.showsHorizontalScrollIndicator = show
+//    }
+//
+//    func dequeueReusableCell<T: UITableViewCell>(_ type: T.Type, completion: @escaping (_ cell: T) -> Void) -> UITableViewCell {
+//        let identifier = String(describing: type)
+//        guard let cell = dequeueReusableCell(withIdentifier: identifier) as? T else { return UITableViewCell() }
+//        completion(cell)
+//        return cell
+//    }
+//
+//    func dequeueReusableHeaderFooterView<T>(_ type: T.Type, completion: @escaping (_ view: T) -> Void) -> T? {
+//        let identifier = String(describing: type)
+//        guard let view = dequeueReusableHeaderFooterView(withIdentifier: identifier) as? T else { return nil }
+//        completion(view)
+//        return view
+//    }
 
 }
 
@@ -61,11 +67,11 @@ extension BaseUITableView {
         numberOfRowsInSectionCall = call
     }
     
-    func viewForHeaderInSection(call: @escaping (_ table: BaseUITableView, _ section: Int) -> UIView?) {
+    func viewForHeaderInSection(call: @escaping (_ section: Int) -> UIView?) {
         viewForHeaderInSectionCall = call
     }
     
-    func cellForRowAt(call: @escaping (_ table: BaseUITableView, _ index: IndexPath) -> UITableViewCell) {
+    func cellForRowAt(call: @escaping (_ index: IndexPath) -> UITableViewCell) {
         cellForRowAtCall = call
     }
     
@@ -102,11 +108,11 @@ extension BaseUITableView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let call = viewForHeaderInSectionCall else { return nil }
-        return call(self, section)
+        return call(section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let call = cellForRowAtCall else { return UITableViewCell(style: .default, reuseIdentifier: "cell") }
-        return call(self, indexPath)
+        return call(indexPath)
     }
 }

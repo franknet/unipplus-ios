@@ -9,6 +9,8 @@
 import UIKit
 
 class HomeViewController: BaseViewController<HomeViewModel> {
+    var pagerView: BaseUIPageView!
+    var pageViews: [UIViewController]!
     
     override func viewDidLoad() {
         setup()
@@ -20,14 +22,9 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     }
     
     private func addContentsPager() {
-        let gradesVM = DisciplinesViewModel()
-        let gradesVC = DisciplinesViewController(viewModel: gradesVM)
-        let paymentsVC = PaymentsViewController(viewModel: PaymentsViewModel())
-        let academicRecordsVC = AcademicRecordsViewController(viewModel: AcademicRecordsViewModel())
-        
-        let pagerView = BaseUIPageView()
+        pagerView = BaseUIPageView()
         pagerView.pageDelegate = self
-        
+        pagerView.setViews(pageViews)
         addViewController(pagerView, toView: self.view)
     }
     

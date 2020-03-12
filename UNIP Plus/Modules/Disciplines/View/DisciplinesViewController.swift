@@ -9,11 +9,11 @@
 import UIKit
 
 class DisciplinesViewController: BaseViewController<DisciplinesViewModel> {
-    @IBOutlet weak var table: BaseUITableView!
+    @IBOutlet weak var table: UITableView!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         setup()
+        viewModel.fetchDisciplines()
     }
     
     private func setup() {
@@ -23,46 +23,65 @@ class DisciplinesViewController: BaseViewController<DisciplinesViewModel> {
     }
     
     private func setTableView() {
+        table.dataSource = self
+        table.delegate = self
         table.registerCell(DisciplineCell.self)
         table.registerHeaderFooter(DisciplinesSectionView.self)
         table.registerHeaderFooter(SemesterStatusView.self)
-        tableCalls()
     }
-
 }
 
-extension DisciplinesViewController {
-    func tableCalls() {
-        table.numberOfSections {
-            return 2
-        }
-        table.numberOfRowsInSection { section in
-            return 4
-        }
-        table.viewForHeaderInSection { tableView, section in
-            return tableView.dequeueReusableHeaderFooterView(DisciplinesSectionView.self) { view in
-                
+extension DisciplinesViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.groupsCount
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.disciplinesCountAt(section)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            return tableView.dequeueReusableHeaderFooterView(SemesterStatusView.self) { [weak self] view in
+                guard let self = self else { return }
+                view.setStatus(self.viewModel.disciplinesStatus)
+            }
+        } else {
+            return tableView.dequeueReusableHeaderFooterView(DisciplinesSectionView.self) { [weak self] view in
+                guard let self = self else { return }
+                view.setDisciplinesGroup(self.viewModel.disciplinesGroupAt(section))
             }
         }
-        table.cellForRowAt { tableView, indexPath in
-            return tableView.dequeueReusableCell(DisciplineCell.self) { cell in
-                
-            }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return table.dequeueReusableCell(DisciplineCell.self) { [weak self] cell in
+            guard let self = self else { return }
+            cell.setDiscipline(self.viewModel.disciplineAt(indexPath))
         }
-        table.didSelectCellAt { indexPath in
-            
-        }
+    }
+}
+
+extension DisciplinesViewController: UITableViewDelegate {
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44.0
+    }
+    
+    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    public func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        return 44.0
     }
 }
 
 extension DisciplinesViewController: DisciplinesViewModelDelegate {
-    // MARK: GradesViewModelDelegate
-    
-    func error(message: String) {
-        
-    }
-    
-    func fetchGradesFinished() {
+    func reloadTable() {
         table.reloadData()
     }
 }

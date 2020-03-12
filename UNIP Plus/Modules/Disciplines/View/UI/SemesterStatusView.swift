@@ -9,13 +9,13 @@
 import UIKit
 
 class SemesterStatusView: UITableViewHeaderFooterView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBOutlet weak var avg: UILabel!
+    @IBOutlet weak var message: UILabel!
+    
+    func setStatus(_ status: DisciplinesStatus?) {
+        guard let status = status else { return }
+        avg.text = "\(status.avg ?? 0)"
+        message.text = status.message
     }
-    */
-
 }
+ 

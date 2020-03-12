@@ -1,293 +1,136 @@
-/*
- Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+//
+//  UnipPlusApiClient.swift
+//  UNIP Plus
+//
+//  Created by Jose Franklin da Silva Alves on 10/03/20.
+//  Copyright © 2020 Mobile Class. All rights reserved.
+//
 
- Licensed under the Apache License, Version 2.0 (the "License").
- You may not use this file except in compliance with the License.
- A copy of the License is located at
+import Foundation
+import Alamofire
 
- http://aws.amazon.com/apache2.0
+enum UnipPlusApiClientResources {
+    case authentication(_ credentials: Credentials)
+    case disciplines
+    case payments
+    case paymentsDownloadPdf(_ dueDt: String)
+    case academicRecords
+    case academicRecordsDownloadPdf
+    case library
+    case librarySearch(_ library: Library)
+    case resourcesUserImage(_ ra: String)
+}
 
- or in the "license" file accompanying this file. This file is distributed
- on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- express or implied. See the License for the specific language governing
- permissions and limitations under the License.
- */
-
-
-import AWSCore
-import AWSAPIGateway
-
-public class UnipPlusApiClient: AWSAPIGatewayClient {
-
-	static let AWSInfoClientKey = "UnipPlusApiClient"
-
-	private static let _serviceClients = AWSSynchronizedMutableDictionary()
-	private static let _defaultClient:UnipPlusApiClient = {
-		var serviceConfiguration: AWSServiceConfiguration? = nil
-        let serviceInfo = AWSInfo.default().defaultServiceInfo(AWSInfoClientKey)
-        if let serviceInfo = serviceInfo {
-            serviceConfiguration = AWSServiceConfiguration(region: serviceInfo.region, credentialsProvider: serviceInfo.cognitoCredentialsProvider)
-        } else if (AWSServiceManager.default().defaultServiceConfiguration != nil) {
-            serviceConfiguration = AWSServiceManager.default().defaultServiceConfiguration
-        } else {
-            serviceConfiguration = AWSServiceConfiguration(region: .Unknown, credentialsProvider: nil)
+class UnipPlusApiClient {
+    typealias onSuccessModelBlock<T: BaseModel> = (_ model: T?, _ error: String?) -> Void
+    typealias onSuccessDataBlock = (_ data: Data?, _ error: String?) -> Void
+    fileprivate final let API_BASE_URL = "https://07xc1cofdj.execute-api.sa-east-1.amazonaws.com/Prod"
+    fileprivate final let API_VERSION = "/api/v1"
+    fileprivate var resource: UnipPlusApiClientResources?
+    fileprivate var defaultHeaders: [String: String] = [
+        "Content-Type":"application/json; charset=utf-8"
+    ]
+    fileprivate var endpoint: String {
+        switch resource! {
+        case .authentication:
+            return API_BASE_URL + API_VERSION + "/authentication"
+        case .disciplines:
+            return API_BASE_URL + API_VERSION + "/disciplines"
+        case .payments:
+            return API_BASE_URL + API_VERSION + "/payments"
+        case .paymentsDownloadPdf(let dueDt):
+            return API_BASE_URL + API_VERSION + "/payments/download?dueDt=" + dueDt
+        case .academicRecords:
+            return API_BASE_URL + API_VERSION + "/academic-records"
+        case .academicRecordsDownloadPdf:
+            return API_BASE_URL + API_VERSION + "/academic-records/download"
+        case .library:
+            return API_BASE_URL + API_VERSION + "/library"
+        case .librarySearch:
+            return API_BASE_URL + API_VERSION + "/library/search"
+        case .resourcesUserImage(let ra):
+            return API_BASE_URL + API_VERSION + "/resources/user?ra=" + ra
         }
-        
-        return UnipPlusApiClient(configuration: serviceConfiguration!)
-	}()
+    }
+    fileprivate var method: String {
+        switch resource! {
+        case .authentication, .librarySearch:
+            return "post"
+        default:
+            return "get"
+        }
+    }
+    fileprivate var headers: [String:String] {
+        switch resource! {
+        case .academicRecordsDownloadPdf, .paymentsDownloadPdf:
+            defaultHeaders["Content-Type"] = "application/pdf"
+            defaultHeaders["Accept"] = "application/pdf"
+        case .resourcesUserImage:
+            defaultHeaders["Content-Type"] = "image/jpeg"
+            defaultHeaders["Accept"] = "image/jpeg"
+        default:
+            break
+        }
+        return defaultHeaders
+    }
+    fileprivate var body: Data? {
+        //TODO: serialize objects
+        switch resource! {
+        case .authentication(let credentials):
+            return credentials.serialize()
+        case .librarySearch(let library):
+            return library.serialize()
+        default:
+            return nil
+        }
+    }
+    fileprivate func buildRequest() -> URLRequest {
+        let url = URL(string: endpoint)!
+        var request = URLRequest(url: url)
+        request.allHTTPHeaderFields = headers
+        request.httpMethod = method
+        request.httpBody = body
+        return request
+    }
+    func fetchResource(_ resource: UnipPlusApiClientResources) -> UnipPlusApiClient {
+        self.resource = resource
+        return self
+    }
+    func execute<T: BaseModel>(for model: T.Type, completionHandler: @escaping onSuccessModelBlock<T>) {
+        let request = buildRequest()
+        AF.request(request)
+        .validate()
+        .responseData { response in
+            switch response.result {
+            case .success(let data):
+                completionHandler(model.descerialize(data: data), nil)
+            case .failure(let error):
+                if let data = response.data {
+                    let apiError: ApiError = ApiError.descerialize(data: data)!
+                    completionHandler(nil, apiError.message)
+                } else {
+                    completionHandler(nil, error.errorDescription)
+                }
+            }
+        }
+    }
+    func execute(completionHandler: @escaping onSuccessDataBlock) {
+        let request = buildRequest()
+        AF.request(request)
+        .validate()
+        .responseData { response in
+            switch response.result {
+            case .success(let data):
+                completionHandler(data, nil)
+            case .failure(let error):
+                if let data = response.data {
+                    let apiError: ApiError = ApiError.descerialize(data: data)!
+                    completionHandler(nil, apiError.message)
+                } else {
+                    completionHandler(nil, error.errorDescription)
+                }
+            }
+        }
+    }
     
-	/**
-	 Returns the singleton service client. If the singleton object does not exist, the SDK instantiates the default service client with `defaultServiceConfiguration` from `AWSServiceManager.defaultServiceManager()`. The reference to this object is maintained by the SDK, and you do not need to retain it manually.
-	
-	 If you want to enable AWS Signature, set the default service configuration in `func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?)`
-	
-	     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-	        let credentialProvider = AWSCognitoCredentialsProvider(regionType: .USEast1, identityPoolId: "YourIdentityPoolId")
-	        let configuration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: credentialProvider)
-	        AWSServiceManager.default().defaultServiceConfiguration = configuration
-	 
-	        return true
-	     }
-	
-	 Then call the following to get the default service client:
-	
-	     let serviceClient = UnipPlusApiClient.default()
-
-     Alternatively, this configuration could also be set in the `info.plist` file of your app under `AWS` dictionary with a configuration dictionary by name `UnipPlusApiClient`.
-	
-	 @return The default service client.
-	 */ 
-	 
-	public class func `default`() -> UnipPlusApiClient{
-		return _defaultClient
-	}
-
-	/**
-	 Creates a service client with the given service configuration and registers it for the key.
-	
-	 If you want to enable AWS Signature, set the default service configuration in `func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?)`
-	
-	     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-	         let credentialProvider = AWSCognitoCredentialsProvider(regionType: .USEast1, identityPoolId: "YourIdentityPoolId")
-	         let configuration = AWSServiceConfiguration(region: .USWest2, credentialsProvider: credentialProvider)
-	         UnipPlusApiClient.registerClient(withConfiguration: configuration, forKey: "USWest2UnipPlusApiClient")
-	
-	         return true
-	     }
-	
-	 Then call the following to get the service client:
-	
-	
-	     let serviceClient = UnipPlusApiClient.client(forKey: "USWest2UnipPlusApiClient")
-	
-	 @warning After calling this method, do not modify the configuration object. It may cause unspecified behaviors.
-	
-	 @param configuration A service configuration object.
-	 @param key           A string to identify the service client.
-	 */
-	
-	public class func registerClient(withConfiguration configuration: AWSServiceConfiguration, forKey key: String){
-		_serviceClients.setObject(UnipPlusApiClient(configuration: configuration), forKey: key  as NSString);
-	}
-
-	/**
-	 Retrieves the service client associated with the key. You need to call `registerClient(withConfiguration:configuration, forKey:)` before invoking this method or alternatively, set the configuration in your application's `info.plist` file. If `registerClientWithConfiguration(configuration, forKey:)` has not been called in advance or if a configuration is not present in the `info.plist` file of the app, this method returns `nil`.
-	
-	 For example, set the default service configuration in `func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) `
-	
-	     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-	         let credentialProvider = AWSCognitoCredentialsProvider(regionType: .USEast1, identityPoolId: "YourIdentityPoolId")
-	         let configuration = AWSServiceConfiguration(region: .USWest2, credentialsProvider: credentialProvider)
-	         UnipPlusApiClient.registerClient(withConfiguration: configuration, forKey: "USWest2UnipPlusApiClient")
-	
-	         return true
-	     }
-	
-	 Then call the following to get the service client:
-	 
-	 	let serviceClient = UnipPlusApiClient.client(forKey: "USWest2UnipPlusApiClient")
-	 
-	 @param key A string to identify the service client.
-	 @return An instance of the service client.
-	 */
-	public class func client(forKey key: String) -> UnipPlusApiClient {
-		objc_sync_enter(self)
-		if let client: UnipPlusApiClient = _serviceClients.object(forKey: key) as? UnipPlusApiClient {
-			objc_sync_exit(self)
-		    return client
-		}
-
-		let serviceInfo = AWSInfo.default().defaultServiceInfo(AWSInfoClientKey)
-		if let serviceInfo = serviceInfo {
-			let serviceConfiguration = AWSServiceConfiguration(region: serviceInfo.region, credentialsProvider: serviceInfo.cognitoCredentialsProvider)
-			UnipPlusApiClient.registerClient(withConfiguration: serviceConfiguration!, forKey: key)
-		}
-		objc_sync_exit(self)
-		return _serviceClients.object(forKey: key) as! UnipPlusApiClient;
-	}
-
-	/**
-	 Removes the service client associated with the key and release it.
-	 
-	 @warning Before calling this method, make sure no method is running on this client.
-	 
-	 @param key A string to identify the service client.
-	 */
-	public class func removeClient(forKey key: String) -> Void{
-		_serviceClients.remove(key)
-	}
-	
-	init(configuration: AWSServiceConfiguration) {
-	    super.init()
-	
-	    self.configuration = configuration.copy() as! AWSServiceConfiguration
-	    var URLString: String = "https://07xc1cofdj.execute-api.sa-east-1.amazonaws.com/Prod"
-	    if URLString.hasSuffix("/") {
-            let index = URLString.index(before: URLString.endIndex)
-	        URLString = URLString.substring(to: index)
-	    }
-	    self.configuration.endpoint = AWSEndpoint(region: configuration.regionType, service: .APIGateway, url: URL(string: URLString))
-	    let signer: AWSSignatureV4Signer = AWSSignatureV4Signer(credentialsProvider: configuration.credentialsProvider, endpoint: self.configuration.endpoint)
-	    if let endpoint = self.configuration.endpoint {
-	    	self.configuration.baseURL = endpoint.url
-	    }
-	    self.configuration.requestInterceptors = [AWSNetworkingRequestInterceptor(), signer]
-	}
-
-	
-    /*
-     
-     
-     
-     return type: 
-     */
-    public func apiV1AcademicRecordsGet() -> AWSTask<AnyObject> {
-	    let headerParameters = [
-                   "Content-Type": "application/json",
-                   "Accept": "application/json",
-                   
-	            ]
-	    
-	    let queryParameters:[String:Any] = [:]
-	    
-	    let pathParameters:[String:Any] = [:]
-	    
-	    return self.invokeHTTPRequest("GET", urlString: "/api/v1/academic-records", pathParameters: pathParameters, queryParameters: queryParameters, headerParameters: headerParameters, body: nil, responseClass: nil)
-	}
-
-	
-    /*
-     
-     
-     
-     return type: 
-     */
-    public func apiV1AcademicRecordsDownloadGet() -> AWSTask<AnyObject> {
-	    let headerParameters = [
-                   "Content-Type": "application/json",
-                   "Accept": "application/json",
-                   
-	            ]
-	    
-	    let queryParameters:[String:Any] = [:]
-	    
-	    let pathParameters:[String:Any] = [:]
-	    
-	    return self.invokeHTTPRequest("GET", urlString: "/api/v1/academic-records/download", pathParameters: pathParameters, queryParameters: queryParameters, headerParameters: headerParameters, body: nil, responseClass: nil)
-	}
-    
-    public func apiV1AuthenticationPost(payload: Credentials) -> AWSTask<LoginResponse> {
-	    let headers = ["Content-Type": "application/json", "Accept": "application/json"]
-        return self.invokeHTTPRequest("POST", urlString: "/api/v1/authentication", pathParameters: nil, queryParameters: nil, headerParameters: headers, body: payload, responseClass: nil) as! AWSTask<LoginResponse>
-	}
-
-    public func apiV1DisciplinesGet() -> AWSTask<AnyObject> {
-	    let headerParameters = ["Content-Type": "application/json", "Accept": "application/json"]
-	    let queryParameters:[String:Any] = [:]
-	    let pathParameters:[String:Any] = [:]
-	    return self.invokeHTTPRequest("GET", urlString: "/api/v1/disciplines", pathParameters: pathParameters, queryParameters: queryParameters, headerParameters: headerParameters, body: nil, responseClass: nil)
-	}
-
-    public func apiV1LibraryGet() -> AWSTask<AnyObject> {
-	    let headerParameters = ["Content-Type": "application/json", "Accept": "application/json"]
-	    let queryParameters:[String:Any] = [:]
-	    let pathParameters:[String:Any] = [:]
-	    return self.invokeHTTPRequest("GET", urlString: "/api/v1/library", pathParameters: pathParameters, queryParameters: queryParameters, headerParameters: headerParameters, body: nil, responseClass: nil)
-	}
-
-    public func apiV1LibrarySearchPost() -> AWSTask<AnyObject> {
-	    let headerParameters = ["Content-Type": "application/json", "Accept": "application/json"]
-	    
-	    let queryParameters:[String:Any] = [:]
-	    
-	    let pathParameters:[String:Any] = [:]
-	    return self.invokeHTTPRequest("POST", urlString: "/api/v1/library/search", pathParameters: pathParameters, queryParameters: queryParameters, headerParameters: headerParameters, body: nil, responseClass: nil)
-	}
-
-	
-    /*
-     
-     
-     
-     return type: 
-     */
-    public func apiV1PaymentsGet() -> AWSTask<AnyObject> {
-	    let headerParameters = [
-                   "Content-Type": "application/json",
-                   "Accept": "application/json",
-                   
-	            ]
-	    
-	    let queryParameters:[String:Any] = [:]
-	    
-	    let pathParameters:[String:Any] = [:]
-	    
-	    return self.invokeHTTPRequest("GET", urlString: "/api/v1/payments", pathParameters: pathParameters, queryParameters: queryParameters, headerParameters: headerParameters, body: nil, responseClass: nil)
-	}
-
-	
-    /*
-     
-     
-     
-     return type: 
-     */
-    public func apiV1PaymentsDownloadGet() -> AWSTask<AnyObject> {
-	    let headerParameters = [
-                   "Content-Type": "application/json",
-                   "Accept": "application/json",
-                   
-	            ]
-	    
-	    let queryParameters:[String:Any] = [:]
-	    
-	    let pathParameters:[String:Any] = [:]
-	    
-	    return self.invokeHTTPRequest("GET", urlString: "/api/v1/payments/download", pathParameters: pathParameters, queryParameters: queryParameters, headerParameters: headerParameters, body: nil, responseClass: nil)
-	}
-
-	
-    /*
-     
-     
-     
-     return type: 
-     */
-    public func apiV1ResourcesUserGet() -> AWSTask<AnyObject> {
-	    let headerParameters = [
-                   "Content-Type": "application/json",
-                   "Accept": "application/json",
-                   
-	            ]
-	    
-	    let queryParameters:[String:Any] = [:]
-	    
-	    let pathParameters:[String:Any] = [:]
-	    
-	    return self.invokeHTTPRequest("GET", urlString: "/api/v1/resources/user", pathParameters: pathParameters, queryParameters: queryParameters, headerParameters: headerParameters, body: nil, responseClass: nil)
-	}
-
-
-
-
 }

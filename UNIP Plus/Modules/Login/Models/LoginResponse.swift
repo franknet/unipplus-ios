@@ -7,10 +7,8 @@
 //
 
 import Foundation
-import AWSCore
 
-@objcMembers
-public class LoginResponse: AWSModel {
+class LoginResponse: BaseModel {
     var courseName: String?
     var courseType: String?
     var email: String?
@@ -18,5 +16,4 @@ public class LoginResponse: AWSModel {
     var photoUri: String?
     var ra: String?
     var situation: String?
-    var message: String?
 }

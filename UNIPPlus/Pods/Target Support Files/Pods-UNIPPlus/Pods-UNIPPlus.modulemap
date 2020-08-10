@@ -1,0 +1,6 @@
+framework module Pods_UNIPPlus {
+  umbrella header "Pods-UNIPPlus-umbrella.h"
+
+  export *
+  module * { export * }
+}

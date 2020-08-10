@@ -1,0 +1,23 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '10.0'
+
+target 'UNIPPlus' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  
+  # Reactive programming
+  pod 'RxSwift', '~> 5.1'
+  pod 'RxCocoa', '~> 5.1'
+  
+  # Networking
+  pod 'Alamofire', '~> 5.2'
+
+  target 'UNIPPlusTests' do
+    inherit! :search_paths
+    
+    # Http response mocker
+    pod 'Mocker', '~> 2.2'
+    
+  end
+
+end

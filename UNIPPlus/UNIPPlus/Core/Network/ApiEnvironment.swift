@@ -9,5 +9,5 @@
 import Foundation
 
 class Environment {
-    static let BASE_URL = ""
+    static let BASE_URL = "https://07xc1cofdj.execute-api.sa-east-1.amazonaws.com/Prod"
 }

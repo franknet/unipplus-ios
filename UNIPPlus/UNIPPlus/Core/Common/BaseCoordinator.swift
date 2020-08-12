@@ -6,4 +6,11 @@
 //  Copyright © 2020 Mobile Class. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+protocol BaseCoordinator {
+    var navigator: UINavigationController? { get set }
+    var children: [BaseCoordinator] { get set }
+    func start()
+    func end()
+}

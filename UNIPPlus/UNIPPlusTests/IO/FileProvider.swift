@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+class FileProvider {
+    
+    static func loadDataFrom(fileName name: String) -> Data? {
+        let bundle = Bundle(for: FileProvider.self)
+        guard let url = bundle.url(forResource: name, withExtension: "json") else { return nil }
+        return try? Data(contentsOf: url)
+    }
+    
+}

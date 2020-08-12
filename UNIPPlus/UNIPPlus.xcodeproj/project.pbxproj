@@ -9,11 +9,24 @@
 /* Begin PBXBuildFile section */
 		8CE60C019CBA353BE991DD6F /* Pods_UNIPPlusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B867A9D80D7531945EE2F2 /* Pods_UNIPPlusTests.framework */; };
 		9E8D88AED37A1E0C19D9AB7A /* Pods_UNIPPlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB061E92540E2AAE5AF8E01 /* Pods_UNIPPlus.framework */; };
+		A621C73D24E369E100353235 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A621C73C24E369E100353235 /* BaseCoordinator.swift */; };
+		A621C74024E36ACE00353235 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A621C73F24E36ACE00353235 /* BaseViewController.swift */; };
+		A621C74224E36AF100353235 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A621C74124E36AF100353235 /* AuthenticationViewModel.swift */; };
+		A621C74424E36B4000353235 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A621C74324E36B4000353235 /* AppCoordinator.swift */; };
+		A621C74624E36CE400353235 /* AuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A621C74524E36CE400353235 /* AuthenticationProvider.swift */; };
+		A621C74824E36D1500353235 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = A621C74724E36D1500353235 /* Credentials.swift */; };
+		A621C74B24E36DB200353235 /* AuthenticationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A621C74A24E36DB200353235 /* AuthenticationResponse.swift */; };
 		A6A0355624E0E2F500C630D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A0355524E0E2F500C630D7 /* AppDelegate.swift */; };
 		A6A0355F24E0E2F600C630D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6A0355E24E0E2F600C630D7 /* Assets.xcassets */; };
 		A6A0356224E0E2F600C630D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6A0356024E0E2F600C630D7 /* LaunchScreen.storyboard */; };
-		A6A0356D24E0E2F600C630D7 /* UNIPPlusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A0356C24E0E2F600C630D7 /* UNIPPlusTests.swift */; };
 		A6A0358024E0E3A100C630D7 /* UNIPPlusPlayground.h in Headers */ = {isa = PBXBuildFile; fileRef = A6A0357E24E0E3A100C630D7 /* UNIPPlusPlayground.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6A99B6424E374C10018FBA1 /* AuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A99B6324E374C10018FBA1 /* AuthenticationTests.swift */; };
+		A6A99B6724E375070018FBA1 /* ApiServiceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A99B6624E375070018FBA1 /* ApiServiceExtension.swift */; };
+		A6A99B6A24E379A70018FBA1 /* FileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A99B6924E379A70018FBA1 /* FileProvider.swift */; };
+		A6A99B6C24E37A590018FBA1 /* authentication-response.json in Resources */ = {isa = PBXBuildFile; fileRef = A6A99B6B24E37A590018FBA1 /* authentication-response.json */; };
+		A6A99B7524E39AD20018FBA1 /* ApiContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A99B7424E39AD20018FBA1 /* ApiContentType.swift */; };
+		A6A99B7824E3A5930018FBA1 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A99B7624E3A5930018FBA1 /* AuthenticationViewController.swift */; };
+		A6A99B7924E3A5930018FBA1 /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6A99B7724E3A5930018FBA1 /* AuthenticationViewController.xib */; };
 		A6B3944824E344620086D1E5 /* ApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B3944724E344620086D1E5 /* ApiProvider.swift */; };
 		A6B3944A24E345200086D1E5 /* ApiEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B3944924E345200086D1E5 /* ApiEnvironment.swift */; };
 		A6B3944C24E346700086D1E5 /* BaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B3944B24E346700086D1E5 /* BaseError.swift */; };
@@ -38,17 +51,31 @@
 		5C10288A69CECE59C4AA40B9 /* Pods-UNIPPlusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIPPlusTests.release.xcconfig"; path = "Target Support Files/Pods-UNIPPlusTests/Pods-UNIPPlusTests.release.xcconfig"; sourceTree = "<group>"; };
 		649069170C7D440820FC372C /* Pods-UNIPPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIPPlus.debug.xcconfig"; path = "Target Support Files/Pods-UNIPPlus/Pods-UNIPPlus.debug.xcconfig"; sourceTree = "<group>"; };
 		755AD1C27CCA1194F9B61A1C /* Pods-UNIPPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIPPlus.release.xcconfig"; path = "Target Support Files/Pods-UNIPPlus/Pods-UNIPPlus.release.xcconfig"; sourceTree = "<group>"; };
+		A621C73C24E369E100353235 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		A621C73F24E36ACE00353235 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A621C74124E36AF100353235 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		A621C74324E36B4000353235 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		A621C74524E36CE400353235 /* AuthenticationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationProvider.swift; sourceTree = "<group>"; };
+		A621C74724E36D1500353235 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		A621C74A24E36DB200353235 /* AuthenticationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationResponse.swift; sourceTree = "<group>"; };
 		A6A0355224E0E2F500C630D7 /* UNIP Plus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UNIP Plus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6A0355524E0E2F500C630D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6A0355E24E0E2F600C630D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6A0356124E0E2F600C630D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6A0356324E0E2F600C630D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6A0356824E0E2F600C630D7 /* UNIPPlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UNIPPlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A6A0356C24E0E2F600C630D7 /* UNIPPlusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNIPPlusTests.swift; sourceTree = "<group>"; };
 		A6A0356E24E0E2F600C630D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6A0357C24E0E3A100C630D7 /* UNIPPlusPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UNIPPlusPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6A0357E24E0E3A100C630D7 /* UNIPPlusPlayground.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UNIPPlusPlayground.h; sourceTree = "<group>"; };
 		A6A0357F24E0E3A100C630D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6A99B6224E374C10018FBA1 /* UNIPPlusTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UNIPPlusTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		A6A99B6324E374C10018FBA1 /* AuthenticationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTests.swift; sourceTree = "<group>"; };
+		A6A99B6624E375070018FBA1 /* ApiServiceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceExtension.swift; sourceTree = "<group>"; };
+		A6A99B6924E379A70018FBA1 /* FileProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileProvider.swift; sourceTree = "<group>"; };
+		A6A99B6B24E37A590018FBA1 /* authentication-response.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "authentication-response.json"; sourceTree = "<group>"; };
+		A6A99B7424E39AD20018FBA1 /* ApiContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiContentType.swift; sourceTree = "<group>"; };
+		A6A99B7624E3A5930018FBA1 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
+		A6A99B7724E3A5930018FBA1 /* AuthenticationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthenticationViewController.xib; sourceTree = "<group>"; };
 		A6B3944724E344620086D1E5 /* ApiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProvider.swift; sourceTree = "<group>"; };
 		A6B3944924E345200086D1E5 /* ApiEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEnvironment.swift; sourceTree = "<group>"; };
 		A6B3944B24E346700086D1E5 /* BaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseError.swift; sourceTree = "<group>"; };
@@ -105,6 +132,56 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A621C73824E368D600353235 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				A621C74924E36D9400353235 /* Models */,
+				A621C73924E368E000353235 /* View */,
+				A621C74124E36AF100353235 /* AuthenticationViewModel.swift */,
+				A621C74524E36CE400353235 /* AuthenticationProvider.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		A621C73924E368E000353235 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A6A99B7624E3A5930018FBA1 /* AuthenticationViewController.swift */,
+				A6A99B7724E3A5930018FBA1 /* AuthenticationViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A621C73B24E3694300353235 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				A6A99B7124E39A700018FBA1 /* Library */,
+				A6A99B7024E39A640018FBA1 /* Academic Records */,
+				A6A99B6F24E39A530018FBA1 /* Financial */,
+				A6A99B6E24E39A4B0018FBA1 /* Disciplines */,
+				A6A99B6D24E39A370018FBA1 /* Home */,
+				A621C73824E368D600353235 /* Authentication */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		A621C73E24E36ABD00353235 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A621C73F24E36ACE00353235 /* BaseViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		A621C74924E36D9400353235 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A621C74724E36D1500353235 /* Credentials.swift */,
+				A621C74A24E36DB200353235 /* AuthenticationResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		A6A0354924E0E2F500C630D7 = {
 			isa = PBXGroup;
 			children = (
@@ -130,12 +207,13 @@
 		A6A0355424E0E2F500C630D7 /* UNIPPlus */ = {
 			isa = PBXGroup;
 			children = (
+				A621C73B24E3694300353235 /* Modules */,
 				A6CF4F1724E3425100F47C19 /* Core */,
-				A6CF4F1424E341FF00F47C19 /* Network */,
 				A6A0355524E0E2F500C630D7 /* AppDelegate.swift */,
 				A6A0355E24E0E2F600C630D7 /* Assets.xcassets */,
 				A6A0356024E0E2F600C630D7 /* LaunchScreen.storyboard */,
 				A6A0356324E0E2F600C630D7 /* Info.plist */,
+				A621C74324E36B4000353235 /* AppCoordinator.swift */,
 			);
 			path = UNIPPlus;
 			sourceTree = "<group>";
@@ -143,8 +221,10 @@
 		A6A0356B24E0E2F600C630D7 /* UNIPPlusTests */ = {
 			isa = PBXGroup;
 			children = (
-				A6A0356C24E0E2F600C630D7 /* UNIPPlusTests.swift */,
 				A6A0356E24E0E2F600C630D7 /* Info.plist */,
+				A6A99B6824E379970018FBA1 /* IO */,
+				A6A99B6524E374EB0018FBA1 /* Network */,
+				A6A99B6024E374930018FBA1 /* Modules */,
 			);
 			path = UNIPPlusTests;
 			sourceTree = "<group>";
@@ -158,6 +238,75 @@
 			path = UNIPPlusPlayground;
 			sourceTree = "<group>";
 		};
+		A6A99B6024E374930018FBA1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				A6A99B6124E3749C0018FBA1 /* Authentication */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		A6A99B6124E3749C0018FBA1 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				A6A99B6224E374C10018FBA1 /* UNIPPlusTests-Bridging-Header.h */,
+				A6A99B6324E374C10018FBA1 /* AuthenticationTests.swift */,
+				A6A99B6B24E37A590018FBA1 /* authentication-response.json */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		A6A99B6524E374EB0018FBA1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A6A99B6624E375070018FBA1 /* ApiServiceExtension.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A6A99B6824E379970018FBA1 /* IO */ = {
+			isa = PBXGroup;
+			children = (
+				A6A99B6924E379A70018FBA1 /* FileProvider.swift */,
+			);
+			path = IO;
+			sourceTree = "<group>";
+		};
+		A6A99B6D24E39A370018FBA1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A6A99B6E24E39A4B0018FBA1 /* Disciplines */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Disciplines;
+			sourceTree = "<group>";
+		};
+		A6A99B6F24E39A530018FBA1 /* Financial */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Financial;
+			sourceTree = "<group>";
+		};
+		A6A99B7024E39A640018FBA1 /* Academic Records */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Academic Records";
+			sourceTree = "<group>";
+		};
+		A6A99B7124E39A700018FBA1 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
 		A6CF4F1424E341FF00F47C19 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +314,7 @@
 				A6B3944724E344620086D1E5 /* ApiProvider.swift */,
 				A6B3944924E345200086D1E5 /* ApiEnvironment.swift */,
 				A6B3944D24E3469D0086D1E5 /* ApiError.swift */,
+				A6A99B7424E39AD20018FBA1 /* ApiContentType.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -172,6 +322,7 @@
 		A6CF4F1724E3425100F47C19 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A6CF4F1424E341FF00F47C19 /* Network */,
 				A6CF4F1A24E342E800F47C19 /* Common */,
 			);
 			path = Core;
@@ -180,7 +331,9 @@
 		A6CF4F1A24E342E800F47C19 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A621C73E24E36ABD00353235 /* UI */,
 				A6CF4F1B24E342FB00F47C19 /* Model */,
+				A621C73C24E369E100353235 /* BaseCoordinator.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -280,6 +433,7 @@
 					};
 					A6A0356724E0E2F600C630D7 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 						TestTargetID = A6A0355124E0E2F500C630D7;
 					};
 					A6A0357B24E0E3A100C630D7 = {
@@ -312,6 +466,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6A99B7924E3A5930018FBA1 /* AuthenticationViewController.xib in Resources */,
 				A6A0356224E0E2F600C630D7 /* LaunchScreen.storyboard in Resources */,
 				A6A0355F24E0E2F600C630D7 /* Assets.xcassets in Resources */,
 			);
@@ -321,6 +476,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6A99B6C24E37A590018FBA1 /* authentication-response.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,13 +575,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A621C74424E36B4000353235 /* AppCoordinator.swift in Sources */,
 				A6B3944E24E3469D0086D1E5 /* ApiError.swift in Sources */,
+				A621C74B24E36DB200353235 /* AuthenticationResponse.swift in Sources */,
 				A6B3944A24E345200086D1E5 /* ApiEnvironment.swift in Sources */,
 				A6B3944C24E346700086D1E5 /* BaseError.swift in Sources */,
+				A621C74824E36D1500353235 /* Credentials.swift in Sources */,
 				A6CF4F1924E342D900F47C19 /* BaseModel.swift in Sources */,
 				A6B3944824E344620086D1E5 /* ApiProvider.swift in Sources */,
+				A6A99B7524E39AD20018FBA1 /* ApiContentType.swift in Sources */,
+				A621C74024E36ACE00353235 /* BaseViewController.swift in Sources */,
+				A621C74224E36AF100353235 /* AuthenticationViewModel.swift in Sources */,
 				A6CF4F1624E3423000F47C19 /* ApiService.swift in Sources */,
+				A6A99B7824E3A5930018FBA1 /* AuthenticationViewController.swift in Sources */,
 				A6A0355624E0E2F500C630D7 /* AppDelegate.swift in Sources */,
+				A621C74624E36CE400353235 /* AuthenticationProvider.swift in Sources */,
+				A621C73D24E369E100353235 /* BaseCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,7 +598,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6A0356D24E0E2F600C630D7 /* UNIPPlusTests.swift in Sources */,
+				A6A99B6724E375070018FBA1 /* ApiServiceExtension.swift in Sources */,
+				A6A99B6424E374C10018FBA1 /* AuthenticationTests.swift in Sources */,
+				A6A99B6A24E379A70018FBA1 /* FileProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -628,6 +795,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = UNIPPlusTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -638,9 +806,11 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobileclass.UNIPPlusTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UNIPPlusTests/Modules/Authentication/UNIPPlusTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UNIPPlus.app/UNIPPlus";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UNIP Plus.app/UNIP Plus";
 			};
 			name = Debug;
 		};
@@ -650,6 +820,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = UNIPPlusTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -660,9 +831,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobileclass.UNIPPlusTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UNIPPlusTests/Modules/Authentication/UNIPPlusTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UNIPPlus.app/UNIPPlus";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UNIP Plus.app/UNIP Plus";
 			};
 			name = Release;
 		};

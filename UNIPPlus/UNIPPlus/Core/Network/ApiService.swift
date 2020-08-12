@@ -22,35 +22,29 @@ class ApiService {
         session = Session(configuration: config)
     }
     
-    func fetch<T: BaseModel>(provider: ApiProvider) -> Observable<T> {
+    func fetch<T: BaseModel>(provider: ApiProvider) -> Observable<Result<T, Error>> {
         return Observable.create { observer -> Disposable in
             if !self.isConnected() {
                 observer.onError(ApiError.noInternetConnection)
+                observer.onCompleted()
             }
             
             guard let request = self.buildRequestFromProvider(provider) else {
                 observer.onError(ApiError.malFormedUrl)
+                observer.onCompleted()
                 return Disposables.create { }
             }
             
             self.execute(request) { response in
-                switch response.result {
-                case .success(let data):
-                    guard let model: T = T.deserialize(from: data) else {
-                        observer.onError(ApiError.parserError)
-                        return
-                    }
-                    observer.onNext(model)
-                case .failure(let error):
-                    observer.onError(error)
-                }
+                observer.onNext(self.validateResponse(response))
+                observer.onCompleted()
             }
             
             return Disposables.create { }
         }
     }
     
-    func download(provider: ApiProvider) -> Observable<Data> {
+    func download(provider: ApiProvider) -> Observable<Result<Data, Error>> {
         return Observable.create { observer -> Disposable in
             if !self.isConnected() {
                 observer.onError(ApiError.noInternetConnection)
@@ -58,19 +52,37 @@ class ApiService {
             
             guard let request = self.buildRequestFromProvider(provider) else {
                 observer.onError(ApiError.malFormedUrl)
-                return Disposables.create { }
+                observer.onCompleted()
+                return Disposables.create()
             }
             
             self.execute(request) { response in
-                switch response.result {
-                case .success(let data):
-                    observer.onNext(data)
-                case .failure(let error):
-                    observer.onError(error)
-                }
+                observer.onNext(self.validateResponse(response))
+                observer.onCompleted()
             }
             
-            return Disposables.create { }
+            return Disposables.create()
+        }
+    }
+    
+    private func validateResponse<T: BaseModel>(_ response: AFDataResponse<Data>) -> Result<T, Error> {
+        switch response.result {
+        case .success(let data):
+            guard let model: T = T.deserialize(from: data) else {
+                return .failure(ApiError.parserError)
+            }
+            return .success(model)
+        case .failure(let error):
+            return .failure(error)
+        }
+    }
+    
+    private func validateResponse(_ response: AFDataResponse<Data>) -> Result<Data, Error> {
+        switch response.result {
+        case .success(let data):
+            return .success(data)
+        case .failure(let error):
+            return .failure(error)
         }
     }
     

@@ -7,3 +7,29 @@
 //
 
 import Foundation
+
+enum AuthenticationProvider {
+    case authenticate(Credentials)
+}
+
+extension AuthenticationProvider: ApiProvider {
+    var path: String {
+        return "/api/v1/authentication"
+    }
+    
+    var headers: [String : String] {
+        let content = ApiContentType.json
+        return content.headers
+    }
+    
+    var method: String {
+        return "post"
+    }
+    
+    var body: Data? {
+        switch self {
+        case .authenticate(let credentials):
+            return credentials.serialize()
+        }
+    }
+}

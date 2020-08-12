@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+struct AuthenticationResponse: BaseModel {
+    var ra: String
+    var name: String
+    var courseName: String
+    var courseType: String
+    var situation: String
+    var email: String
+    var photoUri: String
+}

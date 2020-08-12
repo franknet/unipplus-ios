@@ -8,8 +8,9 @@
 
 import Foundation
 
-class BaseModel: Codable {
-    
+protocol BaseModel: Codable { }
+
+extension BaseModel {
     func serialize() -> Data? {
         return try? JSONEncoder().encode(self)
     }
@@ -17,5 +18,4 @@ class BaseModel: Codable {
     static func deserialize<T: BaseModel>(from data: Data) -> T? {
         return try? JSONDecoder().decode(T.self, from: data) as T
     }
-    
 }

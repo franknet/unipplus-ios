@@ -1,15 +1,14 @@
 //
-//  UNIPPlusTests.swift
+//  AuthenticationTests.swift
 //  UNIPPlusTests
 //
-//  Created by Jose Franklin da Silva Alves on 09/08/20.
+//  Created by Jose Franklin da Silva Alves on 11/08/20.
 //  Copyright © 2020 Mobile Class. All rights reserved.
 //
 
 import XCTest
-@testable import UNIPPlus
 
-class UNIPPlusTests: XCTestCase {
+class AuthenticationTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

@@ -11,7 +11,6 @@ import RxSwift
 import Alamofire
 
 class ApiService {
-    
     private var session: Session?
     
     init(session: Session) {

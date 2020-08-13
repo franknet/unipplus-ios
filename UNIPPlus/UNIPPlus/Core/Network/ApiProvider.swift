@@ -12,11 +12,12 @@ protocol ApiProvider {
     var path: String { get }
     var headers: [String:String] { get }
     var method: String { get }
-    var body: Data? { get }
 }
 
 extension ApiProvider {
     var endpoint: URL? {
         return URL(string: Environment.BASE_URL + path)
     }
+    
+    var body: Data? { get { return nil } set {} }
 }

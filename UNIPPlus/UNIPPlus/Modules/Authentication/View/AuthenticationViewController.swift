@@ -22,7 +22,7 @@ class AuthenticationViewController: BaseViewController {
     }
     
     private func setupRx() {
-        
+        viewModel.errorMessage.bind(to: rx.alertMassage).disposed(by: dispose)
     }
 
 

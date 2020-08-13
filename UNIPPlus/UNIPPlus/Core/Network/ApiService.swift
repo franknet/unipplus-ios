@@ -22,21 +22,27 @@ class ApiService {
         session = Session(configuration: config)
     }
     
-    func fetch<T: BaseModel>(provider: ApiProvider) -> Observable<Result<T, Error>> {
+    func fetch<T: BaseModel>(provider: ApiProvider) -> Observable<T> {
         return Observable.create { observer -> Disposable in
             if !self.isConnected() {
-                observer.onError(ApiError.noInternetConnection)
+                observer.onError(ApiError.noInternetConnection.nsError())
                 observer.onCompleted()
             }
             
             guard let request = self.buildRequestFromProvider(provider) else {
-                observer.onError(ApiError.malFormedUrl)
+                observer.onError(ApiError.malFormedUrl.nsError())
                 observer.onCompleted()
                 return Disposables.create { }
             }
             
             self.execute(request) { response in
-                observer.onNext(self.validateResponse(response))
+                let result: Result<T, Error> = self.validateResponse(response)
+                switch result {
+                case .success(let model):
+                    observer.onNext(model)
+                case .failure(let error):
+                    observer.onError(error)
+                }
                 observer.onCompleted()
             }
             
@@ -44,20 +50,26 @@ class ApiService {
         }
     }
     
-    func download(provider: ApiProvider) -> Observable<Result<Data, Error>> {
+    func download(provider: ApiProvider) -> Observable<Data> {
         return Observable.create { observer -> Disposable in
             if !self.isConnected() {
-                observer.onError(ApiError.noInternetConnection)
+                observer.onError(ApiError.noInternetConnection.nsError())
             }
             
             guard let request = self.buildRequestFromProvider(provider) else {
-                observer.onError(ApiError.malFormedUrl)
+                observer.onError(ApiError.malFormedUrl.nsError())
                 observer.onCompleted()
                 return Disposables.create()
             }
             
             self.execute(request) { response in
-                observer.onNext(self.validateResponse(response))
+                let result = self.validateResponse(response)
+                switch result {
+                case .success(let data):
+                    observer.onNext(data)
+                case .failure(let error):
+                    observer.onError(error)
+                }
                 observer.onCompleted()
             }
             
@@ -69,11 +81,11 @@ class ApiService {
         switch response.result {
         case .success(let data):
             guard let model: T = T.deserialize(from: data) else {
-                return .failure(ApiError.parserError)
+                return .failure(ApiError.parserError.nsError())
             }
             return .success(model)
         case .failure(let error):
-            return .failure(error)
+            return .failure(validateResponseMessage(error, response))
         }
     }
     
@@ -82,8 +94,14 @@ class ApiService {
         case .success(let data):
             return .success(data)
         case .failure(let error):
-            return .failure(error)
+            return .failure(validateResponseMessage(error, response))
         }
+    }
+    
+    private func validateResponseMessage(_ error: AFError, _ response: AFDataResponse<Data>) -> Error {
+        guard let data = response.data else { return ApiError.none(error).nsError() }
+        guard let model: ApiResponse = ApiResponse.deserialize(from: data) else { return ApiError.none(error).nsError() }
+        return ApiError.serviceError(model).nsError()
     }
     
     private func isConnected() -> Bool {

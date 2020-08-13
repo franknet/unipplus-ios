@@ -9,24 +9,11 @@
 import Foundation
 import RxSwift
 import RxRelay
+import RxSwiftExt
 
 class AuthenticationViewModel {
-    let disposer = DisposeBag()
-    var service: ApiService
+    typealias ResulEvent = Observable<Event<AuthenticationResponse>>
     
-    //MARK:  Inputs
-    let ra = BehaviorRelay<String>(value: "")
-    let password = BehaviorRelay<String>(value: "")
-    
-    //MARK: Outputs
-    var result: Observable<Result<AuthenticationResponse, Error>>!
-    var isLoading: Observable<Bool>!
-    var isSubmitEnabled: Observable<Bool>!
-    
-    //MARK: Actions
-    let submit = PublishRelay<Void>()
-    
-    //MARK: Setup
     init() {
         service = ApiService()
         setupRx()
@@ -37,23 +24,49 @@ class AuthenticationViewModel {
         setupRx()
     }
     
+    let disposer = DisposeBag()
+    var service: ApiService
+    
+    //MARK:  Inputs
+    let ra = BehaviorRelay<String>(value: "")
+    let password = BehaviorRelay<String>(value: "")
+    
+    //MARK: Outputs
+    var model: Observable<AuthenticationResponse>!
+    var isLoading: Observable<Bool>!
+    var errorMessage: Observable<String>!
+    var isSubmitEnabled: Observable<Bool>!
+    
+    //MARK: Actions
+    let submit = PublishRelay<Void>()
+    
+    //MARK: Events
+    private var resultEvent: ResulEvent!
+    
+    //MARK: Setup
     private func setupRx() {
         let raAndPassowrd = Observable.combineLatest(ra, password)
         
-        result = submit.withLatestFrom(raAndPassowrd)
-        .flatMap { (raValue, passwordValue) -> Observable<Result<AuthenticationResponse, Error>> in
+        resultEvent = submit.withLatestFrom(raAndPassowrd)
+        .flatMap { (raValue, passwordValue) -> ResulEvent in
             let credentials = Credentials(ra: raValue, password: passwordValue)
-            return self.service.fetch(provider: AuthenticationProvider.authenticate(credentials))
+            return self.service.fetch(provider: AuthenticationProvider.authenticate(credentials)).materialize()
         }
+        
+        model = resultEvent.elements()
+        .map( { $0 })
+        
+        errorMessage = resultEvent.errors()
+        .map( { $0.localizedDescription })
         
         isLoading = Observable.merge(
             submit.map({ true }),
-            result.map({ _ in false })
-        )
+            model.map({ _ in false })
+        ).startWith(false)
         
         isSubmitEnabled = Observable.merge(
             raAndPassowrd.map({ !$0.isEmpty && !$1.isEmpty }),
-            isLoading.map(!)
-        )
+            isLoading.map({ _ in true })
+        ).startWith(false)
     }
 }

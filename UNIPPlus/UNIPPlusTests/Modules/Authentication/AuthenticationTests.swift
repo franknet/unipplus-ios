@@ -33,24 +33,27 @@ class AuthenticationTests: XCTestCase {
     func testAuthenticationWithSuccess() {
         let expect = XCTestExpectation(description: "Return authentication with success")
         
-        let credentials = Credentials(ra: "", password: "")
+        let credentials = Credentials(ra: "asdasd", password: "asdasd")
         let provider = AuthenticationProvider.authenticate(credentials)
         service.mockProvider(provider, responseFile: "authentication-response", statusCode: 200)
         
-        viewModel.result.subscribe(onNext: { result in
-            switch result {
-            case .success:
-                XCTAssert(true)
-            case .failure(let error):
-                print("Error: " + error.localizedDescription)
-                XCTAssert(false)
-            }
-            expect.fulfill()
-        }, onError: { error in
-            print("Error: " + error.localizedDescription)
+        viewModel.errorMessage.subscribe(onNext: { _ in
             XCTAssert(false)
             expect.fulfill()
         }).disposed(by: dispose)
+        
+        viewModel.model.subscribe(onNext: { _ in
+            XCTAssert(true)
+            expect.fulfill()
+        }).disposed(by: dispose)
+        
+//        viewModel.isLoading.subscribe(onNext: { loading in
+//            XCTAssert(loading)
+//        }).disposed(by: dispose)
+//
+//        viewModel.isSubmitEnabled.subscribe(onNext: { enabled in
+//            XCTAssertFalse(enabled)
+//        }).disposed(by: dispose)
         
         viewModel.submit.accept(())
 
@@ -62,18 +65,15 @@ class AuthenticationTests: XCTestCase {
         
         let credentials = Credentials(ra: "", password: "")
         let provider = AuthenticationProvider.authenticate(credentials)
-        service.mockProvider(provider, responseFile: "authentication-response", statusCode: 500)
+        service.mockProvider(provider, responseFile: "default-error-response", statusCode: 500)
         
-        viewModel.result.subscribe(onNext: { response in
-            switch response {
-            case .success:
-                XCTAssert(false)
-            case .failure:
-                XCTAssert(true)
-            }
+        viewModel.errorMessage.subscribe(onNext: { message in
+            XCTAssertEqual(message, "Something wrong is not right")
             expect.fulfill()
-        }, onError: { error in
-            XCTAssert(true)
+        }).disposed(by: dispose)
+        
+        viewModel.model.subscribe(onNext: { _ in
+            XCTAssert(false)
             expect.fulfill()
         }).disposed(by: dispose)
         
@@ -81,5 +81,4 @@ class AuthenticationTests: XCTestCase {
         
         wait(for: [expect], timeout: 60)
     }
-
 }

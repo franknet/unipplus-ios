@@ -9,7 +9,7 @@
 import Foundation
 
 enum ApiError {
-    case none(Error)
+    case unknow(Error)
     case malFormedUrl
     case noInternetConnection
     case parserError
@@ -19,7 +19,7 @@ enum ApiError {
 extension ApiError: Error {
     var localizedDescription: String {
         switch self {
-        case .none(let error):
+        case .unknow(let error):
             return error.localizedDescription
         case .malFormedUrl:
             return "Wrong url format"
@@ -34,7 +34,7 @@ extension ApiError: Error {
 
     var _code: Int {
         switch self {
-        case .none: return 999
+        case .unknow: return 999
         case .malFormedUrl: return 001
         case .noInternetConnection: return 002
         case .parserError: return 003

@@ -33,7 +33,7 @@ class AuthenticationTests: XCTestCase {
     func testAuthenticationWithSuccess() {
         let expect = XCTestExpectation(description: "Return authentication with success")
         
-        let credentials = Credentials(ra: "asdasd", password: "asdasd")
+        let credentials = Credentials(ra: "", password: "")
         let provider = AuthenticationProvider.authenticate(credentials)
         service.mockProvider(provider, responseFile: "authentication-response", statusCode: 200)
         
@@ -47,17 +47,35 @@ class AuthenticationTests: XCTestCase {
             expect.fulfill()
         }).disposed(by: dispose)
         
-//        viewModel.isLoading.subscribe(onNext: { loading in
-//            XCTAssert(loading)
-//        }).disposed(by: dispose)
-//
-//        viewModel.isSubmitEnabled.subscribe(onNext: { enabled in
-//            XCTAssertFalse(enabled)
-//        }).disposed(by: dispose)
-        
-        viewModel.submit.accept(())
+        viewModel.isLoading.subscribe(onNext: { loading in
+            XCTAssert(loading)
+        }).disposed(by: dispose)
 
+        viewModel.submit.accept(())
+        
         wait(for: [expect], timeout: 60)
+        
+        viewModel.isLoading.subscribe(onNext: { loading in
+            XCTAssertFalse(loading)
+        }).disposed(by: dispose)
+    }
+    
+    func testSubmitButtonEnabled() {
+        viewModel.ra.accept("123123")
+        viewModel.password.accept("adasaf")
+        
+        viewModel.isSubmitEnabled.subscribe(onNext: { enabled in
+            XCTAssert(enabled)
+        }).disposed(by: dispose)
+    }
+    
+    func testSubmitButtonDisenabled() {
+        viewModel.ra.accept("")
+        viewModel.password.accept("")
+        
+        viewModel.isSubmitEnabled.subscribe(onNext: { enabled in
+            XCTAssertFalse(enabled)
+        }).disposed(by: dispose)
     }
 
     func testAuthenticationWithFailure() {

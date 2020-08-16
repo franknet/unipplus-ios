@@ -99,8 +99,10 @@ class ApiService {
     }
     
     private func validateResponseMessage(_ error: AFError, _ response: AFDataResponse<Data>) -> Error {
-        guard let data = response.data else { return ApiError.none(error).nsError() }
-        guard let model: ApiResponse = ApiResponse.deserialize(from: data) else { return ApiError.none(error).nsError() }
+        guard let data = response.data else { return ApiError.unknow(error).nsError() }
+        guard let model: ApiResponse = ApiResponse.deserialize(from: data) else {
+            return ApiError.parserError.nsError()
+        }
         return ApiError.serviceError(model).nsError()
     }
     

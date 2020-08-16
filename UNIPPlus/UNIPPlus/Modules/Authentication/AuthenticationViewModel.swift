@@ -13,6 +13,7 @@ import RxSwiftExt
 
 class AuthenticationViewModel {
     typealias ResulEvent = Observable<Event<AuthenticationResponse>>
+    private var service: ApiService
     
     init() {
         service = ApiService()
@@ -23,9 +24,6 @@ class AuthenticationViewModel {
         self.service = service
         setupRx()
     }
-    
-    let disposer = DisposeBag()
-    var service: ApiService
     
     //MARK:  Inputs
     let ra = BehaviorRelay<String>(value: "")
@@ -54,19 +52,14 @@ class AuthenticationViewModel {
         }
         
         model = resultEvent.elements()
-        .map( { $0 })
         
         errorMessage = resultEvent.errors()
-        .map( { $0.localizedDescription })
+        .map({ $0.localizedDescription })
         
-        isLoading = Observable.merge(
-            submit.map({ true }),
-            model.map({ _ in false })
-        ).startWith(false)
+        isLoading = resultEvent.isLoading()
         
         isSubmitEnabled = Observable.merge(
-            raAndPassowrd.map({ !$0.isEmpty && !$1.isEmpty }),
-            isLoading.map({ _ in true })
-        ).startWith(false)
+            raAndPassowrd.map({ $0.count > 0 && $1.count > 0 })
+        )
     }
 }

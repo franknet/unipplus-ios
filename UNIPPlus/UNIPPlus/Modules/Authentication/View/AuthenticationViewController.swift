@@ -13,27 +13,30 @@ import RxSwift
 class AuthenticationViewController: BaseViewController {
     private var viewModel: AuthenticationViewModel!
     private let dispose = DisposeBag()
+    private let keyboardManage = KeyboardManager()
+    
+    @IBOutlet weak private var raTextField: UITextField!
+    @IBOutlet weak private var passwordTextField: UITextField!
+    @IBOutlet weak private var submitButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = AuthenticationViewModel()
-
-        // Do any additional setup after loading the view.
+        keyboardManage.start()
+        setupRx()
     }
     
     private func setupRx() {
+        raTextField.rx.text.orEmpty.bind(to: viewModel.ra).disposed(by: dispose)
+        passwordTextField.rx.text.orEmpty.bind(to: viewModel.password).disposed(by: dispose)
+        submitButton.rx.tap.bind(to: viewModel.submit).disposed(by: dispose)
+        
+        viewModel.isSubmitEnabled.bind(to: submitButton.rx.isEnabled).disposed(by: dispose)
+        viewModel.isSubmitEnabled.map({ $0 ? 1.0 : 0.3 }).bind(to: submitButton.rx.alpha).disposed(by: dispose)
         viewModel.errorMessage.bind(to: rx.alertMassage).disposed(by: dispose)
+        
+        keyboardManage.keyboard.bind(to: rx.animateShowKeyboard).disposed(by: dispose)
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+

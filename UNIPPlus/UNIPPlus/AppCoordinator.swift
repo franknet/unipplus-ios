@@ -10,13 +10,15 @@ import UIKit
 
 class AppCoordinator: BaseCoordinator {
     var navigator: UINavigationController?
-    
     var children: [BaseCoordinator] = []
-    
     var window: UIWindow?
+    var authenticationView: AuthenticationViewController!
     
     func start() {
-        navigator = UINavigationController()
+        authenticationView = AuthenticationViewController()
+        
+        navigator = UINavigationController(rootViewController: authenticationView)
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
         window?.rootViewController = navigator
@@ -26,7 +28,5 @@ class AppCoordinator: BaseCoordinator {
     func end() {
         
     }
-    
-    
 }
 

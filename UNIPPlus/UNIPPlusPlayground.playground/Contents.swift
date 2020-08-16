@@ -4,16 +4,9 @@ import UIKit
 import RxRelay
 import RxSwift
 import RxCocoa
-import PlaygroundSupport
+import RxSwiftExt
 
-extension Error {
-    func asObservable() -> Observable<String> {
-        return Observable.create { observer -> Disposable in
-            observer.onNext(self.localizedDescription)
-            return Disposables.create { }
-        }
-    }
-}
+import PlaygroundSupport
 
 class UPError: Error {
     var localizedDescription: String {
@@ -35,28 +28,40 @@ class ViewModel {
     // output
     var showMessage: Observable<String>!
     var response: Observable<String>!
+    var btnTapped: Observable<Bool>!
+    
+    // events
+    var resultEvent: Observable<Event<String>>!
+    
+    let disponse = DisposeBag()
     
     init() {
-        showMessage = submit.flatMap { value -> Observable<String> in
-            return self.perform()
+        resultEvent = submit.flatMap { value -> Observable<Event<String>> in
+            return self.perform().materialize()
         }
-        showMessage.catchErrorJustReturn("")
-        .bind(to: resultText).disposed(by: dispose)
+        
+        resultEvent.elements()
+        .map({ $0 }).bind(to: resultText).disposed(by: disponse)
+        
+        showMessage = resultEvent.errors()
+        .map({ $0.localizedDescription })
+        
     }
     
     func perform() -> Observable<String> {
         return Observable.create { [weak self] observer -> Disposable in
             guard let self = self else {
-                return Disposables.create { }
+                return Disposables.create()
             }
             self.count += 1
             let error = NSError(domain: "", code: 200, userInfo: [NSLocalizedDescriptionKey: "Deu Ruim"])
-//            observer.onNext("Count: \(self.count)")
-            observer.onError(error)
-            observer.onCompleted()
-            return Disposables.create {
-                
+            
+            Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
+                observer.onNext("Count: \(self.count)")
             }
+            
+            observer.onCompleted()
+            return Disposables.create()
         }
     }
 }
@@ -93,13 +98,7 @@ class ViewController : UIViewController {
     func setupRx() {
         button.rx.tap.bind(to: viewModel.submit).disposed(by: dispose)
         viewModel.resultText.bind(to: resultLabel.rx.text).disposed(by: dispose)
-        viewModel.showMessage.subscribe(onNext: { message in
-//            self.viewModel.resultText.accept(message)
-        }, onError: { [weak self] error in
-            guard let self = self else { return }
-            let alert = UIAlertController(title: "Warning", message: error.localizedDescription, preferredStyle: .alert)
-            self.show(alert, sender: nil)
-        }).disposed(by: dispose)
+        
     }
     
     func activateConstraints() {

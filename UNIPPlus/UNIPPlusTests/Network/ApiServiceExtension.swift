@@ -19,9 +19,9 @@ extension ApiService {
         return ApiService(session: Session(configuration: config))
     }
     
-    func mockProvider(_ provider: ApiProvider, responseFile name: String, statusCode code: Int) {
-        guard let endpoint = provider.endpoint else { return }
+    func mockResource(_ resource: String, method: Mock.HTTPMethod, responseFile name: String, statusCode code: Int) {
+        guard let endpoint = URL(string: ApiEnvironment.host + resource) else { return }
         guard let data = FileProvider.loadDataFrom(fileName: name) else { return }
-        Mock(url: endpoint, ignoreQuery: true, dataType: .json, statusCode: code, data: [.post : data]).register()
+        Mock(url: endpoint, ignoreQuery: true, dataType: .json, statusCode: code, data: [method : data]).register()
     }
 }

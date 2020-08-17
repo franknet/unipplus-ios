@@ -113,7 +113,7 @@ class ApiService {
     private func buildRequestFromProvider(_ provider: ApiProvider) -> URLRequest? {
         guard let endpoint = provider.endpoint else { return nil }
         var request = URLRequest(url: endpoint)
-        request.httpMethod = provider.method
+        request.httpMethod = provider.method.rawValue
         request.allHTTPHeaderFields = provider.headers
         request.httpBody = provider.body
         request.timeoutInterval = 60

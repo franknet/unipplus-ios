@@ -11,12 +11,13 @@ import Foundation
 protocol ApiProvider {
     var path: String { get }
     var headers: [String:String] { get }
-    var method: String { get }
+    var method: ApiHttpMethod { get }
 }
 
 extension ApiProvider {
+    
     var endpoint: URL? {
-        return URL(string: Environment.BASE_URL + path)
+        return URL(string: ApiEnvironment.host + path)
     }
     
     var body: Data? { get { return nil } set {} }

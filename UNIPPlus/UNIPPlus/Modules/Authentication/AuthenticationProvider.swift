@@ -14,7 +14,7 @@ enum AuthenticationProvider {
 
 extension AuthenticationProvider: ApiProvider {
     var path: String {
-        return "/api/v1/authentication"
+        return ApiResources.authentication
     }
     
     var headers: [String : String] {
@@ -22,8 +22,8 @@ extension AuthenticationProvider: ApiProvider {
         return content.headers
     }
     
-    var method: String {
-        return "post"
+    var method: ApiHttpMethod {
+        return .post
     }
     
     var body: Data? {

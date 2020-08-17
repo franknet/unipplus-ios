@@ -33,9 +33,7 @@ class AuthenticationTests: XCTestCase {
     func testAuthenticationWithSuccess() {
         let expect = XCTestExpectation(description: "Return authentication with success")
         
-        let credentials = Credentials(ra: "", password: "")
-        let provider = AuthenticationProvider.authenticate(credentials)
-        service.mockProvider(provider, responseFile: "authentication-response", statusCode: 200)
+        service.mockResource(ApiResources.authentication, method: .post, responseFile: "authentication-response", statusCode: 200)
         
         viewModel.errorMessage.subscribe(onNext: { _ in
             XCTAssert(false)
@@ -81,9 +79,7 @@ class AuthenticationTests: XCTestCase {
     func testAuthenticationWithFailure() {
         let expect = XCTestExpectation(description: "Return authentication with failure")
         
-        let credentials = Credentials(ra: "", password: "")
-        let provider = AuthenticationProvider.authenticate(credentials)
-        service.mockProvider(provider, responseFile: "default-error-response", statusCode: 500)
+        service.mockResource(ApiResources.authentication, method: .post, responseFile: "default-error-response", statusCode: 500)
         
         viewModel.errorMessage.subscribe(onNext: { message in
             XCTAssertEqual(message, "Something wrong is not right")

@@ -30,12 +30,14 @@
 		A6A99B7824E3A5930018FBA1 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A99B7624E3A5930018FBA1 /* AuthenticationViewController.swift */; };
 		A6A99B7924E3A5930018FBA1 /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6A99B7724E3A5930018FBA1 /* AuthenticationViewController.xib */; };
 		A6B3944824E344620086D1E5 /* ApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B3944724E344620086D1E5 /* ApiProvider.swift */; };
-		A6B3944A24E345200086D1E5 /* ApiEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B3944924E345200086D1E5 /* ApiEnvironment.swift */; };
 		A6B3944E24E3469D0086D1E5 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B3944D24E3469D0086D1E5 /* ApiError.swift */; };
 		A6CF4F1624E3423000F47C19 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF4F1524E3423000F47C19 /* ApiService.swift */; };
 		A6CF4F1924E342D900F47C19 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF4F1824E342D900F47C19 /* BaseModel.swift */; };
 		A6ECC67E24E882AB0037C775 /* RxExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ECC67D24E882AB0037C775 /* RxExtension.swift */; };
 		A6ECC68124E981460037C775 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ECC68024E981460037C775 /* KeyboardManager.swift */; };
+		A6ECC68B24EA07340037C775 /* ApiHttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ECC68A24EA07340037C775 /* ApiHttpMethod.swift */; };
+		A6ECC68D24EA07B70037C775 /* ApiEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ECC68C24EA07B70037C775 /* ApiEnvironment.swift */; };
+		A6ECC68F24EA084F0037C775 /* ApiResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ECC68E24EA084F0037C775 /* ApiResources.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,12 +84,14 @@
 		A6A99B7624E3A5930018FBA1 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		A6A99B7724E3A5930018FBA1 /* AuthenticationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthenticationViewController.xib; sourceTree = "<group>"; };
 		A6B3944724E344620086D1E5 /* ApiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProvider.swift; sourceTree = "<group>"; };
-		A6B3944924E345200086D1E5 /* ApiEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEnvironment.swift; sourceTree = "<group>"; };
 		A6B3944D24E3469D0086D1E5 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		A6CF4F1524E3423000F47C19 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		A6CF4F1824E342D900F47C19 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		A6ECC67D24E882AB0037C775 /* RxExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxExtension.swift; sourceTree = "<group>"; };
 		A6ECC68024E981460037C775 /* KeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
+		A6ECC68A24EA07340037C775 /* ApiHttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHttpMethod.swift; sourceTree = "<group>"; };
+		A6ECC68C24EA07B70037C775 /* ApiEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEnvironment.swift; sourceTree = "<group>"; };
+		A6ECC68E24EA084F0037C775 /* ApiResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResources.swift; sourceTree = "<group>"; };
 		AACE4A4063FA820663DB8EC1 /* Pods-UNIPPlusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIPPlusTests.debug.xcconfig"; path = "Target Support Files/Pods-UNIPPlusTests/Pods-UNIPPlusTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -319,10 +323,12 @@
 			children = (
 				A6CF4F1524E3423000F47C19 /* ApiService.swift */,
 				A6B3944724E344620086D1E5 /* ApiProvider.swift */,
-				A6B3944924E345200086D1E5 /* ApiEnvironment.swift */,
 				A6B3944D24E3469D0086D1E5 /* ApiError.swift */,
 				A6A99B7424E39AD20018FBA1 /* ApiContentType.swift */,
 				A6416B0A24E4CD7900341F3C /* ApiResponse.swift */,
+				A6ECC68A24EA07340037C775 /* ApiHttpMethod.swift */,
+				A6ECC68C24EA07B70037C775 /* ApiEnvironment.swift */,
+				A6ECC68E24EA084F0037C775 /* ApiResources.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -604,7 +610,6 @@
 				A621C74424E36B4000353235 /* AppCoordinator.swift in Sources */,
 				A6B3944E24E3469D0086D1E5 /* ApiError.swift in Sources */,
 				A621C74B24E36DB200353235 /* AuthenticationResponse.swift in Sources */,
-				A6B3944A24E345200086D1E5 /* ApiEnvironment.swift in Sources */,
 				A621C74824E36D1500353235 /* Credentials.swift in Sources */,
 				A6CF4F1924E342D900F47C19 /* BaseModel.swift in Sources */,
 				A6B3944824E344620086D1E5 /* ApiProvider.swift in Sources */,
@@ -612,12 +617,15 @@
 				A6ECC68124E981460037C775 /* KeyboardManager.swift in Sources */,
 				A621C74024E36ACE00353235 /* BaseViewController.swift in Sources */,
 				A6416B0B24E4CD7900341F3C /* ApiResponse.swift in Sources */,
+				A6ECC68F24EA084F0037C775 /* ApiResources.swift in Sources */,
 				A621C74224E36AF100353235 /* AuthenticationViewModel.swift in Sources */,
 				A6CF4F1624E3423000F47C19 /* ApiService.swift in Sources */,
 				A6A99B7824E3A5930018FBA1 /* AuthenticationViewController.swift in Sources */,
 				A6A0355624E0E2F500C630D7 /* AppDelegate.swift in Sources */,
 				A621C74624E36CE400353235 /* AuthenticationProvider.swift in Sources */,
+				A6ECC68B24EA07340037C775 /* ApiHttpMethod.swift in Sources */,
 				A621C73D24E369E100353235 /* BaseCoordinator.swift in Sources */,
+				A6ECC68D24EA07B70037C775 /* ApiEnvironment.swift in Sources */,
 				A6ECC67E24E882AB0037C775 /* RxExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

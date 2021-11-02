@@ -1,0 +1,22 @@
+{
+  "name": "UNIPPlusCore",
+  "version": "0.1.0",
+  "summary": "A short description of UNIPPlusCore.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/franknet/UNIPPlusCore",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "franknet": "franklinsilvaalves@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/franknet/UNIPPlusCore.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "UNIPPlusCore/Classes/**/*"
+}

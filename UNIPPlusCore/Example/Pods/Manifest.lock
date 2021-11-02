@@ -1,0 +1,16 @@
+PODS:
+  - UNIPPlusCore (0.1.0)
+
+DEPENDENCIES:
+  - UNIPPlusCore (from `../`)
+
+EXTERNAL SOURCES:
+  UNIPPlusCore:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  UNIPPlusCore: 5f437ae50a1cd53ccef787109e789f6e38f90d3b
+
+PODFILE CHECKSUM: 7ef0e267608d6a0282157a989cb700e2a1804f12
+
+COCOAPODS: 1.11.2

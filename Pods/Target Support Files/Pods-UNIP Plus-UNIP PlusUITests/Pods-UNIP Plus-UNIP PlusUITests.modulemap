@@ -1,6 +1,0 @@
-framework module Pods_UNIP_Plus_UNIP_PlusUITests {
-  umbrella header "Pods-UNIP Plus-UNIP PlusUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

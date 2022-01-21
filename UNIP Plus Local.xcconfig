@@ -1,0 +1,12 @@
+//
+//  local_config.xcconfig
+//  UNIP Plus
+//
+//  Created by José Franklin Silva Alves on 21/01/22.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+SLASH = /
+API_BASE_URL = http:$(SLASH)/localhost:5001/unip-plus/southamerica-east1/api/Prod

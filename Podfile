@@ -12,8 +12,4 @@ target 'UNIP Plus' do
     # Pods for testing
   end
 
-  target 'UNIP PlusUITests' do
-    # Pods for testing
-  end
-
 end

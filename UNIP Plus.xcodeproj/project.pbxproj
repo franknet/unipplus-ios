@@ -7,18 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C0BD2FCDB0BECA51445C1C7 /* Pods_UNIP_PlusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D24C05ADEB5E905946DDDE /* Pods_UNIP_PlusTests.framework */; };
 		41A77E5124599732EF95E55E /* Pods_UNIP_Plus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0626FC6E8202F29C83A1CB4 /* Pods_UNIP_Plus.framework */; };
+		A692146AA98773A689552DD9 /* Pods_UNIP_PlusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87474EA49EA94EF75D7FAD9E /* Pods_UNIP_PlusTests.framework */; };
+		E314F65127A21589006ABCA1 /* CodableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F65027A21589006ABCA1 /* CodableObject.swift */; };
+		E314F66727A2279C006ABCA1 /* CodableObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F66627A2279C006ABCA1 /* CodableObjectTests.swift */; };
+		E36B50D4279F84D500D74832 /* RestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36B50D3279F84D500D74832 /* RestHelper.swift */; };
+		E36B50D7279F852C00D74832 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36B50D6279F852C00D74832 /* APIProvider.swift */; };
+		E36B50DA279F881700D74832 /* RestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36B50D9279F881700D74832 /* RestError.swift */; };
+		E36B50DC279F887200D74832 /* RestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36B50DB279F887200D74832 /* RestMethod.swift */; };
+		E36B50DE279F8F1F00D74832 /* AppInfoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36B50DD279F8F1F00D74832 /* AppInfoHelper.swift */; };
 		E38D52E22730E5B300269695 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38D52E12730E5B300269695 /* AppDelegate.swift */; };
 		E38D52EB2730E5B500269695 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E38D52EA2730E5B500269695 /* Assets.xcassets */; };
 		E38D52EE2730E5B500269695 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E38D52EC2730E5B500269695 /* LaunchScreen.storyboard */; };
-		E38D52F92730E5B500269695 /* UNIP_PlusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38D52F82730E5B500269695 /* UNIP_PlusTests.swift */; };
 		E3D5D15E279B5F9C006AF85D /* UNIP Plus Local.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = E3D5D15D279B5F9C006AF85D /* UNIP Plus Local.xcconfig */; };
 		E3D5D165279B6DF1006AF85D /* UNIP Plus Stage.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = E3D5D164279B6DF1006AF85D /* UNIP Plus Stage.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E38D52F52730E5B500269695 /* PBXContainerItemProxy */ = {
+		E314F65E27A223EA006ABCA1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E38D52D62730E5B300269695 /* Project object */;
 			proxyType = 1;
@@ -28,42 +34,48 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0DCAD1B6E1D7237773C27082 /* Pods-UNIP PlusTests.local.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIP PlusTests.local.xcconfig"; path = "Target Support Files/Pods-UNIP PlusTests/Pods-UNIP PlusTests.local.xcconfig"; sourceTree = "<group>"; };
-		408E15222749D8F1AC3DE591 /* Pods-UNIP PlusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIP PlusTests.release.xcconfig"; path = "Target Support Files/Pods-UNIP PlusTests/Pods-UNIP PlusTests.release.xcconfig"; sourceTree = "<group>"; };
+		002F252573F7529086FD7A6C /* Pods-UNIP PlusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIP PlusTests.debug.xcconfig"; path = "Target Support Files/Pods-UNIP PlusTests/Pods-UNIP PlusTests.debug.xcconfig"; sourceTree = "<group>"; };
+		66CC3627FE7E55B697421FE0 /* Pods-UNIP PlusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIP PlusTests.release.xcconfig"; path = "Target Support Files/Pods-UNIP PlusTests/Pods-UNIP PlusTests.release.xcconfig"; sourceTree = "<group>"; };
+		6FEB34C1AE6E64DCE820E964 /* Pods-UNIP PlusTests.stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIP PlusTests.stage.xcconfig"; path = "Target Support Files/Pods-UNIP PlusTests/Pods-UNIP PlusTests.stage.xcconfig"; sourceTree = "<group>"; };
+		87474EA49EA94EF75D7FAD9E /* Pods_UNIP_PlusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UNIP_PlusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F19838DC6F23F87E15F7A0D /* Pods-UNIP PlusTests.local.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIP PlusTests.local.xcconfig"; path = "Target Support Files/Pods-UNIP PlusTests/Pods-UNIP PlusTests.local.xcconfig"; sourceTree = "<group>"; };
 		9A558095F2E5F9037531DC3A /* Pods-UNIP Plus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIP Plus.release.xcconfig"; path = "Target Support Files/Pods-UNIP Plus/Pods-UNIP Plus.release.xcconfig"; sourceTree = "<group>"; };
 		A16BD6841ED1B0DF04653806 /* Pods-UNIP Plus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIP Plus.debug.xcconfig"; path = "Target Support Files/Pods-UNIP Plus/Pods-UNIP Plus.debug.xcconfig"; sourceTree = "<group>"; };
-		B9D24C05ADEB5E905946DDDE /* Pods_UNIP_PlusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UNIP_PlusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0626FC6E8202F29C83A1CB4 /* Pods_UNIP_Plus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UNIP_Plus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D4205090C4D8D1D74F3B7393 /* Pods-UNIP PlusTests.stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIP PlusTests.stage.xcconfig"; path = "Target Support Files/Pods-UNIP PlusTests/Pods-UNIP PlusTests.stage.xcconfig"; sourceTree = "<group>"; };
 		DBDBEBDC8391F462D5598361 /* Pods-UNIP Plus.local.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIP Plus.local.xcconfig"; path = "Target Support Files/Pods-UNIP Plus/Pods-UNIP Plus.local.xcconfig"; sourceTree = "<group>"; };
+		E314F65027A21589006ABCA1 /* CodableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableObject.swift; sourceTree = "<group>"; };
+		E314F65A27A223EA006ABCA1 /* UNIP PlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UNIP PlusTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E314F66627A2279C006ABCA1 /* CodableObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableObjectTests.swift; sourceTree = "<group>"; };
+		E36B50D3279F84D500D74832 /* RestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestHelper.swift; sourceTree = "<group>"; };
+		E36B50D6279F852C00D74832 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
+		E36B50D9279F881700D74832 /* RestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestError.swift; sourceTree = "<group>"; };
+		E36B50DB279F887200D74832 /* RestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestMethod.swift; sourceTree = "<group>"; };
+		E36B50DD279F8F1F00D74832 /* AppInfoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoHelper.swift; sourceTree = "<group>"; };
 		E38D52DE2730E5B300269695 /* UNIP Plus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UNIP Plus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E38D52E12730E5B300269695 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E38D52EA2730E5B500269695 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E38D52ED2730E5B500269695 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E38D52EF2730E5B500269695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E38D52F42730E5B500269695 /* UNIP PlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UNIP PlusTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E38D52F82730E5B500269695 /* UNIP_PlusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNIP_PlusTests.swift; sourceTree = "<group>"; };
 		E3D5D15D279B5F9C006AF85D /* UNIP Plus Local.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "UNIP Plus Local.xcconfig"; sourceTree = "<group>"; };
 		E3D5D162279B6997006AF85D /* UNIP Plus Prod.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "UNIP Plus Prod.xcconfig"; sourceTree = "<group>"; };
 		E3D5D164279B6DF1006AF85D /* UNIP Plus Stage.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "UNIP Plus Stage.xcconfig"; sourceTree = "<group>"; };
 		EBAEC1A85AD801896C941633 /* Pods-UNIP Plus.stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIP Plus.stage.xcconfig"; path = "Target Support Files/Pods-UNIP Plus/Pods-UNIP Plus.stage.xcconfig"; sourceTree = "<group>"; };
-		FDDF98A41CB43EB5ACF8AD56 /* Pods-UNIP PlusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIP PlusTests.debug.xcconfig"; path = "Target Support Files/Pods-UNIP PlusTests/Pods-UNIP PlusTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E314F65727A223EA006ABCA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A692146AA98773A689552DD9 /* Pods_UNIP_PlusTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E38D52DB2730E5B300269695 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				41A77E5124599732EF95E55E /* Pods_UNIP_Plus.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E38D52F12730E5B500269695 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3C0BD2FCDB0BECA51445C1C7 /* Pods_UNIP_PlusTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				D0626FC6E8202F29C83A1CB4 /* Pods_UNIP_Plus.framework */,
-				B9D24C05ADEB5E905946DDDE /* Pods_UNIP_PlusTests.framework */,
+				87474EA49EA94EF75D7FAD9E /* Pods_UNIP_PlusTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -85,13 +97,66 @@
 				A16BD6841ED1B0DF04653806 /* Pods-UNIP Plus.debug.xcconfig */,
 				DBDBEBDC8391F462D5598361 /* Pods-UNIP Plus.local.xcconfig */,
 				9A558095F2E5F9037531DC3A /* Pods-UNIP Plus.release.xcconfig */,
-				FDDF98A41CB43EB5ACF8AD56 /* Pods-UNIP PlusTests.debug.xcconfig */,
-				0DCAD1B6E1D7237773C27082 /* Pods-UNIP PlusTests.local.xcconfig */,
-				408E15222749D8F1AC3DE591 /* Pods-UNIP PlusTests.release.xcconfig */,
 				EBAEC1A85AD801896C941633 /* Pods-UNIP Plus.stage.xcconfig */,
-				D4205090C4D8D1D74F3B7393 /* Pods-UNIP PlusTests.stage.xcconfig */,
+				002F252573F7529086FD7A6C /* Pods-UNIP PlusTests.debug.xcconfig */,
+				6FEB34C1AE6E64DCE820E964 /* Pods-UNIP PlusTests.stage.xcconfig */,
+				8F19838DC6F23F87E15F7A0D /* Pods-UNIP PlusTests.local.xcconfig */,
+				66CC3627FE7E55B697421FE0 /* Pods-UNIP PlusTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E314F65B27A223EA006ABCA1 /* UNIP PlusTests */ = {
+			isa = PBXGroup;
+			children = (
+				E314F66527A22780006ABCA1 /* Lang */,
+			);
+			path = "UNIP PlusTests";
+			sourceTree = "<group>";
+		};
+		E314F66527A22780006ABCA1 /* Lang */ = {
+			isa = PBXGroup;
+			children = (
+				E314F66627A2279C006ABCA1 /* CodableObjectTests.swift */,
+			);
+			path = Lang;
+			sourceTree = "<group>";
+		};
+		E36B50D1279F84B500D74832 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E36B50D8279F880300D74832 /* Lang */,
+				E36B50D5279F851500D74832 /* Providers */,
+				E36B50D2279F84C200D74832 /* Helpers */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E36B50D2279F84C200D74832 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E36B50D3279F84D500D74832 /* RestHelper.swift */,
+				E36B50DD279F8F1F00D74832 /* AppInfoHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E36B50D5279F851500D74832 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				E36B50D6279F852C00D74832 /* APIProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		E36B50D8279F880300D74832 /* Lang */ = {
+			isa = PBXGroup;
+			children = (
+				E36B50D9279F881700D74832 /* RestError.swift */,
+				E36B50DB279F887200D74832 /* RestMethod.swift */,
+				E314F65027A21589006ABCA1 /* CodableObject.swift */,
+			);
+			path = Lang;
 			sourceTree = "<group>";
 		};
 		E38D52D52730E5B300269695 = {
@@ -101,7 +166,7 @@
 				E3D5D162279B6997006AF85D /* UNIP Plus Prod.xcconfig */,
 				E3D5D15D279B5F9C006AF85D /* UNIP Plus Local.xcconfig */,
 				E38D52E02730E5B300269695 /* UNIP Plus */,
-				E38D52F72730E5B500269695 /* UNIP PlusTests */,
+				E314F65B27A223EA006ABCA1 /* UNIP PlusTests */,
 				E38D52DF2730E5B300269695 /* Products */,
 				6335CF747E8B57D8EF329409 /* Pods */,
 				15CB7952641D8EC340BBA853 /* Frameworks */,
@@ -112,7 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				E38D52DE2730E5B300269695 /* UNIP Plus.app */,
-				E38D52F42730E5B500269695 /* UNIP PlusTests.xctest */,
+				E314F65A27A223EA006ABCA1 /* UNIP PlusTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,6 +185,7 @@
 		E38D52E02730E5B300269695 /* UNIP Plus */ = {
 			isa = PBXGroup;
 			children = (
+				E36B50D1279F84B500D74832 /* Core */,
 				E38D52E12730E5B300269695 /* AppDelegate.swift */,
 				E38D52EA2730E5B500269695 /* Assets.xcassets */,
 				E38D52EC2730E5B500269695 /* LaunchScreen.storyboard */,
@@ -128,17 +194,28 @@
 			path = "UNIP Plus";
 			sourceTree = "<group>";
 		};
-		E38D52F72730E5B500269695 /* UNIP PlusTests */ = {
-			isa = PBXGroup;
-			children = (
-				E38D52F82730E5B500269695 /* UNIP_PlusTests.swift */,
-			);
-			path = "UNIP PlusTests";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E314F65927A223EA006ABCA1 /* UNIP PlusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E314F66027A223EA006ABCA1 /* Build configuration list for PBXNativeTarget "UNIP PlusTests" */;
+			buildPhases = (
+				E9DD420FEC5E2575232115CE /* [CP] Check Pods Manifest.lock */,
+				E314F65627A223EA006ABCA1 /* Sources */,
+				E314F65727A223EA006ABCA1 /* Frameworks */,
+				E314F65827A223EA006ABCA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E314F65F27A223EA006ABCA1 /* PBXTargetDependency */,
+			);
+			name = "UNIP PlusTests";
+			productName = "UNIP PlusTests";
+			productReference = E314F65A27A223EA006ABCA1 /* UNIP PlusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E38D52DD2730E5B300269695 /* UNIP Plus */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E38D53082730E5B500269695 /* Build configuration list for PBXNativeTarget "UNIP Plus" */;
@@ -157,25 +234,6 @@
 			productReference = E38D52DE2730E5B300269695 /* UNIP Plus.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E38D52F32730E5B500269695 /* UNIP PlusTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E38D530B2730E5B500269695 /* Build configuration list for PBXNativeTarget "UNIP PlusTests" */;
-			buildPhases = (
-				047B2819595FF6DFB20ED73D /* [CP] Check Pods Manifest.lock */,
-				E38D52F02730E5B500269695 /* Sources */,
-				E38D52F12730E5B500269695 /* Frameworks */,
-				E38D52F22730E5B500269695 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E38D52F62730E5B500269695 /* PBXTargetDependency */,
-			);
-			name = "UNIP PlusTests";
-			productName = "UNIP PlusTests";
-			productReference = E38D52F42730E5B500269695 /* UNIP PlusTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -183,15 +241,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1310;
+				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
+					E314F65927A223EA006ABCA1 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = E38D52DD2730E5B300269695;
+					};
 					E38D52DD2730E5B300269695 = {
 						CreatedOnToolsVersion = 13.1;
-					};
-					E38D52F32730E5B500269695 = {
-						CreatedOnToolsVersion = 13.1;
-						TestTargetID = E38D52DD2730E5B300269695;
 					};
 				};
 			};
@@ -209,12 +267,19 @@
 			projectRoot = "";
 			targets = (
 				E38D52DD2730E5B300269695 /* UNIP Plus */,
-				E38D52F32730E5B500269695 /* UNIP PlusTests */,
+				E314F65927A223EA006ABCA1 /* UNIP PlusTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E314F65827A223EA006ABCA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E38D52DC2730E5B300269695 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -226,38 +291,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E38D52F22730E5B500269695 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		047B2819595FF6DFB20ED73D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-UNIP PlusTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		E5F7D62E0E2E9FB88508B454 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -280,32 +316,60 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E9DD420FEC5E2575232115CE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UNIP PlusTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E314F65627A223EA006ABCA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E314F66727A2279C006ABCA1 /* CodableObjectTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E38D52DA2730E5B300269695 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E36B50DC279F887200D74832 /* RestMethod.swift in Sources */,
+				E314F65127A21589006ABCA1 /* CodableObject.swift in Sources */,
 				E38D52E22730E5B300269695 /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E38D52F02730E5B500269695 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E38D52F92730E5B500269695 /* UNIP_PlusTests.swift in Sources */,
+				E36B50D4279F84D500D74832 /* RestHelper.swift in Sources */,
+				E36B50DE279F8F1F00D74832 /* AppInfoHelper.swift in Sources */,
+				E36B50DA279F881700D74832 /* RestError.swift in Sources */,
+				E36B50D7279F852C00D74832 /* APIProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E38D52F62730E5B500269695 /* PBXTargetDependency */ = {
+		E314F65F27A223EA006ABCA1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E38D52DD2730E5B300269695 /* UNIP Plus */;
-			targetProxy = E38D52F52730E5B500269695 /* PBXContainerItemProxy */;
+			targetProxy = E314F65E27A223EA006ABCA1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -321,6 +385,82 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E314F66127A223EA006ABCA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 002F252573F7529086FD7A6C /* Pods-UNIP PlusTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "prototype.UNIP-PlusTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UNIP Plus.app/UNIP Plus";
+			};
+			name = Debug;
+		};
+		E314F66227A223EA006ABCA1 /* Stage */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FEB34C1AE6E64DCE820E964 /* Pods-UNIP PlusTests.stage.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "prototype.UNIP-PlusTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UNIP Plus.app/UNIP Plus";
+			};
+			name = Stage;
+		};
+		E314F66327A223EA006ABCA1 /* Local */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F19838DC6F23F87E15F7A0D /* Pods-UNIP PlusTests.local.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "prototype.UNIP-PlusTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UNIP Plus.app/UNIP Plus";
+			};
+			name = Local;
+		};
+		E314F66427A223EA006ABCA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66CC3627FE7E55B697421FE0 /* Pods-UNIP PlusTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "prototype.UNIP-PlusTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UNIP Plus.app/UNIP Plus";
+			};
+			name = Release;
+		};
 		E38D53062730E5B500269695 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E3D5D162279B6997006AF85D /* UNIP Plus Prod.xcconfig */;
@@ -497,58 +637,6 @@
 			};
 			name = Release;
 		};
-		E38D530C2730E5B500269695 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FDDF98A41CB43EB5ACF8AD56 /* Pods-UNIP PlusTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "br.com.mobileclass.UNIP-PlusTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UNIP Plus.app/UNIP Plus";
-			};
-			name = Debug;
-		};
-		E38D530D2730E5B500269695 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 408E15222749D8F1AC3DE591 /* Pods-UNIP PlusTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "br.com.mobileclass.UNIP-PlusTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UNIP Plus.app/UNIP Plus";
-			};
-			name = Release;
-		};
 		E3D5D15F279B6292006AF85D /* Local */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E3D5D15D279B5F9C006AF85D /* UNIP Plus Local.xcconfig */;
@@ -637,32 +725,6 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Local;
-		};
-		E3D5D161279B6292006AF85D /* Local */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0DCAD1B6E1D7237773C27082 /* Pods-UNIP PlusTests.local.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "br.com.mobileclass.UNIP-PlusTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UNIP Plus.app/UNIP Plus";
 			};
 			name = Local;
 		};
@@ -757,35 +819,20 @@
 			};
 			name = Stage;
 		};
-		E3D5D168279B6E0A006AF85D /* Stage */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4205090C4D8D1D74F3B7393 /* Pods-UNIP PlusTests.stage.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "br.com.mobileclass.UNIP-PlusTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UNIP Plus.app/UNIP Plus";
-			};
-			name = Stage;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E314F66027A223EA006ABCA1 /* Build configuration list for PBXNativeTarget "UNIP PlusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E314F66127A223EA006ABCA1 /* Debug */,
+				E314F66227A223EA006ABCA1 /* Stage */,
+				E314F66327A223EA006ABCA1 /* Local */,
+				E314F66427A223EA006ABCA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E38D52D92730E5B300269695 /* Build configuration list for PBXProject "UNIP Plus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -804,17 +851,6 @@
 				E3D5D167279B6E0A006AF85D /* Stage */,
 				E3D5D160279B6292006AF85D /* Local */,
 				E38D530A2730E5B500269695 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E38D530B2730E5B500269695 /* Build configuration list for PBXNativeTarget "UNIP PlusTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E38D530C2730E5B500269695 /* Debug */,
-				E3D5D168279B6E0A006AF85D /* Stage */,
-				E3D5D161279B6292006AF85D /* Local */,
-				E38D530D2730E5B500269695 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

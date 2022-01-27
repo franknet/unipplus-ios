@@ -32,19 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E38D52F32730E5B500269695"
+               BlueprintIdentifier = "E314F65927A223EA006ABCA1"
                BuildableName = "UNIP PlusTests.xctest"
                BlueprintName = "UNIP PlusTests"
-               ReferencedContainer = "container:UNIP Plus.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E38D52FD2730E5B500269695"
-               BuildableName = "UNIP PlusUITests.xctest"
-               BlueprintName = "UNIP PlusUITests"
                ReferencedContainer = "container:UNIP Plus.xcodeproj">
             </BuildableReference>
          </TestableReference>

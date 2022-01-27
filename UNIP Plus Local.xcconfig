@@ -9,4 +9,5 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 
 SLASH = /
-API_BASE_URL = http:$(SLASH)/localhost:5001/unip-plus/southamerica-east1/api/Prod
+API_ORIGIN = https:$(SLASH)/localhost:5001
+API_BASE_URL = ${API_ORIGIN}/unip-plus/southamerica-east1/api

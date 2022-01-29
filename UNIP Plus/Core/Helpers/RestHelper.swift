@@ -12,7 +12,7 @@ class RestHelper {
     
     private let session: URLSession
     private var netMonitor: NWPathMonitor?
-    private var networkStatus: NWPath.Status = .unsatisfied
+    private var networkStatus: NWPath.Status = .satisfied
     
     required init(_ session: URLSession = URLSession(configuration: .default)) {
         self.session = session
@@ -69,7 +69,7 @@ class RestHelper {
                 return
             }
             completion(.success(data))
-        }
+        }.resume()
     }
     
     private func responseMessageFromData(_ data: Data) -> String? {
@@ -84,7 +84,7 @@ class RestHelper {
         netMonitor?.pathUpdateHandler = { path in
             self.networkStatus = path.status
         }
-        netMonitor?.start(queue: .init(label: "NetWork Monitoring"))
+        netMonitor?.start(queue: .init(label: "Network Monitoring"))
     }
     
     private func stopNetMonitoring() {

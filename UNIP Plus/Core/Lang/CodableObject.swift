@@ -21,4 +21,4 @@ extension CodableObject {
 
 extension Array: CodableObject where Element: CodableObject { }
 
-extension Dictionary: CodableObject where Key: Codable, Value: CodableObject { }
+extension Dictionary: CodableObject where Key: CodableObject, Value: CodableObject { }

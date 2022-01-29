@@ -15,6 +15,8 @@ class CodableObjectTests: XCTestCase {
         var age: Int?
     }
     
+    var codableDict: [String:CodableObject]?
+    
     var jsonData: Data?
     var jsonArrayData: Data?
 
@@ -25,13 +27,15 @@ class CodableObjectTests: XCTestCase {
         json["name"] = "José"
         json["age"] = 32
         
+        
+        
         jsonData = try? JSONSerialization.data(withJSONObject: json, options: [])
         jsonArrayData = try? JSONSerialization.data(withJSONObject: [json], options: [])
     }
 
     override func tearDownWithError() throws {
         jsonData = nil
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        jsonArrayData = nil
     }
 
     func testDecode() throws {

@@ -11,6 +11,7 @@
 		A692146AA98773A689552DD9 /* Pods_UNIP_PlusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87474EA49EA94EF75D7FAD9E /* Pods_UNIP_PlusTests.framework */; };
 		E314F65127A21589006ABCA1 /* CodableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F65027A21589006ABCA1 /* CodableObject.swift */; };
 		E314F66727A2279C006ABCA1 /* CodableObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F66627A2279C006ABCA1 /* CodableObjectTests.swift */; };
+		E314F66A27A3866A006ABCA1 /* RestHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F66927A3866A006ABCA1 /* RestHelperTests.swift */; };
 		E36B50D4279F84D500D74832 /* RestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36B50D3279F84D500D74832 /* RestHelper.swift */; };
 		E36B50D7279F852C00D74832 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36B50D6279F852C00D74832 /* APIProvider.swift */; };
 		E36B50DA279F881700D74832 /* RestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36B50D9279F881700D74832 /* RestError.swift */; };
@@ -20,7 +21,6 @@
 		E38D52EB2730E5B500269695 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E38D52EA2730E5B500269695 /* Assets.xcassets */; };
 		E38D52EE2730E5B500269695 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E38D52EC2730E5B500269695 /* LaunchScreen.storyboard */; };
 		E3D5D15E279B5F9C006AF85D /* UNIP Plus Local.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = E3D5D15D279B5F9C006AF85D /* UNIP Plus Local.xcconfig */; };
-		E3D5D165279B6DF1006AF85D /* UNIP Plus Stage.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = E3D5D164279B6DF1006AF85D /* UNIP Plus Stage.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		002F252573F7529086FD7A6C /* Pods-UNIP PlusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIP PlusTests.debug.xcconfig"; path = "Target Support Files/Pods-UNIP PlusTests/Pods-UNIP PlusTests.debug.xcconfig"; sourceTree = "<group>"; };
 		66CC3627FE7E55B697421FE0 /* Pods-UNIP PlusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIP PlusTests.release.xcconfig"; path = "Target Support Files/Pods-UNIP PlusTests/Pods-UNIP PlusTests.release.xcconfig"; sourceTree = "<group>"; };
-		6FEB34C1AE6E64DCE820E964 /* Pods-UNIP PlusTests.stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIP PlusTests.stage.xcconfig"; path = "Target Support Files/Pods-UNIP PlusTests/Pods-UNIP PlusTests.stage.xcconfig"; sourceTree = "<group>"; };
 		87474EA49EA94EF75D7FAD9E /* Pods_UNIP_PlusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UNIP_PlusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F19838DC6F23F87E15F7A0D /* Pods-UNIP PlusTests.local.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIP PlusTests.local.xcconfig"; path = "Target Support Files/Pods-UNIP PlusTests/Pods-UNIP PlusTests.local.xcconfig"; sourceTree = "<group>"; };
 		9A558095F2E5F9037531DC3A /* Pods-UNIP Plus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIP Plus.release.xcconfig"; path = "Target Support Files/Pods-UNIP Plus/Pods-UNIP Plus.release.xcconfig"; sourceTree = "<group>"; };
@@ -46,6 +45,7 @@
 		E314F65027A21589006ABCA1 /* CodableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableObject.swift; sourceTree = "<group>"; };
 		E314F65A27A223EA006ABCA1 /* UNIP PlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UNIP PlusTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E314F66627A2279C006ABCA1 /* CodableObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableObjectTests.swift; sourceTree = "<group>"; };
+		E314F66927A3866A006ABCA1 /* RestHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestHelperTests.swift; sourceTree = "<group>"; };
 		E36B50D3279F84D500D74832 /* RestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestHelper.swift; sourceTree = "<group>"; };
 		E36B50D6279F852C00D74832 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		E36B50D9279F881700D74832 /* RestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestError.swift; sourceTree = "<group>"; };
@@ -58,8 +58,6 @@
 		E38D52EF2730E5B500269695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3D5D15D279B5F9C006AF85D /* UNIP Plus Local.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "UNIP Plus Local.xcconfig"; sourceTree = "<group>"; };
 		E3D5D162279B6997006AF85D /* UNIP Plus Prod.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "UNIP Plus Prod.xcconfig"; sourceTree = "<group>"; };
-		E3D5D164279B6DF1006AF85D /* UNIP Plus Stage.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "UNIP Plus Stage.xcconfig"; sourceTree = "<group>"; };
-		EBAEC1A85AD801896C941633 /* Pods-UNIP Plus.stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIP Plus.stage.xcconfig"; path = "Target Support Files/Pods-UNIP Plus/Pods-UNIP Plus.stage.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +95,7 @@
 				A16BD6841ED1B0DF04653806 /* Pods-UNIP Plus.debug.xcconfig */,
 				DBDBEBDC8391F462D5598361 /* Pods-UNIP Plus.local.xcconfig */,
 				9A558095F2E5F9037531DC3A /* Pods-UNIP Plus.release.xcconfig */,
-				EBAEC1A85AD801896C941633 /* Pods-UNIP Plus.stage.xcconfig */,
 				002F252573F7529086FD7A6C /* Pods-UNIP PlusTests.debug.xcconfig */,
-				6FEB34C1AE6E64DCE820E964 /* Pods-UNIP PlusTests.stage.xcconfig */,
 				8F19838DC6F23F87E15F7A0D /* Pods-UNIP PlusTests.local.xcconfig */,
 				66CC3627FE7E55B697421FE0 /* Pods-UNIP PlusTests.release.xcconfig */,
 			);
@@ -109,6 +105,7 @@
 		E314F65B27A223EA006ABCA1 /* UNIP PlusTests */ = {
 			isa = PBXGroup;
 			children = (
+				E314F66827A3863B006ABCA1 /* Helpers */,
 				E314F66527A22780006ABCA1 /* Lang */,
 			);
 			path = "UNIP PlusTests";
@@ -120,6 +117,14 @@
 				E314F66627A2279C006ABCA1 /* CodableObjectTests.swift */,
 			);
 			path = Lang;
+			sourceTree = "<group>";
+		};
+		E314F66827A3863B006ABCA1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E314F66927A3866A006ABCA1 /* RestHelperTests.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		E36B50D1279F84B500D74832 /* Core */ = {
@@ -162,7 +167,6 @@
 		E38D52D52730E5B300269695 = {
 			isa = PBXGroup;
 			children = (
-				E3D5D164279B6DF1006AF85D /* UNIP Plus Stage.xcconfig */,
 				E3D5D162279B6997006AF85D /* UNIP Plus Prod.xcconfig */,
 				E3D5D15D279B5F9C006AF85D /* UNIP Plus Local.xcconfig */,
 				E38D52E02730E5B300269695 /* UNIP Plus */,
@@ -287,7 +291,6 @@
 				E3D5D15E279B5F9C006AF85D /* UNIP Plus Local.xcconfig in Resources */,
 				E38D52EE2730E5B500269695 /* LaunchScreen.storyboard in Resources */,
 				E38D52EB2730E5B500269695 /* Assets.xcassets in Resources */,
-				E3D5D165279B6DF1006AF85D /* UNIP Plus Stage.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E314F66727A2279C006ABCA1 /* CodableObjectTests.swift in Sources */,
+				E314F66A27A3866A006ABCA1 /* RestHelperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,25 +407,6 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UNIP Plus.app/UNIP Plus";
 			};
 			name = Debug;
-		};
-		E314F66227A223EA006ABCA1 /* Stage */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6FEB34C1AE6E64DCE820E964 /* Pods-UNIP PlusTests.stage.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "prototype.UNIP-PlusTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UNIP Plus.app/UNIP Plus";
-			};
-			name = Stage;
 		};
 		E314F66327A223EA006ABCA1 /* Local */ = {
 			isa = XCBuildConfiguration;
@@ -728,97 +713,6 @@
 			};
 			name = Local;
 		};
-		E3D5D166279B6E0A006AF85D /* Stage */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E3D5D164279B6DF1006AF85D /* UNIP Plus Stage.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Stage;
-		};
-		E3D5D167279B6E0A006AF85D /* Stage */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EBAEC1A85AD801896C941633 /* Pods-UNIP Plus.stage.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "UNIP Plus/Info.plist";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "br.com.mobileclass.UNIP-Plus";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Stage;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -826,7 +720,6 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E314F66127A223EA006ABCA1 /* Debug */,
-				E314F66227A223EA006ABCA1 /* Stage */,
 				E314F66327A223EA006ABCA1 /* Local */,
 				E314F66427A223EA006ABCA1 /* Release */,
 			);
@@ -837,7 +730,6 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E38D53062730E5B500269695 /* Debug */,
-				E3D5D166279B6E0A006AF85D /* Stage */,
 				E3D5D15F279B6292006AF85D /* Local */,
 				E38D53072730E5B500269695 /* Release */,
 			);
@@ -848,7 +740,6 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E38D53092730E5B500269695 /* Debug */,
-				E3D5D167279B6E0A006AF85D /* Stage */,
 				E3D5D160279B6292006AF85D /* Local */,
 				E38D530A2730E5B500269695 /* Release */,
 			);

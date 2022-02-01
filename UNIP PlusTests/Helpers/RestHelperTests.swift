@@ -36,7 +36,7 @@ class RestHelperTests: XCTestCase {
         
         provider = .init(path: "/v1/test_get_success", method: .GET, headers: nil, data: nil)
         
-        provider?.fetch(type: SuccessMessage.self, { result in
+        provider?.fetch(modelType: SuccessMessage.self, { result in
             expect.fulfill()
             switch result {
             case .success(let model):
@@ -54,7 +54,7 @@ class RestHelperTests: XCTestCase {
         
         provider = .init(path: "/v1/test_service_error", method: .GET, headers: nil, data: nil)
         
-        provider?.fetch(type: SuccessMessage.self, { result in
+        provider?.fetch { result in
             expect.fulfill()
             switch result {
             case .success:
@@ -63,7 +63,7 @@ class RestHelperTests: XCTestCase {
                 XCTAssertNotNil(error.localizedDescription)
                 XCTAssert(error.localizedDescription == "sessão expirada!")
             }
-        })
+        }
         
         wait(for: [expect], timeout: 30)
     }

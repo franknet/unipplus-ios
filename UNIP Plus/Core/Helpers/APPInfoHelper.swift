@@ -10,11 +10,7 @@ import Foundation
 class AppInfoHelper {
     
     private static var info: NSDictionary? {
-        guard
-            let filePath = Bundle.main.path(forResource: "Info", ofType: "plist")
-        else {
-            return nil
-        }
+        guard let filePath = Bundle.main.path(forResource: "Info", ofType: "plist") else { return nil }
         let fileURL = URL(fileURLWithPath: filePath)
         return NSDictionary(contentsOf: fileURL)
     }

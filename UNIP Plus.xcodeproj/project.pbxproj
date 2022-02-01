@@ -12,6 +12,23 @@
 		E314F65127A21589006ABCA1 /* CodableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F65027A21589006ABCA1 /* CodableObject.swift */; };
 		E314F66727A2279C006ABCA1 /* CodableObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F66627A2279C006ABCA1 /* CodableObjectTests.swift */; };
 		E314F66A27A3866A006ABCA1 /* RestHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F66927A3866A006ABCA1 /* RestHelperTests.swift */; };
+		E314F67427A58A04006ABCA1 /* AppInfoHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F67327A58A04006ABCA1 /* AppInfoHelperTests.swift */; };
+		E314F67627A5F171006ABCA1 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F67527A5F171006ABCA1 /* AuthenticationViewModel.swift */; };
+		E314F67927A5F18F006ABCA1 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F67827A5F18F006ABCA1 /* Credentials.swift */; };
+		E314F67B27A5F1F6006ABCA1 /* AuthenticationAPIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F67A27A5F1F6006ABCA1 /* AuthenticationAPIProvider.swift */; };
+		E314F67D27A5F382006ABCA1 /* DisciplinesAPIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F67C27A5F382006ABCA1 /* DisciplinesAPIProvider.swift */; };
+		E314F67F27A5F401006ABCA1 /* FinanceAPIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F67E27A5F401006ABCA1 /* FinanceAPIProvider.swift */; };
+		E314F68127A5F4F5006ABCA1 /* AcademicRecordsAPIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F68027A5F4F5006ABCA1 /* AcademicRecordsAPIProvider.swift */; };
+		E314F68327A5F560006ABCA1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F68227A5F560006ABCA1 /* User.swift */; };
+		E314F68527A5F568006ABCA1 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F68427A5F568006ABCA1 /* Session.swift */; };
+		E314F68A27A5F7B2006ABCA1 /* Disciplines.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F68927A5F7B2006ABCA1 /* Disciplines.swift */; };
+		E314F68C27A5F7BF006ABCA1 /* Discipline.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F68B27A5F7BF006ABCA1 /* Discipline.swift */; };
+		E314F68E27A5F9C4006ABCA1 /* Documents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F68D27A5F9C4006ABCA1 /* Documents.swift */; };
+		E314F69027A5F9CF006ABCA1 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F68F27A5F9CF006ABCA1 /* Document.swift */; };
+		E314F69227A5F9D9006ABCA1 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F69127A5F9D9006ABCA1 /* Payment.swift */; };
+		E314F69427A5FC1C006ABCA1 /* ARDiscipline.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F69327A5FC1C006ABCA1 /* ARDiscipline.swift */; };
+		E314F69827A5FC60006ABCA1 /* ARSemester.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F69727A5FC60006ABCA1 /* ARSemester.swift */; };
+		E34542A327A89746008DBB8C /* APIProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34542A227A89746008DBB8C /* APIProviderTests.swift */; };
 		E36B50D4279F84D500D74832 /* RestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36B50D3279F84D500D74832 /* RestHelper.swift */; };
 		E36B50D7279F852C00D74832 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36B50D6279F852C00D74832 /* APIProvider.swift */; };
 		E36B50DA279F881700D74832 /* RestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36B50D9279F881700D74832 /* RestError.swift */; };
@@ -46,6 +63,23 @@
 		E314F65A27A223EA006ABCA1 /* UNIP PlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UNIP PlusTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E314F66627A2279C006ABCA1 /* CodableObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableObjectTests.swift; sourceTree = "<group>"; };
 		E314F66927A3866A006ABCA1 /* RestHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestHelperTests.swift; sourceTree = "<group>"; };
+		E314F67327A58A04006ABCA1 /* AppInfoHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoHelperTests.swift; sourceTree = "<group>"; };
+		E314F67527A5F171006ABCA1 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		E314F67827A5F18F006ABCA1 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		E314F67A27A5F1F6006ABCA1 /* AuthenticationAPIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationAPIProvider.swift; sourceTree = "<group>"; };
+		E314F67C27A5F382006ABCA1 /* DisciplinesAPIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisciplinesAPIProvider.swift; sourceTree = "<group>"; };
+		E314F67E27A5F401006ABCA1 /* FinanceAPIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceAPIProvider.swift; sourceTree = "<group>"; };
+		E314F68027A5F4F5006ABCA1 /* AcademicRecordsAPIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademicRecordsAPIProvider.swift; sourceTree = "<group>"; };
+		E314F68227A5F560006ABCA1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E314F68427A5F568006ABCA1 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		E314F68927A5F7B2006ABCA1 /* Disciplines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disciplines.swift; sourceTree = "<group>"; };
+		E314F68B27A5F7BF006ABCA1 /* Discipline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discipline.swift; sourceTree = "<group>"; };
+		E314F68D27A5F9C4006ABCA1 /* Documents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Documents.swift; sourceTree = "<group>"; };
+		E314F68F27A5F9CF006ABCA1 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		E314F69127A5F9D9006ABCA1 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
+		E314F69327A5FC1C006ABCA1 /* ARDiscipline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARDiscipline.swift; sourceTree = "<group>"; };
+		E314F69727A5FC60006ABCA1 /* ARSemester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSemester.swift; sourceTree = "<group>"; };
+		E34542A227A89746008DBB8C /* APIProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProviderTests.swift; sourceTree = "<group>"; };
 		E36B50D3279F84D500D74832 /* RestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestHelper.swift; sourceTree = "<group>"; };
 		E36B50D6279F852C00D74832 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		E36B50D9279F881700D74832 /* RestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestError.swift; sourceTree = "<group>"; };
@@ -105,6 +139,7 @@
 		E314F65B27A223EA006ABCA1 /* UNIP PlusTests */ = {
 			isa = PBXGroup;
 			children = (
+				E34542A127A89715008DBB8C /* Providers */,
 				E314F66827A3863B006ABCA1 /* Helpers */,
 				E314F66527A22780006ABCA1 /* Lang */,
 			);
@@ -123,13 +158,116 @@
 			isa = PBXGroup;
 			children = (
 				E314F66927A3866A006ABCA1 /* RestHelperTests.swift */,
+				E314F67327A58A04006ABCA1 /* AppInfoHelperTests.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E314F66B27A4C499006ABCA1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				E314F67127A57FB2006ABCA1 /* Academic Records */,
+				E314F67027A57FA9006ABCA1 /* Finance */,
+				E314F66F27A57F9C006ABCA1 /* Disciplines */,
+				E314F66E27A57F93006ABCA1 /* Authentication */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		E314F66E27A57F93006ABCA1 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				E314F67727A5F176006ABCA1 /* Models */,
+				E314F67527A5F171006ABCA1 /* AuthenticationViewModel.swift */,
+				E314F67A27A5F1F6006ABCA1 /* AuthenticationAPIProvider.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		E314F66F27A57F9C006ABCA1 /* Disciplines */ = {
+			isa = PBXGroup;
+			children = (
+				E314F68627A5F739006ABCA1 /* Models */,
+				E314F67C27A5F382006ABCA1 /* DisciplinesAPIProvider.swift */,
+			);
+			path = Disciplines;
+			sourceTree = "<group>";
+		};
+		E314F67027A57FA9006ABCA1 /* Finance */ = {
+			isa = PBXGroup;
+			children = (
+				E314F68727A5F744006ABCA1 /* Models */,
+				E314F67E27A5F401006ABCA1 /* FinanceAPIProvider.swift */,
+			);
+			path = Finance;
+			sourceTree = "<group>";
+		};
+		E314F67127A57FB2006ABCA1 /* Academic Records */ = {
+			isa = PBXGroup;
+			children = (
+				E314F68827A5F74A006ABCA1 /* Models */,
+				E314F68027A5F4F5006ABCA1 /* AcademicRecordsAPIProvider.swift */,
+			);
+			path = "Academic Records";
+			sourceTree = "<group>";
+		};
+		E314F67227A57FD9006ABCA1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		E314F67727A5F176006ABCA1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E314F67827A5F18F006ABCA1 /* Credentials.swift */,
+				E314F68227A5F560006ABCA1 /* User.swift */,
+				E314F68427A5F568006ABCA1 /* Session.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E314F68627A5F739006ABCA1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E314F68927A5F7B2006ABCA1 /* Disciplines.swift */,
+				E314F68B27A5F7BF006ABCA1 /* Discipline.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E314F68727A5F744006ABCA1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E314F68D27A5F9C4006ABCA1 /* Documents.swift */,
+				E314F68F27A5F9CF006ABCA1 /* Document.swift */,
+				E314F69127A5F9D9006ABCA1 /* Payment.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E314F68827A5F74A006ABCA1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E314F69327A5FC1C006ABCA1 /* ARDiscipline.swift */,
+				E314F69727A5FC60006ABCA1 /* ARSemester.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E34542A127A89715008DBB8C /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				E34542A227A89746008DBB8C /* APIProviderTests.swift */,
+			);
+			path = Providers;
 			sourceTree = "<group>";
 		};
 		E36B50D1279F84B500D74832 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				E314F67227A57FD9006ABCA1 /* UI */,
 				E36B50D8279F880300D74832 /* Lang */,
 				E36B50D5279F851500D74832 /* Providers */,
 				E36B50D2279F84C200D74832 /* Helpers */,
@@ -189,6 +327,7 @@
 		E38D52E02730E5B300269695 /* UNIP Plus */ = {
 			isa = PBXGroup;
 			children = (
+				E314F66B27A4C499006ABCA1 /* Modules */,
 				E36B50D1279F84B500D74832 /* Core */,
 				E38D52E12730E5B300269695 /* AppDelegate.swift */,
 				E38D52EA2730E5B500269695 /* Assets.xcassets */,
@@ -348,6 +487,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E314F67427A58A04006ABCA1 /* AppInfoHelperTests.swift in Sources */,
+				E34542A327A89746008DBB8C /* APIProviderTests.swift in Sources */,
 				E314F66727A2279C006ABCA1 /* CodableObjectTests.swift in Sources */,
 				E314F66A27A3866A006ABCA1 /* RestHelperTests.swift in Sources */,
 			);
@@ -358,12 +499,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				E36B50DC279F887200D74832 /* RestMethod.swift in Sources */,
+				E314F69827A5FC60006ABCA1 /* ARSemester.swift in Sources */,
 				E314F65127A21589006ABCA1 /* CodableObject.swift in Sources */,
 				E38D52E22730E5B300269695 /* AppDelegate.swift in Sources */,
+				E314F68A27A5F7B2006ABCA1 /* Disciplines.swift in Sources */,
+				E314F67927A5F18F006ABCA1 /* Credentials.swift in Sources */,
+				E314F67F27A5F401006ABCA1 /* FinanceAPIProvider.swift in Sources */,
+				E314F68E27A5F9C4006ABCA1 /* Documents.swift in Sources */,
+				E314F68527A5F568006ABCA1 /* Session.swift in Sources */,
+				E314F68127A5F4F5006ABCA1 /* AcademicRecordsAPIProvider.swift in Sources */,
+				E314F69027A5F9CF006ABCA1 /* Document.swift in Sources */,
+				E314F68327A5F560006ABCA1 /* User.swift in Sources */,
+				E314F67D27A5F382006ABCA1 /* DisciplinesAPIProvider.swift in Sources */,
 				E36B50D4279F84D500D74832 /* RestHelper.swift in Sources */,
+				E314F67627A5F171006ABCA1 /* AuthenticationViewModel.swift in Sources */,
+				E314F69427A5FC1C006ABCA1 /* ARDiscipline.swift in Sources */,
+				E314F69227A5F9D9006ABCA1 /* Payment.swift in Sources */,
+				E314F68C27A5F7BF006ABCA1 /* Discipline.swift in Sources */,
 				E36B50DE279F8F1F00D74832 /* AppInfoHelper.swift in Sources */,
 				E36B50DA279F881700D74832 /* RestError.swift in Sources */,
 				E36B50D7279F852C00D74832 /* APIProvider.swift in Sources */,
+				E314F67B27A5F1F6006ABCA1 /* AuthenticationAPIProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

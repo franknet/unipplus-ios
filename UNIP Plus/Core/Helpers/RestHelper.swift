@@ -35,19 +35,20 @@ class RestHelper {
     }
     
     private func createRequestFromProvider(_ provider: APIProvider, _ completion: (Result<URLRequest, RestError>) -> Void ) {
-        guard let url = URL(string: AppInfoHelper.baseURL + provider.path) else {
+        if let url = URL(string: AppInfoHelper.baseURL + provider.path) {
+            var request = URLRequest(url: url)
+            request.httpMethod = provider.method.rawValue
+            request.allHTTPHeaderFields = provider.headers
+            request.httpBody = provider.data
+            completion(.success(request))
+        } else {
             completion(.failure(.badRequest))
-            return
         }
-        var request = URLRequest(url: url)
-        request.httpMethod = provider.method.rawValue
-        request.allHTTPHeaderFields = provider.headers
-        request.httpBody = provider.data
-        completion(.success(request))
     }
     
     private func executeRequest(_ request: URLRequest, _ completion: @escaping (Result<Data, RestError>) -> Void) {
         session.dataTask(with: request) { data, urlResponse, error in
+            request.log()
             if let error = error {
                 completion(.failure(.unknow(error)))
                 return
@@ -56,27 +57,26 @@ class RestHelper {
                 completion(.failure(.noData))
                 return
             }
+            response.log()
             if response.statusCode >= 500 {
                 completion(.failure(.serviceUnavaliable))
                 return
             }
-            guard response.statusCode == 200 else {
-                if let responseMessage = self.responseMessageFromData(data) {
-                    completion(.failure(.serviceError(responseMessage)))
-                } else {
-                    completion(.failure(.noData))
-                }
-                return
+            if response.statusCode != 200 {
+                let serviceError = self.serviceMessageFromData(data)
+                completion(.failure(serviceError))
+            } else {
+                completion(.success(data))
             }
-            completion(.success(data))
         }.resume()
     }
     
-    private func responseMessageFromData(_ data: Data) -> String? {
-        guard let json = try? JSONDecoder().decode([String: String].self, from: data) else {
-            return nil
+    private func serviceMessageFromData(_ data: Data) -> RestError {
+        if let json = try? JSONDecoder().decode([String: String].self, from: data), let message = json["message"] {
+            return .serviceError(message)
+        } else {
+            return .decodeError
         }
-        return json["message"]
     }
     
     private func startNetMonitoring() {
@@ -94,5 +94,29 @@ class RestHelper {
     
     deinit {
         stopNetMonitoring()
+    }
+}
+
+extension HTTPURLResponse {
+    func log() {
+        
+        print("=== RESPONSE ===")
+        
+        print("Status: \(self.statusCode) \(self.url?.absoluteString ?? "")")
+        
+        print("HEADERS:")
+        print(self.allHeaderFields)
+    }
+}
+
+extension URLRequest {
+    func log() {
+        
+        print("=== REQUEST ===")
+        
+        print("URL:\(self.url?.absoluteString ?? "")")
+        
+        print("HEADERS:")
+        print(self.allHTTPHeaderFields ?? [:])
     }
 }

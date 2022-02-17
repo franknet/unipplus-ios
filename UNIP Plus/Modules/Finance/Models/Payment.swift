@@ -21,4 +21,5 @@ struct Payment: CodableObject {
     let receipt: String?
     let reversalDate: String?
     let difference: Double?
+    let bankSlipUrl: String?
 }

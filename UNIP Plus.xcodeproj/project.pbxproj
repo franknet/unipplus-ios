@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		41A77E5124599732EF95E55E /* Pods_UNIP_Plus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0626FC6E8202F29C83A1CB4 /* Pods_UNIP_Plus.framework */; };
 		A692146AA98773A689552DD9 /* Pods_UNIP_PlusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87474EA49EA94EF75D7FAD9E /* Pods_UNIP_PlusTests.framework */; };
+		E306C63927AEC60300B25526 /* DynamicLabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E306C63827AEC60300B25526 /* DynamicLabelExtension.swift */; };
+		E306C63B27AEC74600B25526 /* DynamicTextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E306C63A27AEC74600B25526 /* DynamicTextFieldExtension.swift */; };
+		E306C63F27AEFDFD00B25526 /* AuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E306C63E27AEFDFD00B25526 /* AuthenticationTests.swift */; };
 		E314F65127A21589006ABCA1 /* CodableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F65027A21589006ABCA1 /* CodableObject.swift */; };
 		E314F66727A2279C006ABCA1 /* CodableObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F66627A2279C006ABCA1 /* CodableObjectTests.swift */; };
 		E314F66A27A3866A006ABCA1 /* RestHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F66927A3866A006ABCA1 /* RestHelperTests.swift */; };
@@ -23,12 +26,30 @@
 		E314F68527A5F568006ABCA1 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F68427A5F568006ABCA1 /* Session.swift */; };
 		E314F68A27A5F7B2006ABCA1 /* Disciplines.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F68927A5F7B2006ABCA1 /* Disciplines.swift */; };
 		E314F68C27A5F7BF006ABCA1 /* Discipline.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F68B27A5F7BF006ABCA1 /* Discipline.swift */; };
-		E314F68E27A5F9C4006ABCA1 /* Documents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F68D27A5F9C4006ABCA1 /* Documents.swift */; };
-		E314F69027A5F9CF006ABCA1 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F68F27A5F9CF006ABCA1 /* Document.swift */; };
+		E314F68E27A5F9C4006ABCA1 /* Payments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F68D27A5F9C4006ABCA1 /* Payments.swift */; };
+		E314F69027A5F9CF006ABCA1 /* PaymentsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F68F27A5F9CF006ABCA1 /* PaymentsType.swift */; };
 		E314F69227A5F9D9006ABCA1 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F69127A5F9D9006ABCA1 /* Payment.swift */; };
 		E314F69427A5FC1C006ABCA1 /* ARDiscipline.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F69327A5FC1C006ABCA1 /* ARDiscipline.swift */; };
 		E314F69827A5FC60006ABCA1 /* ARSemester.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F69727A5FC60006ABCA1 /* ARSemester.swift */; };
 		E34542A327A89746008DBB8C /* APIProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34542A227A89746008DBB8C /* APIProviderTests.swift */; };
+		E34542A527A9B0B0008DBB8C /* DisciplinesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34542A427A9B0B0008DBB8C /* DisciplinesViewModel.swift */; };
+		E34542A727A9B0E6008DBB8C /* FinanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34542A627A9B0E6008DBB8C /* FinanceViewModel.swift */; };
+		E34542A927A9B114008DBB8C /* AcademicRecordsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34542A827A9B114008DBB8C /* AcademicRecordsViewModel.swift */; };
+		E34542AB27A9B6F3008DBB8C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34542AA27A9B6F3008DBB8C /* Coordinator.swift */; };
+		E34542AD27A9B7B6008DBB8C /* EmbedNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34542AC27A9B7B6008DBB8C /* EmbedNavigationViewController.swift */; };
+		E34542AF27A9BAC0008DBB8C /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34542AE27A9BAC0008DBB8C /* AuthenticationCoordinator.swift */; };
+		E34542B427A9BDD3008DBB8C /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34542B327A9BDD3008DBB8C /* HomeCoordinator.swift */; };
+		E34542B727AAF7E9008DBB8C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34542B527AAF7E9008DBB8C /* HomeViewController.swift */; };
+		E34542B827AAF7E9008DBB8C /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E34542B627AAF7E9008DBB8C /* HomeViewController.xib */; };
+		E34542BA27AAF8E0008DBB8C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34542B927AAF8E0008DBB8C /* HomeViewModel.swift */; };
+		E34542BE27AAFABC008DBB8C /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34542BC27AAFABC008DBB8C /* AuthenticationViewController.swift */; };
+		E34542BF27AAFABC008DBB8C /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E34542BD27AAFABC008DBB8C /* AuthenticationViewController.xib */; };
+		E34542C527AAFB82008DBB8C /* DisciplinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34542C327AAFB82008DBB8C /* DisciplinesViewController.swift */; };
+		E34542C627AAFB82008DBB8C /* DisciplinesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E34542C427AAFB82008DBB8C /* DisciplinesViewController.xib */; };
+		E34542C927AAFB90008DBB8C /* FinanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34542C727AAFB90008DBB8C /* FinanceViewController.swift */; };
+		E34542CA27AAFB90008DBB8C /* FinanceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E34542C827AAFB90008DBB8C /* FinanceViewController.xib */; };
+		E34542CD27AAFBAA008DBB8C /* AcademicRecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34542CB27AAFBAA008DBB8C /* AcademicRecordsViewController.swift */; };
+		E34542CE27AAFBAA008DBB8C /* AcademicRecordsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E34542CC27AAFBAA008DBB8C /* AcademicRecordsViewController.xib */; };
 		E36B50D4279F84D500D74832 /* RestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36B50D3279F84D500D74832 /* RestHelper.swift */; };
 		E36B50D7279F852C00D74832 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36B50D6279F852C00D74832 /* APIProvider.swift */; };
 		E36B50DA279F881700D74832 /* RestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36B50D9279F881700D74832 /* RestError.swift */; };
@@ -37,7 +58,9 @@
 		E38D52E22730E5B300269695 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38D52E12730E5B300269695 /* AppDelegate.swift */; };
 		E38D52EB2730E5B500269695 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E38D52EA2730E5B500269695 /* Assets.xcassets */; };
 		E38D52EE2730E5B500269695 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E38D52EC2730E5B500269695 /* LaunchScreen.storyboard */; };
-		E3D5D15E279B5F9C006AF85D /* UNIP Plus Local.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = E3D5D15D279B5F9C006AF85D /* UNIP Plus Local.xcconfig */; };
+		E3A3D3B127AEB82D00348EC7 /* DynamicObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A3D3B027AEB82D00348EC7 /* DynamicObject.swift */; };
+		E3A6ADB927B1DDC70026AD68 /* DynamicObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A6ADB827B1DDC70026AD68 /* DynamicObjectTests.swift */; };
+		E3A6ADBB27B1F9F20026AD68 /* UITextFieldDynamicProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A6ADBA27B1F9F20026AD68 /* UITextFieldDynamicProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +82,9 @@
 		A16BD6841ED1B0DF04653806 /* Pods-UNIP Plus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIP Plus.debug.xcconfig"; path = "Target Support Files/Pods-UNIP Plus/Pods-UNIP Plus.debug.xcconfig"; sourceTree = "<group>"; };
 		D0626FC6E8202F29C83A1CB4 /* Pods_UNIP_Plus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UNIP_Plus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBDBEBDC8391F462D5598361 /* Pods-UNIP Plus.local.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIP Plus.local.xcconfig"; path = "Target Support Files/Pods-UNIP Plus/Pods-UNIP Plus.local.xcconfig"; sourceTree = "<group>"; };
+		E306C63827AEC60300B25526 /* DynamicLabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicLabelExtension.swift; sourceTree = "<group>"; };
+		E306C63A27AEC74600B25526 /* DynamicTextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTextFieldExtension.swift; sourceTree = "<group>"; };
+		E306C63E27AEFDFD00B25526 /* AuthenticationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTests.swift; sourceTree = "<group>"; };
 		E314F65027A21589006ABCA1 /* CodableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableObject.swift; sourceTree = "<group>"; };
 		E314F65A27A223EA006ABCA1 /* UNIP PlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UNIP PlusTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E314F66627A2279C006ABCA1 /* CodableObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableObjectTests.swift; sourceTree = "<group>"; };
@@ -74,12 +100,30 @@
 		E314F68427A5F568006ABCA1 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		E314F68927A5F7B2006ABCA1 /* Disciplines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disciplines.swift; sourceTree = "<group>"; };
 		E314F68B27A5F7BF006ABCA1 /* Discipline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discipline.swift; sourceTree = "<group>"; };
-		E314F68D27A5F9C4006ABCA1 /* Documents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Documents.swift; sourceTree = "<group>"; };
-		E314F68F27A5F9CF006ABCA1 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		E314F68D27A5F9C4006ABCA1 /* Payments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payments.swift; sourceTree = "<group>"; };
+		E314F68F27A5F9CF006ABCA1 /* PaymentsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsType.swift; sourceTree = "<group>"; };
 		E314F69127A5F9D9006ABCA1 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		E314F69327A5FC1C006ABCA1 /* ARDiscipline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARDiscipline.swift; sourceTree = "<group>"; };
 		E314F69727A5FC60006ABCA1 /* ARSemester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSemester.swift; sourceTree = "<group>"; };
 		E34542A227A89746008DBB8C /* APIProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProviderTests.swift; sourceTree = "<group>"; };
+		E34542A427A9B0B0008DBB8C /* DisciplinesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisciplinesViewModel.swift; sourceTree = "<group>"; };
+		E34542A627A9B0E6008DBB8C /* FinanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceViewModel.swift; sourceTree = "<group>"; };
+		E34542A827A9B114008DBB8C /* AcademicRecordsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademicRecordsViewModel.swift; sourceTree = "<group>"; };
+		E34542AA27A9B6F3008DBB8C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		E34542AC27A9B7B6008DBB8C /* EmbedNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbedNavigationViewController.swift; sourceTree = "<group>"; };
+		E34542AE27A9BAC0008DBB8C /* AuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinator.swift; sourceTree = "<group>"; };
+		E34542B327A9BDD3008DBB8C /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		E34542B527AAF7E9008DBB8C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E34542B627AAF7E9008DBB8C /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		E34542B927AAF8E0008DBB8C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		E34542BC27AAFABC008DBB8C /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
+		E34542BD27AAFABC008DBB8C /* AuthenticationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthenticationViewController.xib; sourceTree = "<group>"; };
+		E34542C327AAFB82008DBB8C /* DisciplinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisciplinesViewController.swift; sourceTree = "<group>"; };
+		E34542C427AAFB82008DBB8C /* DisciplinesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisciplinesViewController.xib; sourceTree = "<group>"; };
+		E34542C727AAFB90008DBB8C /* FinanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceViewController.swift; sourceTree = "<group>"; };
+		E34542C827AAFB90008DBB8C /* FinanceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinanceViewController.xib; sourceTree = "<group>"; };
+		E34542CB27AAFBAA008DBB8C /* AcademicRecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademicRecordsViewController.swift; sourceTree = "<group>"; };
+		E34542CC27AAFBAA008DBB8C /* AcademicRecordsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AcademicRecordsViewController.xib; sourceTree = "<group>"; };
 		E36B50D3279F84D500D74832 /* RestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestHelper.swift; sourceTree = "<group>"; };
 		E36B50D6279F852C00D74832 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		E36B50D9279F881700D74832 /* RestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestError.swift; sourceTree = "<group>"; };
@@ -90,6 +134,9 @@
 		E38D52EA2730E5B500269695 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E38D52ED2730E5B500269695 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E38D52EF2730E5B500269695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3A3D3B027AEB82D00348EC7 /* DynamicObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicObject.swift; sourceTree = "<group>"; };
+		E3A6ADB827B1DDC70026AD68 /* DynamicObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicObjectTests.swift; sourceTree = "<group>"; };
+		E3A6ADBA27B1F9F20026AD68 /* UITextFieldDynamicProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldDynamicProperties.swift; sourceTree = "<group>"; };
 		E3D5D15D279B5F9C006AF85D /* UNIP Plus Local.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "UNIP Plus Local.xcconfig"; sourceTree = "<group>"; };
 		E3D5D162279B6997006AF85D /* UNIP Plus Prod.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "UNIP Plus Prod.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,22 +183,50 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E306C63727AEC5BC00B25526 /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				E306C63827AEC60300B25526 /* DynamicLabelExtension.swift */,
+				E306C63A27AEC74600B25526 /* DynamicTextFieldExtension.swift */,
+				E3A6ADBA27B1F9F20026AD68 /* UITextFieldDynamicProperties.swift */,
+			);
+			path = Rx;
+			sourceTree = "<group>";
+		};
+		E306C63C27AEFDDC00B25526 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				E306C63D27AEFDE500B25526 /* Authentication */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		E306C63D27AEFDE500B25526 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				E306C63E27AEFDFD00B25526 /* AuthenticationTests.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		E314F65B27A223EA006ABCA1 /* UNIP PlusTests */ = {
 			isa = PBXGroup;
 			children = (
+				E306C63C27AEFDDC00B25526 /* Features */,
 				E34542A127A89715008DBB8C /* Providers */,
 				E314F66827A3863B006ABCA1 /* Helpers */,
-				E314F66527A22780006ABCA1 /* Lang */,
+				E314F66527A22780006ABCA1 /* Models */,
 			);
 			path = "UNIP PlusTests";
 			sourceTree = "<group>";
 		};
-		E314F66527A22780006ABCA1 /* Lang */ = {
+		E314F66527A22780006ABCA1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				E314F66627A2279C006ABCA1 /* CodableObjectTests.swift */,
+				E3A6ADB827B1DDC70026AD68 /* DynamicObjectTests.swift */,
 			);
-			path = Lang;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E314F66827A3863B006ABCA1 /* Helpers */ = {
@@ -166,6 +241,7 @@
 		E314F66B27A4C499006ABCA1 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				E34542B127A9BDB3008DBB8C /* Home */,
 				E314F67127A57FB2006ABCA1 /* Academic Records */,
 				E314F67027A57FA9006ABCA1 /* Finance */,
 				E314F66F27A57F9C006ABCA1 /* Disciplines */,
@@ -177,9 +253,11 @@
 		E314F66E27A57F93006ABCA1 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				E34542BB27AAFAA3008DBB8C /* View */,
 				E314F67727A5F176006ABCA1 /* Models */,
 				E314F67527A5F171006ABCA1 /* AuthenticationViewModel.swift */,
 				E314F67A27A5F1F6006ABCA1 /* AuthenticationAPIProvider.swift */,
+				E34542AE27A9BAC0008DBB8C /* AuthenticationCoordinator.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -187,8 +265,10 @@
 		E314F66F27A57F9C006ABCA1 /* Disciplines */ = {
 			isa = PBXGroup;
 			children = (
+				E34542C027AAFB5E008DBB8C /* View */,
 				E314F68627A5F739006ABCA1 /* Models */,
 				E314F67C27A5F382006ABCA1 /* DisciplinesAPIProvider.swift */,
+				E34542A427A9B0B0008DBB8C /* DisciplinesViewModel.swift */,
 			);
 			path = Disciplines;
 			sourceTree = "<group>";
@@ -196,8 +276,10 @@
 		E314F67027A57FA9006ABCA1 /* Finance */ = {
 			isa = PBXGroup;
 			children = (
+				E34542C127AAFB64008DBB8C /* View */,
 				E314F68727A5F744006ABCA1 /* Models */,
 				E314F67E27A5F401006ABCA1 /* FinanceAPIProvider.swift */,
+				E34542A627A9B0E6008DBB8C /* FinanceViewModel.swift */,
 			);
 			path = Finance;
 			sourceTree = "<group>";
@@ -205,8 +287,10 @@
 		E314F67127A57FB2006ABCA1 /* Academic Records */ = {
 			isa = PBXGroup;
 			children = (
+				E34542C227AAFB69008DBB8C /* View */,
 				E314F68827A5F74A006ABCA1 /* Models */,
 				E314F68027A5F4F5006ABCA1 /* AcademicRecordsAPIProvider.swift */,
+				E34542A827A9B114008DBB8C /* AcademicRecordsViewModel.swift */,
 			);
 			path = "Academic Records";
 			sourceTree = "<group>";
@@ -214,6 +298,9 @@
 		E314F67227A57FD9006ABCA1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				E306C63727AEC5BC00B25526 /* Rx */,
+				E34542AA27A9B6F3008DBB8C /* Coordinator.swift */,
+				E34542AC27A9B7B6008DBB8C /* EmbedNavigationViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -223,7 +310,6 @@
 			children = (
 				E314F67827A5F18F006ABCA1 /* Credentials.swift */,
 				E314F68227A5F560006ABCA1 /* User.swift */,
-				E314F68427A5F568006ABCA1 /* Session.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -240,8 +326,8 @@
 		E314F68727A5F744006ABCA1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E314F68D27A5F9C4006ABCA1 /* Documents.swift */,
-				E314F68F27A5F9CF006ABCA1 /* Document.swift */,
+				E314F68D27A5F9C4006ABCA1 /* Payments.swift */,
+				E314F68F27A5F9CF006ABCA1 /* PaymentsType.swift */,
 				E314F69127A5F9D9006ABCA1 /* Payment.swift */,
 			);
 			path = Models;
@@ -264,11 +350,67 @@
 			path = Providers;
 			sourceTree = "<group>";
 		};
+		E34542B127A9BDB3008DBB8C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E34542B227A9BDBD008DBB8C /* View */,
+				E34542B327A9BDD3008DBB8C /* HomeCoordinator.swift */,
+				E34542B927AAF8E0008DBB8C /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E34542B227A9BDBD008DBB8C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E34542B527AAF7E9008DBB8C /* HomeViewController.swift */,
+				E34542B627AAF7E9008DBB8C /* HomeViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E34542BB27AAFAA3008DBB8C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E34542BC27AAFABC008DBB8C /* AuthenticationViewController.swift */,
+				E34542BD27AAFABC008DBB8C /* AuthenticationViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E34542C027AAFB5E008DBB8C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E34542C327AAFB82008DBB8C /* DisciplinesViewController.swift */,
+				E34542C427AAFB82008DBB8C /* DisciplinesViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E34542C127AAFB64008DBB8C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E34542C727AAFB90008DBB8C /* FinanceViewController.swift */,
+				E34542C827AAFB90008DBB8C /* FinanceViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E34542C227AAFB69008DBB8C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E34542CB27AAFBAA008DBB8C /* AcademicRecordsViewController.swift */,
+				E34542CC27AAFBAA008DBB8C /* AcademicRecordsViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E36B50D1279F84B500D74832 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				E3A3D3AF27AEB81900348EC7 /* Rx */,
 				E314F67227A57FD9006ABCA1 /* UI */,
-				E36B50D8279F880300D74832 /* Lang */,
+				E36B50D8279F880300D74832 /* Models */,
 				E36B50D5279F851500D74832 /* Providers */,
 				E36B50D2279F84C200D74832 /* Helpers */,
 			);
@@ -292,14 +434,15 @@
 			path = Providers;
 			sourceTree = "<group>";
 		};
-		E36B50D8279F880300D74832 /* Lang */ = {
+		E36B50D8279F880300D74832 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E314F68427A5F568006ABCA1 /* Session.swift */,
 				E36B50D9279F881700D74832 /* RestError.swift */,
 				E36B50DB279F887200D74832 /* RestMethod.swift */,
 				E314F65027A21589006ABCA1 /* CodableObject.swift */,
 			);
-			path = Lang;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E38D52D52730E5B300269695 = {
@@ -335,6 +478,14 @@
 				E38D52EF2730E5B500269695 /* Info.plist */,
 			);
 			path = "UNIP Plus";
+			sourceTree = "<group>";
+		};
+		E3A3D3AF27AEB81900348EC7 /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				E3A3D3B027AEB82D00348EC7 /* DynamicObject.swift */,
+			);
+			path = Rx;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,7 +536,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1310;
+				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					E314F65927A223EA006ABCA1 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -427,9 +578,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3D5D15E279B5F9C006AF85D /* UNIP Plus Local.xcconfig in Resources */,
+				E34542BF27AAFABC008DBB8C /* AuthenticationViewController.xib in Resources */,
+				E34542C627AAFB82008DBB8C /* DisciplinesViewController.xib in Resources */,
 				E38D52EE2730E5B500269695 /* LaunchScreen.storyboard in Resources */,
 				E38D52EB2730E5B500269695 /* Assets.xcassets in Resources */,
+				E34542B827AAF7E9008DBB8C /* HomeViewController.xib in Resources */,
+				E34542CE27AAFBAA008DBB8C /* AcademicRecordsViewController.xib in Resources */,
+				E34542CA27AAFB90008DBB8C /* FinanceViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,7 +644,9 @@
 			files = (
 				E314F67427A58A04006ABCA1 /* AppInfoHelperTests.swift in Sources */,
 				E34542A327A89746008DBB8C /* APIProviderTests.swift in Sources */,
+				E3A6ADB927B1DDC70026AD68 /* DynamicObjectTests.swift in Sources */,
 				E314F66727A2279C006ABCA1 /* CodableObjectTests.swift in Sources */,
+				E306C63F27AEFDFD00B25526 /* AuthenticationTests.swift in Sources */,
 				E314F66A27A3866A006ABCA1 /* RestHelperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,26 +656,43 @@
 			buildActionMask = 2147483647;
 			files = (
 				E36B50DC279F887200D74832 /* RestMethod.swift in Sources */,
+				E34542A927A9B114008DBB8C /* AcademicRecordsViewModel.swift in Sources */,
+				E34542AB27A9B6F3008DBB8C /* Coordinator.swift in Sources */,
 				E314F69827A5FC60006ABCA1 /* ARSemester.swift in Sources */,
+				E34542B427A9BDD3008DBB8C /* HomeCoordinator.swift in Sources */,
+				E34542B727AAF7E9008DBB8C /* HomeViewController.swift in Sources */,
 				E314F65127A21589006ABCA1 /* CodableObject.swift in Sources */,
 				E38D52E22730E5B300269695 /* AppDelegate.swift in Sources */,
 				E314F68A27A5F7B2006ABCA1 /* Disciplines.swift in Sources */,
+				E34542CD27AAFBAA008DBB8C /* AcademicRecordsViewController.swift in Sources */,
+				E34542C527AAFB82008DBB8C /* DisciplinesViewController.swift in Sources */,
 				E314F67927A5F18F006ABCA1 /* Credentials.swift in Sources */,
 				E314F67F27A5F401006ABCA1 /* FinanceAPIProvider.swift in Sources */,
-				E314F68E27A5F9C4006ABCA1 /* Documents.swift in Sources */,
+				E314F68E27A5F9C4006ABCA1 /* Payments.swift in Sources */,
+				E3A3D3B127AEB82D00348EC7 /* DynamicObject.swift in Sources */,
+				E306C63927AEC60300B25526 /* DynamicLabelExtension.swift in Sources */,
+				E34542BE27AAFABC008DBB8C /* AuthenticationViewController.swift in Sources */,
 				E314F68527A5F568006ABCA1 /* Session.swift in Sources */,
+				E34542C927AAFB90008DBB8C /* FinanceViewController.swift in Sources */,
 				E314F68127A5F4F5006ABCA1 /* AcademicRecordsAPIProvider.swift in Sources */,
-				E314F69027A5F9CF006ABCA1 /* Document.swift in Sources */,
+				E3A6ADBB27B1F9F20026AD68 /* UITextFieldDynamicProperties.swift in Sources */,
+				E314F69027A5F9CF006ABCA1 /* PaymentsType.swift in Sources */,
 				E314F68327A5F560006ABCA1 /* User.swift in Sources */,
+				E34542AD27A9B7B6008DBB8C /* EmbedNavigationViewController.swift in Sources */,
+				E34542A527A9B0B0008DBB8C /* DisciplinesViewModel.swift in Sources */,
 				E314F67D27A5F382006ABCA1 /* DisciplinesAPIProvider.swift in Sources */,
 				E36B50D4279F84D500D74832 /* RestHelper.swift in Sources */,
 				E314F67627A5F171006ABCA1 /* AuthenticationViewModel.swift in Sources */,
 				E314F69427A5FC1C006ABCA1 /* ARDiscipline.swift in Sources */,
+				E34542A727A9B0E6008DBB8C /* FinanceViewModel.swift in Sources */,
 				E314F69227A5F9D9006ABCA1 /* Payment.swift in Sources */,
+				E34542AF27A9BAC0008DBB8C /* AuthenticationCoordinator.swift in Sources */,
+				E306C63B27AEC74600B25526 /* DynamicTextFieldExtension.swift in Sources */,
 				E314F68C27A5F7BF006ABCA1 /* Discipline.swift in Sources */,
 				E36B50DE279F8F1F00D74832 /* AppInfoHelper.swift in Sources */,
 				E36B50DA279F881700D74832 /* RestError.swift in Sources */,
 				E36B50D7279F852C00D74832 /* APIProvider.swift in Sources */,
+				E34542BA27AAF8E0008DBB8C /* HomeViewModel.swift in Sources */,
 				E314F67B27A5F1F6006ABCA1 /* AuthenticationAPIProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

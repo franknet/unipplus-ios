@@ -7,20 +7,36 @@
 
 import Foundation
 
-struct AuthenticationAPIProvider: APIProvider {
+enum AuthenticationAPIProvider: APIProvider {
     
-    let credentials: Credentials
+    case login(credentials: Credentials)
     
-    var path: String = "/v1/authentication"
+    var path: String  {
+        switch self {
+        case .login:
+            return "/v1/authentication"
+        }
+    }
     
-    var method: RestMethod = .POST
+    var method: RestMethod {
+        switch self {
+        case .login:
+            return .POST
+        }
+    }
     
     var headers: [String : String]? {
-        ["Content-Type": "application/json"]
+        switch self {
+        case .login:
+            return ["Content-Type": "application/json"]
+        }
     }
     
     var data: Data? {
-        credentials.encode()
+        switch self {
+        case .login(let credentials):
+            return credentials.encode()
+        }
     }
     
 }

@@ -13,6 +13,7 @@ enum UserGender: CodableObject {
 }
 
 struct User: CodableObject {
+    let uid: String?
     let id: String?
     let userName: String?
     let status: String?

@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol CodableObject: Codable { }
+protocol CodableObject: Codable, Equatable { }
 
 extension CodableObject {
     static func decode(fromData data: Data) -> Self? {

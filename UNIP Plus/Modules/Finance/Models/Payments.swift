@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Documents: CodableObject {
+struct Payments: CodableObject {
     let totalPaid: Double?
-    let docs: [Document]?
+    let types: [PaymentsType]?
 }

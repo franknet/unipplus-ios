@@ -17,7 +17,7 @@ class APIProviderTests: XCTestCase {
 
     override func setUpWithError() throws {
         
-        authenticationAPIProvider = AuthenticationAPIProvider(credentials: .init(id: "f11bhb1", password: "0107"))
+        authenticationAPIProvider = AuthenticationAPIProvider.login(credentials: .init(id: "f11bhb1", password: "0107"))
         disciplinesAPIProvider = DisciplinesAPIProvider()
         financePaymentsAPIProvider = FinanceAPIProvider.payments
         academicRecordsAPIProvider = AcademicRecordsAPIProvider()
@@ -36,7 +36,7 @@ class APIProviderTests: XCTestCase {
         
         let expectation = XCTestExpectation(description: "Expect to fetch all main api services with success!")
         
-        let financePaymentsCompletionHandler: ((Result<Documents, RestError>) -> Void) = { result in
+        let financePaymentsCompletionHandler: ((Result<Payments, RestError>) -> Void) = { result in
             switch result {
             case .success:
                 XCTAssert(true)
@@ -50,7 +50,7 @@ class APIProviderTests: XCTestCase {
         let academicRecordsCompletionHandler: ((Result<[ARSemester], RestError>) -> Void) = { result in
             switch result {
             case .success:
-                self.financePaymentsAPIProvider?.fetch(modelType: Documents.self, financePaymentsCompletionHandler)
+                self.financePaymentsAPIProvider?.fetch(modelType: Payments.self, financePaymentsCompletionHandler)
             case .failure(let error):
                 XCTAssert(false)
                 print(error.localizedDescription)
@@ -71,7 +71,7 @@ class APIProviderTests: XCTestCase {
             
         }
         
-        let authenticationCompletionHandler: ((Result<Session, RestError>) -> Void) = { result in
+        let authenticationCompletionHandler: ((Result<User, RestError>) -> Void) = { result in
             switch result {
             case .success:
                 self.disciplinesAPIProvider?.fetch(modelType: Disciplines.self, disciplinesCompletionHandler)
@@ -83,7 +83,7 @@ class APIProviderTests: XCTestCase {
             
         }
         
-        authenticationAPIProvider?.fetch(modelType: Session.self, authenticationCompletionHandler)
+        authenticationAPIProvider?.fetch(modelType: User.self, authenticationCompletionHandler)
         
         wait(for: [expectation], timeout: 30)
     }

@@ -7,7 +7,11 @@
 
 import Foundation
 
-enum RestError: LocalizedError {
+enum RestError: LocalizedError, Equatable {
+    static func == (lhs: RestError, rhs: RestError) -> Bool {
+        return lhs.localizedDescription == rhs.localizedDescription
+    }
+    
     case badRequest
     case noData
     case serviceError(String)

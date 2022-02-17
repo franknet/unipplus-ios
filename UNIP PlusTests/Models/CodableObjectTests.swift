@@ -15,8 +15,6 @@ class CodableObjectTests: XCTestCase {
         var age: Int?
     }
     
-    var codableDict: [String:CodableObject]?
-    
     var jsonData: Data?
     var jsonArrayData: Data?
 
